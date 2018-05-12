@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.android.ts.emis">
+
+    <application
+        android:name=".app.APPApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="${APP_NAME}"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon,android:label">
+
+        <!-- 启动界面 -->
+        <activity
+            android:name=".activity.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Transparent.Splash.Fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 主界面 -->
+        <activity
+            android:name=".activity.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <!-- 通用H5加载 -->
+        <activity
+            android:name=".activity.common.CommonWebActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Transparent"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- 我的-设置 -->
+        <activity
+            android:name=".activity.my.SettingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Transparent"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- 我的设置-关于 -->
+        <activity
+            android:name=".activity.my.AboutUsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Transparent" />
+
+        <!-- 我的设置-分享 -->
+        <activity
+            android:name=".activity.my.SharedActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Transparent" />
+
+        <!-- 我的设置-意见反馈 -->
+        <activity
+            android:name=".activity.my.FeedbackActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Transparent"
+            android:windowSoftInputMode="adjustResize" />
+    </application>
+
+    <!-- 网络反问权限 - 非隐私权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 允许从非系统拨号器里输入电话号码 - 隐私权限 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!-- 允许读取/写入/创建外部存储 - 隐私权限(系统基本授权) -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 读取设备手机信息 - 隐私权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+</manifest>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/EMIS_Android_App.iml" filepath="$PROJECT_DIR$/EMIS_Android_App.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib-andfix/lib-andfix.iml" filepath="$PROJECT_DIR$/lib-andfix/lib-andfix.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib-banner/lib-banner.iml" filepath="$PROJECT_DIR$/lib-banner/lib-banner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib-common/lib-common.iml" filepath="$PROJECT_DIR$/lib-common/lib-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib-okhttputils/lib-okhttputils.iml" filepath="$PROJECT_DIR$/lib-okhttputils/lib-okhttputils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib-pullrefresh/lib-pullrefresh.iml" filepath="$PROJECT_DIR$/lib-pullrefresh/lib-pullrefresh.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib-styleplug/lib-styleplug.iml" filepath="$PROJECT_DIR$/lib-styleplug/lib-styleplug.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib-swipebacklayout/lib-swipebacklayout.iml" filepath="$PROJECT_DIR$/lib-swipebacklayout/lib-swipebacklayout.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_root_refresh"
+    style="@style/MatchMatch.Vertical"
+    android:background="@color/color_black_deep">
+
+    <RelativeLayout
+        style="@style/MatchMatch.Horizontal"
+        android:layout_height="240dp"
+        android:background="@drawable/ic_main_work_background">
+
+        <RelativeLayout
+            android:id="@+id/rly_work_bill"
+            style="@style/MatchMatch.Horizontal"
+            android:layout_height="@dimen/item_dp50"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_black_bg">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/item_dp20"
+                android:src="@drawable/icon_main_my_setting" />
+
+            <TextView
+                style="@style/Text_Common_Style"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/item_dp50"
+                android:text="今日工单"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_count"
+                style="@style/Text_WrapWrap_Style"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/item_dp75"
+                android:text="0/0"
+                android:textColor="@color/white" />
+
+            <TextView
+                style="@style/Text_WrapWrap_Style"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/item_dp20"
+                android:text="(完成/总数)"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize_supersmall" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rlv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:overScrollMode="never"
+        android:scrollbars="none" />
+</LinearLayout>

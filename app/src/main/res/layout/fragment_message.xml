@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cn.bingoogolapple.refreshlayout.BGARefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_root_refresh"
+    android:background="@color/color_black_deep"
+    style="@style/MatchMatch">
+
+    <LinearLayout
+        android:id="@+id/lly_content"
+        style="@style/MatchMatch.Vertical"
+        android:gravity="center">
+
+        <TextView
+            style="@style/WrapWrap"
+            android:layout_centerInParent="true"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textSize_20" />
+    </LinearLayout>
+
+</cn.bingoogolapple.refreshlayout.BGARefreshLayout>
