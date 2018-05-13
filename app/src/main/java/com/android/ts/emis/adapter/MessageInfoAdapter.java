@@ -40,10 +40,7 @@ public class MessageInfoAdapter extends CommonBaseAdapter<MessageInfoBean.BodyBe
             viewHolder = (ViewHolder) convertView.getTag();
         }
         MessageInfoBean.BodyBean.DataBean bean = data.get(position);
-        if (viewHolder != null && bean != null) {
-
-        }
-        return null;
+        return convertView;
     }
 
     class ViewHolder {

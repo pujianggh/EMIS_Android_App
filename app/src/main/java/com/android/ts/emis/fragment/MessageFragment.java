@@ -62,13 +62,6 @@ public class MessageFragment extends BaseFragment {
                     @Override
                     public void run() {
                         rlRootRefresh.endRefreshing();
-                        MessageInfoBean.BodyBean.DataBean dataBean;
-                        for (int i = 0; i < 10; i++) {
-                            dataBean = new MessageInfoBean.BodyBean.DataBean();
-                            dataBean.setMsgId(i + "");
-                            dataBean.setMsgTitle("信息中心 " + i);
-                            data.add(dataBean);
-                        }
                         mAdapter.notifyDataSetChanged();
                     }
                 }, 2000);
@@ -88,6 +81,7 @@ public class MessageFragment extends BaseFragment {
             data.add(dataBean);
         }
         mAdapter = new MessageInfoAdapter(getActivity(), data);
+        lvListData.setAdapter(mAdapter);
     }
 
     @OnClick({R.id.tv_title_bar})
