@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/rl_root_refresh"
     style="@style/MatchMatch.Vertical"
-    android:background="@color/color_black_deep">
+    android:background="@color/color_black_bg">
 
     <RelativeLayout
         style="@style/MatchMatch.Horizontal"

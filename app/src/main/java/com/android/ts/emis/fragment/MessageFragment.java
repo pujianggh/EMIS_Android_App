@@ -1,15 +1,25 @@
 package com.android.ts.emis.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.LinearLayout;
+import android.view.View;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.android.ts.emis.R;
+import com.android.ts.emis.activity.common.CommonWebActivity;
+import com.android.ts.emis.adapter.MessageInfoAdapter;
 import com.android.ts.emis.base.BaseFragment;
+import com.android.ts.emis.mode.MessageInfoBean;
 import com.android.ts.emis.utils.ThreadUtil;
 import com.libcommon.action.utils.LogAPPUtil;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import cn.bingoogolapple.refreshlayout.BGANormalRefreshViewHolder;
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 
@@ -24,8 +34,13 @@ import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 public class MessageFragment extends BaseFragment {
     @BindView(R.id.rl_root_refresh)
     BGARefreshLayout rlRootRefresh;
-    @BindView(R.id.lly_content)
-    LinearLayout llyContent;
+    @BindView(R.id.lv_list_data)
+    ListView lvListData;
+    @BindView(R.id.tv_title_bar)
+    TextView tvTitleBar;
+
+    private MessageInfoAdapter mAdapter;
+    private List<MessageInfoBean.BodyBean.DataBean> data = new ArrayList<>();
 
     @Override
     protected void initView(Bundle savedInstanceState) {
@@ -47,6 +62,14 @@ public class MessageFragment extends BaseFragment {
                     @Override
                     public void run() {
                         rlRootRefresh.endRefreshing();
+                        MessageInfoBean.BodyBean.DataBean dataBean;
+                        for (int i = 0; i < 10; i++) {
+                            dataBean = new MessageInfoBean.BodyBean.DataBean();
+                            dataBean.setMsgId(i + "");
+                            dataBean.setMsgTitle("信息中心 " + i);
+                            data.add(dataBean);
+                        }
+                        mAdapter.notifyDataSetChanged();
                     }
                 }, 2000);
             }
@@ -56,6 +79,24 @@ public class MessageFragment extends BaseFragment {
                 return false;
             }
         });
+
+        MessageInfoBean.BodyBean.DataBean dataBean;
+        for (int i = 0; i < 10; i++) {
+            dataBean = new MessageInfoBean.BodyBean.DataBean();
+            dataBean.setMsgId(i + "");
+            dataBean.setMsgTitle("信息中心 " + i);
+            data.add(dataBean);
+        }
+        mAdapter = new MessageInfoAdapter(getActivity(), data);
+    }
+
+    @OnClick({R.id.tv_title_bar})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.tv_title_bar:
+                startActivity(new Intent(getActivity(), CommonWebActivity.class));
+                break;
+        }
     }
 
     @Override

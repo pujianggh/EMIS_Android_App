@@ -49,7 +49,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public boolean isSupportSwipeBack() {
-        return true;
+        return false;
     }
 
     @Override
