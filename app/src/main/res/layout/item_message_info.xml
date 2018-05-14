@@ -1,72 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/item_dp120"
+    style="@style/MatchWrap"
     android:background="@color/color_black_bg"
     android:gravity="center_vertical">
 
-    <ImageView
-        android:id="@+id/igv_icon"
-        android:layout_width="@dimen/item_dp35"
-        android:layout_height="@dimen/item_dp35"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="@dimen/spacing_normal"
-        android:src="@drawable/icon_home_message_wei" />
-
     <LinearLayout
-        android:id="@+id/lly_item"
-        style="@style/MatchMatch.Vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/selector_item"
-        android:gravity="center_vertical"
-        android:orientation="vertical">
+        style="@style/MatchMatch"
+        android:background="@drawable/selector_item_list"
+        android:gravity="center_vertical">
 
-        <RelativeLayout style="@style/MatchAuto">
+        <ImageView
+            android:id="@+id/igv_icon"
+            android:layout_width="@dimen/item_dp35"
+            android:layout_height="@dimen/item_dp35"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/spacing_normal"
+            android:src="@drawable/icon_home_message_wei" />
 
-            <TextView
-                style="@style/Text_WrapWrap_Style"
-                android:layout_margin="@dimen/spacing_min"
-                android:text="EMIS"
-                android:textColor="@color/white"
-                android:textSize="@dimen/textsize_normalplus" />
-
-            <TextView
-                style="@style/Text_WrapWrap_Style"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="@dimen/spacing_normal"
-                android:text="昨天"
-                android:textColor="@color/white"
-                android:textSize="@dimen/textsize_normalplus" />
-        </RelativeLayout>
-
-        <RelativeLayout style="@style/MatchAuto">
-
-            <TextView
-                style="@style/Text_WrapWrap_Style"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="@dimen/spacing_min"
-                android:layout_marginRight="13dp"
-                android:ellipsize="end"
-                android:lines="2"
-                android:text="尊敬的用户您好,巡检任务测试于2018-05-02开始，请提前准备。"
-                android:textColor="@color/white"
-                android:textSize="@dimen/textsize_normalplus" />
-
-            <ImageView
-                android:layout_width="@dimen/spacing_min"
-                android:layout_height="@dimen/spacing_min"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="@dimen/spacing_normal"
-                android:layout_marginTop="@dimen/spacing_min"
-                android:src="@drawable/icon_tip" />
-        </RelativeLayout>
-
-        <View
+        <LinearLayout
+            android:id="@+id/lly_item"
+            style="@style/MatchMatch.Vertical"
             android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:layout_marginLeft="@dimen/spacing_min"
-            android:layout_marginRight="@dimen/item_dp10"
-            android:background="@color/line_lightgray" />
+            android:layout_height="80dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <RelativeLayout style="@style/MatchAuto">
+
+                <TextView
+                    style="@style/Text_WrapWrap_Style"
+                    android:layout_margin="@dimen/spacing_min"
+                    android:text="EMIS"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize_normalplus" />
+
+                <TextView
+                    style="@style/Text_WrapWrap_Style"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/spacing_normal"
+                    android:text="昨天"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize_normalplus" />
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/MatchAuto">
+
+                <TextView
+                    style="@style/Text_WrapWrap_Style"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="@dimen/spacing_min"
+                    android:layout_marginRight="13dp"
+                    android:ellipsize="end"
+                    android:lines="2"
+                    android:text="尊敬的用户您好,巡检任务测试于2018-05-02开始，请提前准备。"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize_normalplus" />
+
+                <ImageView
+                    android:layout_width="@dimen/spacing_min"
+                    android:layout_height="@dimen/spacing_min"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/spacing_normal"
+                    android:layout_marginTop="@dimen/spacing_min"
+                    android:src="@drawable/icon_tip" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="@dimen/spacing_min"
+                android:layout_marginRight="@dimen/item_dp10"
+                android:background="@color/line_lightgray" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
