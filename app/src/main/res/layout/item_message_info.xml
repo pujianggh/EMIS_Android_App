@@ -71,7 +71,7 @@
                 android:layout_height="1px"
                 android:layout_marginLeft="@dimen/spacing_min"
                 android:layout_marginRight="@dimen/item_dp10"
-                android:background="@color/line_lightgray" />
+                android:background="@color/text_contentgray" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

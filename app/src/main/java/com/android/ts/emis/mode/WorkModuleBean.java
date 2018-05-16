@@ -11,27 +11,11 @@ import java.util.List;
  * @mail 515210530@qq.com
  * @Description:
  */
-public class WorkModuleBean implements Serializable {
-    private int code;
-    private String msg;
-
+public class WorkModuleBean extends BaseStateBean implements Serializable {
+    private String BannerImgUrl;
+    private int OrderNum;
+    private int OffOrderNum;
     private List<BodyBean> body;
-
-    public int getCode() {
-        return code;
-    }
-
-    public void setCode(int code) {
-        this.code = code;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
 
     public List<BodyBean> getBody() {
         return body;
@@ -41,9 +25,35 @@ public class WorkModuleBean implements Serializable {
         this.body = body;
     }
 
+    public String getBannerImgUrl() {
+        return BannerImgUrl;
+    }
+
+    public void setBannerImgUrl(String bannerImgUrl) {
+        BannerImgUrl = bannerImgUrl;
+    }
+
+    public int getOrderNum() {
+        return OrderNum;
+    }
+
+    public void setOrderNum(int orderNum) {
+        OrderNum = orderNum;
+    }
+
+    public int getOffOrderNum() {
+        return OffOrderNum;
+    }
+
+    public void setOffOrderNum(int offOrderNum) {
+        OffOrderNum = offOrderNum;
+    }
+
     public static class BodyBean {
         private String name;
-        private String count;
+        private String imageURL;
+        private int workCode;
+        private int count;
 
         public String getName() {
             return name;
@@ -53,11 +63,27 @@ public class WorkModuleBean implements Serializable {
             this.name = name;
         }
 
-        public String getCount() {
+        public String getImageURL() {
+            return imageURL;
+        }
+
+        public void setImageURL(String imageURL) {
+            this.imageURL = imageURL;
+        }
+
+        public int getWorkCode() {
+            return workCode;
+        }
+
+        public void setWorkCode(int workCode) {
+            this.workCode = workCode;
+        }
+
+        public int getCount() {
             return count;
         }
 
-        public void setCount(String count) {
+        public void setCount(int count) {
             this.count = count;
         }
     }

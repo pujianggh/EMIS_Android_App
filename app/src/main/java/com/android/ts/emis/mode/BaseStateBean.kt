@@ -11,6 +11,9 @@ import java.io.Serializable
  * @Description:
  */
 open class BaseStateBean : Serializable {
-    open var code: Int = 0
-    open var msg: String? = null
+    private val AppCode: String? = null
+    private val ResponseDate: String? = null
+    private val Sign: String? = null
+    private val ErrCode: String? = null
+    private val ErrMsg: String? = null
 }

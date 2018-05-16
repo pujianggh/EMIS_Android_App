@@ -23,8 +23,16 @@ import butterknife.OnClick;
  * @Description:
  */
 public class MyFragment extends BaseFragment {
-    @BindView(R.id.rly_one)
-    RelativeLayout rlyOne;
+    @BindView(R.id.rly_myGuarantee)
+    RelativeLayout rlyMyGuarantee;
+    @BindView(R.id.rly_bindPhone)
+    RelativeLayout rlyBindPhone;
+    @BindView(R.id.rly_restPassword)
+    RelativeLayout rlyRestPassword;
+    @BindView(R.id.rly_offlineDownload)
+    RelativeLayout rlyOfflineDownload;
+    @BindView(R.id.rly_setting)
+    RelativeLayout rlySetting;
 
     @Override
     protected void initView(Bundle savedInstanceState) {
@@ -32,10 +40,20 @@ public class MyFragment extends BaseFragment {
         unBinder = ButterKnife.bind(this, mContentView);
     }
 
-    @OnClick({R.id.rly_one, R.id.rly_setting})
+    @OnClick({R.id.rly_myGuarantee, R.id.rly_bindPhone, R.id.rly_restPassword, R.id.rly_offlineDownload,
+            R.id.rly_setting})
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.rly_one:
+            case R.id.rly_myGuarantee:
+                startActivity(new Intent(getActivity(), CommonWebActivity.class));
+                break;
+            case R.id.rly_bindPhone:
+                startActivity(new Intent(getActivity(), CommonWebActivity.class));
+                break;
+            case R.id.rly_restPassword:
+                startActivity(new Intent(getActivity(), CommonWebActivity.class));
+                break;
+            case R.id.rly_offlineDownload:
                 startActivity(new Intent(getActivity(), CommonWebActivity.class));
                 break;
             case R.id.rly_setting:

@@ -10,10 +10,9 @@ import android.widget.TextView;
 import com.android.ts.emis.R;
 import com.android.ts.emis.adapter.WorkModuleAdapter;
 import com.android.ts.emis.base.BaseFragment;
+import com.android.ts.emis.config.DataCenter;
+import com.android.ts.emis.handle.RecycleViewDivider;
 import com.android.ts.emis.mode.WorkModuleBean;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -35,7 +34,7 @@ public class WorkFragment extends BaseFragment {
     RecyclerView rlvContent;
 
     private WorkModuleAdapter mWorkModuleAdapter;
-    private List<WorkModuleBean.BodyBean> mDatas;
+    private WorkModuleBean moduleBean;
 
     @Override
     protected void initView(Bundle savedInstanceState) {
@@ -47,19 +46,14 @@ public class WorkFragment extends BaseFragment {
 
     private void initData() {
         rlyWorkBill.getBackground().mutate().setAlpha(100);
-        mDatas = new ArrayList<>();
-        WorkModuleBean.BodyBean bodyBean;
-        for (int i = 1; i <= 9; i++) {
-            bodyBean = new WorkModuleBean.BodyBean();
-            bodyBean.setName("工单" + i);
-            bodyBean.setCount("" + i * i);
-            mDatas.add(bodyBean);
-        }
+        moduleBean = DataCenter.getWorkModuleData();
+        tvCount.setText(moduleBean.getOffOrderNum() + "/" + moduleBean.getOrderNum());
 
-        GridLayoutManager layoutManager = new GridLayoutManager(getActivity(), 3);
+        GridLayoutManager layoutManager = new GridLayoutManager(mAPPApplication, 3);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         rlvContent.setLayoutManager(layoutManager);
-        mWorkModuleAdapter = new WorkModuleAdapter(getActivity(), mDatas);
+        rlvContent.addItemDecoration(new RecycleViewDivider(mAPPApplication));
+        mWorkModuleAdapter = new WorkModuleAdapter(mAPPApplication, moduleBean.getBody());
         rlvContent.setAdapter(mWorkModuleAdapter);
     }
 }
