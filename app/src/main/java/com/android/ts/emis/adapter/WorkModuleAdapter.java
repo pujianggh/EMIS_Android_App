@@ -39,7 +39,7 @@ public class WorkModuleAdapter extends RecyclerView.Adapter<WorkModuleAdapter.Vi
 
     @Override
     public int getItemCount() {
-        return mDatas.size();
+        return mDatas == null ? 0 : mDatas.size();
     }
 
     @Override

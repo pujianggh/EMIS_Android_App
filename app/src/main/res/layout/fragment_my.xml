@@ -33,15 +33,13 @@
                     android:text="EMIS" />
             </LinearLayout>
 
-            <LinearLayout
-                style="@style/MatchMatch.Vertical"
-                android:paddingLeft="@dimen/spacing_normal"
-                android:paddingRight="@dimen/spacing_normal">
+            <LinearLayout style="@style/MatchMatch.Vertical">
 
                 <RelativeLayout
                     android:id="@+id/rly_one"
                     style="@style/LinearLayout_Table_Style"
-                    android:layout_height="@dimen/spacing_maxplus">
+                    android:layout_height="@dimen/spacing_maxplus"
+                    android:background="@drawable/selector_item_bg">
 
                     <ImageView
                         android:layout_width="25dp"
@@ -61,11 +59,18 @@
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:src="@drawable/icon_arrow_white" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/color_black_bar" />
                 </RelativeLayout>
 
                 <RelativeLayout
                     style="@style/LinearLayout_Table_Style"
-                    android:layout_height="@dimen/spacing_maxplus">
+                    android:layout_height="@dimen/spacing_maxplus"
+                    android:background="@drawable/selector_item_bg">
 
                     <ImageView
                         android:layout_width="25dp"
@@ -85,11 +90,18 @@
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:src="@drawable/icon_arrow_white" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/color_black_bar" />
                 </RelativeLayout>
 
                 <RelativeLayout
                     style="@style/LinearLayout_Table_Style"
-                    android:layout_height="@dimen/spacing_maxplus">
+                    android:layout_height="@dimen/spacing_maxplus"
+                    android:background="@drawable/selector_item_bg">
 
                     <ImageView
                         android:layout_width="25dp"
@@ -109,11 +121,18 @@
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:src="@drawable/icon_arrow_white" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/color_black_bar" />
                 </RelativeLayout>
 
                 <RelativeLayout
                     style="@style/LinearLayout_Table_Style"
-                    android:layout_height="@dimen/spacing_maxplus">
+                    android:layout_height="@dimen/spacing_maxplus"
+                    android:background="@drawable/selector_item_bg">
 
                     <ImageView
                         android:layout_width="25dp"
@@ -133,11 +152,18 @@
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:src="@drawable/icon_arrow_white" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/color_black_bar" />
                 </RelativeLayout>
 
                 <RelativeLayout
                     style="@style/LinearLayout_Table_Style"
-                    android:layout_height="@dimen/spacing_maxplus">
+                    android:layout_height="@dimen/spacing_maxplus"
+                    android:background="@drawable/selector_item_bg">
 
                     <ImageView
                         android:layout_width="25dp"
@@ -157,12 +183,19 @@
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:src="@drawable/icon_arrow_white" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/color_black_bar" />
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:id="@+id/rly_setting"
                     style="@style/LinearLayout_Table_Style"
-                    android:layout_height="@dimen/spacing_maxplus">
+                    android:layout_height="@dimen/spacing_maxplus"
+                    android:background="@drawable/selector_item_bg">
 
                     <ImageView
                         android:layout_width="25dp"
@@ -182,8 +215,13 @@
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:src="@drawable/icon_arrow_white" />
-                </RelativeLayout>
 
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/color_black_bar" />
+                </RelativeLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

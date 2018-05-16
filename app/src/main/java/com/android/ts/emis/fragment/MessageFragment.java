@@ -57,7 +57,7 @@ public class MessageFragment extends BaseFragment {
         rlRootRefresh.setDelegate(new BGARefreshLayout.BGARefreshLayoutDelegate() {
             @Override
             public void onBGARefreshLayoutBeginRefreshing(BGARefreshLayout refreshLayout) {
-                showToast("加载最新");
+                showToast("下拉加载最新");
                 ThreadUtil.INSTANCE.runInUIThread(new Runnable() {
                     @Override
                     public void run() {
@@ -69,7 +69,14 @@ public class MessageFragment extends BaseFragment {
 
             @Override
             public boolean onBGARefreshLayoutBeginLoadingMore(BGARefreshLayout refreshLayout) {
-                return false;
+                showToast("上拉加载最新");
+                ThreadUtil.INSTANCE.runInUIThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        rlRootRefresh.endLoadingMore();
+                    }
+                }, 2000);
+                return true;
             }
         });
 

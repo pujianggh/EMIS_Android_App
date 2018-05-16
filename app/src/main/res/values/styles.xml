@@ -66,6 +66,8 @@
     <style name="LinearLayout_Table_Style">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/spacing_maxplus</item>
+        <item name="android:paddingLeft">@dimen/item_dp15</item>
+        <item name="android:paddingRight">@dimen/item_dp15</item>
         <item name="android:background">@drawable/line_table_linear</item>
     </style>
 

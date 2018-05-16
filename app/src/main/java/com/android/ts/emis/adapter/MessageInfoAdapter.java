@@ -40,12 +40,20 @@ public class MessageInfoAdapter extends CommonBaseAdapter<MessageInfoBean.BodyBe
             viewHolder = (ViewHolder) convertView.getTag();
         }
         MessageInfoBean.BodyBean.DataBean bean = data.get(position);
+        if (viewHolder != null && bean != null) {
+            viewHolder.viewLine.setVisibility(View.VISIBLE);
+            if ((position + 1) == getCount()) {
+                viewHolder.viewLine.setVisibility(View.GONE);
+            }
+        }
         return convertView;
     }
 
     class ViewHolder {
         @BindView(R.id.igv_icon)
         ImageView igvIcon;
+        @BindView(R.id.view_line)
+        View viewLine;
 
         ViewHolder(View view) {
             ButterKnife.bind(this, view);

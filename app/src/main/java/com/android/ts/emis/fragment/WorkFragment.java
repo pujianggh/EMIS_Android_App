@@ -46,7 +46,7 @@ public class WorkFragment extends BaseFragment {
     }
 
     private void initData() {
-        rlyWorkBill.getBackground().setAlpha(100);
+        rlyWorkBill.getBackground().mutate().setAlpha(100);
         mDatas = new ArrayList<>();
         WorkModuleBean.BodyBean bodyBean;
         for (int i = 1; i <= 9; i++) {
