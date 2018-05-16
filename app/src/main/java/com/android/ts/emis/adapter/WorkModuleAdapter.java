@@ -52,7 +52,10 @@ public class WorkModuleAdapter extends RecyclerView.Adapter<WorkModuleAdapter.Vi
         final WorkModuleBean.BodyBean mode = mDatas.get(position);
         if (holder != null && mode != null) {
             holder.tvName.setText(mode.getName());
-            holder.tvCount.setText(mode.getCount());
+            if (mode.getCount() > 0) {
+                holder.tvCount.setVisibility(View.VISIBLE);
+                holder.tvCount.setText(mode.getCount() + "");
+            }
             holder.llyItem.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -62,7 +65,7 @@ public class WorkModuleAdapter extends RecyclerView.Adapter<WorkModuleAdapter.Vi
         }
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.tv_name)
         TextView tvName;
         @BindView(R.id.tv_count)

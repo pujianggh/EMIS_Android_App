@@ -29,14 +29,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="@dimen/spacing_min"
-                android:background="@drawable/shape_red_tips"
+                android:background="@drawable/shape_red_tips2"
                 android:gravity="center"
                 android:paddingLeft="4dp"
                 android:paddingRight="4dp"
                 android:text="39"
                 android:textColor="@color/white"
                 android:textSize="@dimen/textSize_10"
-                android:visibility="visible" />
+                android:visibility="gone" />
         </RelativeLayout>
 
         <TextView
