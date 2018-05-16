@@ -56,6 +56,27 @@ public class WorkModuleAdapter extends RecyclerView.Adapter<WorkModuleAdapter.Vi
                 holder.tvCount.setVisibility(View.VISIBLE);
                 holder.tvCount.setText(mode.getCount() + "");
             }
+
+            switch (mode.getWorkCode()) {
+                case 10001:
+                    holder.igvIcon.setImageResource(R.drawable.icon_home_work_xj);
+                    break;
+                case 10002:
+                    holder.igvIcon.setImageResource(R.drawable.icon_home_work_gd);
+                    break;
+                case 10003:
+                    holder.igvIcon.setImageResource(R.drawable.icon_home_work_jhxwh);
+                    break;
+                case 10004:
+                    holder.igvIcon.setImageResource(R.drawable.icon_home_work_zc);
+                    break;
+                case 10005:
+                    holder.igvIcon.setImageResource(R.drawable.ic_home_function_inventories);
+                    break;
+                case 10008:
+                    holder.igvIcon.setImageResource(R.drawable.ic_home_function_inventories);
+                    break;
+            }
             holder.llyItem.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

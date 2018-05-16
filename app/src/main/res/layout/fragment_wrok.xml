@@ -21,7 +21,7 @@
                 android:layout_height="18dp"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/item_dp20"
-                android:src="@drawable/icon_main_my_setting" />
+                android:src="@drawable/icon_home_work_count" />
 
             <TextView
                 style="@style/Text_Common_Style"
