@@ -22,9 +22,9 @@ import butterknife.ButterKnife;
  * @mail 515210530@qq.com
  * @Description:
  */
-public class MessageInfoAdapter extends CommonBaseAdapter<MessageInfoBean.BodyBean.DataBean> {
+public class MessageInfoAdapter extends CommonBaseAdapter<MessageInfoBean.Data> {
 
-    public MessageInfoAdapter(Context context, List<MessageInfoBean.BodyBean.DataBean> data) {
+    public MessageInfoAdapter(Context context, List<MessageInfoBean.Data> data) {
         super(context);
         this.data = data;
     }
@@ -39,7 +39,7 @@ public class MessageInfoAdapter extends CommonBaseAdapter<MessageInfoBean.BodyBe
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        MessageInfoBean.BodyBean.DataBean bean = data.get(position);
+        MessageInfoBean.Data bean = data.get(position);
         if (viewHolder != null && bean != null) {
             viewHolder.viewLine.setVisibility(View.VISIBLE);
             if ((position + 1) == getCount()) {
