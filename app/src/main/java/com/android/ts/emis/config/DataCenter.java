@@ -1,5 +1,6 @@
 package com.android.ts.emis.config;
 
+import com.android.ts.emis.mode.MessageInfoBean;
 import com.android.ts.emis.mode.WorkModuleBean;
 
 import java.util.ArrayList;
@@ -14,6 +15,37 @@ import java.util.List;
  * @Description:
  */
 public class DataCenter {
+
+    /**
+     * 获取消息中心数据
+     */
+    public static MessageInfoBean getMessageModuleData() {
+        List<MessageInfoBean.Data> list = new ArrayList<>();
+        MessageInfoBean dataBean = new MessageInfoBean();
+        dataBean.setTotal(20);
+
+        MessageInfoBean.Data data;
+        for (int i = 0; i < 20; i++) {
+            data = new MessageInfoBean.Data();
+            if (i < 3) {
+                data.setDate("今天");
+                data.setState("0");
+            } else if (i < 10) {
+                data.setDate("昨天");
+                data.setState("1");
+            } else {
+                data.setDate("2018-4-30");
+                data.setState("0");
+            }
+            data.setId("" + i);
+            data.setMessage("尊敬的用户您好,巡检任务测试于2018-04-02开始，请提前准备。");
+            data.setTitle("EMIS");
+            list.add(data);
+        }
+
+        dataBean.setData(list);
+        return dataBean;
+    }
 
     /**
      * 获取工作模块数据

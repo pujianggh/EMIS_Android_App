@@ -38,10 +38,10 @@
     <style name="TitleBarDefaultStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">50dp</item>
-        <item name="android:background">@drawable/layer_title_bar_bg</item>
-        <item name="bgatitlebar_leftAndRightTextColor">@color/text_deepgray</item>
+        <item name="android:background">@color/color_black_deep</item>
+        <item name="bgatitlebar_leftAndRightTextColor">@color/white</item>
         <item name="bgatitlebar_leftAndRightTextSize">@dimen/textSize_12</item>
-        <item name="bgatitlebar_titleTextColor">@color/text_deepgray</item>
+        <item name="bgatitlebar_titleTextColor">@color/white</item>
         <item name="bgatitlebar_titleTextSize">@dimen/textSize_16</item>
         <item name="bgatitlebar_leftAndRightPadding">@dimen/spacing_normal</item>
         <item name="bgatitlebar_rightDrawablePadding">@dimen/spacing_min</item>

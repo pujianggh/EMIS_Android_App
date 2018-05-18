@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/layout_titleBar"
     style="@style/MatchWrap.Vertical"
-    android:background="@android:color/white">
+    android:background="@color/color_black_deep">
 
     <cn.bingoogolapple.titlebar.BGATitleBar
         android:id="@+id/titleBar"

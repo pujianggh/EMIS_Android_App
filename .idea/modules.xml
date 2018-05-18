@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/lib-pullrefresh/lib-pullrefresh.iml" filepath="$PROJECT_DIR$/lib-pullrefresh/lib-pullrefresh.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib-styleplug/lib-styleplug.iml" filepath="$PROJECT_DIR$/lib-styleplug/lib-styleplug.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib-swipebacklayout/lib-swipebacklayout.iml" filepath="$PROJECT_DIR$/lib-swipebacklayout/lib-swipebacklayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib-swipeitemlayout/lib-swipeitemlayout.iml" filepath="$PROJECT_DIR$/lib-swipeitemlayout/lib-swipeitemlayout.iml" />
     </modules>
   </component>
 </project>

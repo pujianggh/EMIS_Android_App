@@ -22,6 +22,6 @@ public class SharedActivity extends BaseActivity {
         setContentView(R.layout.activity_shared);
         ButterKnife.bind(this);
 
-        setTitleBarLayout(R.drawable.selector_title_back, "分享", "返回", true);
+        setTitleBarLayout(R.drawable.icon_back_white_bar, null, "返回", true);
     }
 }

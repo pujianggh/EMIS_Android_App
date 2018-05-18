@@ -11,167 +11,80 @@ import java.util.List;
  * @mail 515210530@qq.com
  * @Description:
  */
-public class MessageInfoBean implements Serializable {
-    private int code;
-    private String msg;
+public class MessageInfoBean extends BaseStateBean implements Serializable {
+    private int Total;
+    private List<Data> Data;
 
-    private List<BodyBean> body;
-
-    public int getCode() {
-        return code;
+    public int getTotal() {
+        return Total;
     }
 
-    public void setCode(int code) {
-        this.code = code;
+    public void setTotal(int total) {
+        Total = total;
     }
 
-    public String getMsg() {
-        return msg;
+    public List<MessageInfoBean.Data> getData() {
+        return Data;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setData(List<MessageInfoBean.Data> data) {
+        Data = data;
     }
 
-    public List<BodyBean> getBody() {
-        return body;
-    }
+    public static class Data {
+        private String title;
+        private int type;
+        private String message;
+        private String date;
+        private String state;//0-未读 1-已读
+        private String id;//
 
-    public void setBody(List<BodyBean> body) {
-        this.body = body;
-    }
-
-    public static class BodyBean {
-        private int page;
-        private int size;
-        private int total;
-        private int totalPages;
-        /**
-         * createTime : 测试内容9g25
-         * msgContent : 测试内容47op
-         * msgId : 测试内容m280
-         * msgLink : 测试内容kr7q
-         * msgPic : 测试内容7kot
-         * msgStat : 测试内容75f1
-         * msgTitle : 测试内容5m8s
-         * msgType : 测试内容059m
-         */
-
-        private List<DataBean> data;
-
-        public int getPage() {
-            return page;
+        public String getTitle() {
+            return title;
         }
 
-        public void setPage(int page) {
-            this.page = page;
+        public void setTitle(String title) {
+            this.title = title;
         }
 
-        public int getSize() {
-            return size;
+        public int getType() {
+            return type;
         }
 
-        public void setSize(int size) {
-            this.size = size;
+        public void setType(int type) {
+            this.type = type;
         }
 
-        public int getTotal() {
-            return total;
+        public String getMessage() {
+            return message;
         }
 
-        public void setTotal(int total) {
-            this.total = total;
+        public void setMessage(String message) {
+            this.message = message;
         }
 
-        public int getTotalPages() {
-            return totalPages;
+        public String getDate() {
+            return date;
         }
 
-        public void setTotalPages(int totalPages) {
-            this.totalPages = totalPages;
+        public void setDate(String date) {
+            this.date = date;
         }
 
-        public List<DataBean> getData() {
-            return data;
+        public String getState() {
+            return state;
         }
 
-        public void setData(List<DataBean> data) {
-            this.data = data;
+        public void setState(String state) {
+            this.state = state;
         }
 
-        public static class DataBean {
-            private String createTime;
-            private String msgContent;
-            private String msgId;
-            private String msgLink;
-            private String msgPic;
-            private String msgStat;
-            private String msgTitle;
-            private String msgType;
+        public String getId() {
+            return id;
+        }
 
-            public String getCreateTime() {
-                return createTime;
-            }
-
-            public void setCreateTime(String createTime) {
-                this.createTime = createTime;
-            }
-
-            public String getMsgContent() {
-                return msgContent;
-            }
-
-            public void setMsgContent(String msgContent) {
-                this.msgContent = msgContent;
-            }
-
-            public String getMsgId() {
-                return msgId;
-            }
-
-            public void setMsgId(String msgId) {
-                this.msgId = msgId;
-            }
-
-            public String getMsgLink() {
-                return msgLink;
-            }
-
-            public void setMsgLink(String msgLink) {
-                this.msgLink = msgLink;
-            }
-
-            public String getMsgPic() {
-                return msgPic;
-            }
-
-            public void setMsgPic(String msgPic) {
-                this.msgPic = msgPic;
-            }
-
-            public String getMsgStat() {
-                return msgStat;
-            }
-
-            public void setMsgStat(String msgStat) {
-                this.msgStat = msgStat;
-            }
-
-            public String getMsgTitle() {
-                return msgTitle;
-            }
-
-            public void setMsgTitle(String msgTitle) {
-                this.msgTitle = msgTitle;
-            }
-
-            public String getMsgType() {
-                return msgType;
-            }
-
-            public void setMsgType(String msgType) {
-                this.msgType = msgType;
-            }
+        public void setId(String id) {
+            this.id = id;
         }
     }
 }

@@ -8,14 +8,12 @@ import android.widget.TextView;
 
 import com.android.ts.emis.R;
 import com.android.ts.emis.activity.common.CommonWebActivity;
-import com.android.ts.emis.adapter.MessageInfoAdapter;
+import com.android.ts.emis.adapter.MessageAdapter;
 import com.android.ts.emis.base.BaseFragment;
+import com.android.ts.emis.config.DataCenter;
 import com.android.ts.emis.mode.MessageInfoBean;
 import com.android.ts.emis.utils.ThreadUtil;
 import com.libcommon.action.utils.LogAPPUtil;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -39,8 +37,8 @@ public class MessageFragment extends BaseFragment {
     @BindView(R.id.tv_title_bar)
     TextView tvTitleBar;
 
-    private MessageInfoAdapter mAdapter;
-    private List<MessageInfoBean.BodyBean.DataBean> data = new ArrayList<>();
+    private MessageAdapter mAdapter;
+    private MessageInfoBean moduleBean;
 
     @Override
     protected void initView(Bundle savedInstanceState) {
@@ -80,15 +78,10 @@ public class MessageFragment extends BaseFragment {
             }
         });
 
-        MessageInfoBean.BodyBean.DataBean dataBean;
-        for (int i = 0; i < 10; i++) {
-            dataBean = new MessageInfoBean.BodyBean.DataBean();
-            dataBean.setMsgId(i + "");
-            dataBean.setMsgTitle("信息中心 " + i);
-            data.add(dataBean);
-        }
-        mAdapter = new MessageInfoAdapter(getActivity(), data);
+        mAdapter = new MessageAdapter(mAPPApplication);
+        moduleBean = DataCenter.getMessageModuleData();
         lvListData.setAdapter(mAdapter);
+        mAdapter.setData(moduleBean.getData());
     }
 
     @OnClick({R.id.tv_title_bar})

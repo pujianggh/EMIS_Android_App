@@ -1,1 +1,1 @@
-include ':app', ':lib-common', ':lib-swipebacklayout', ':lib-okhttputils', ':lib-andfix', ':lib-pullrefresh', ':lib-banner', ':lib-styleplug'
+include ':app', ':lib-common', ':lib-swipebacklayout', ':lib-okhttputils', ':lib-andfix', ':lib-pullrefresh', ':lib-banner', ':lib-styleplug', ':lib-swipeitemlayout'

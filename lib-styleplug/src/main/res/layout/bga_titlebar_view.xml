@@ -13,13 +13,13 @@
         android:clickable="true"
         android:ellipsize="end"
         android:gravity="center"
-        android:maxWidth="85dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:singleLine="true"
-        android:textColor="@android:color/black"
-        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
         android:visibility="gone"
+        android:textStyle="bold"
         tools:text="Left"
         tools:visibility="visible"/>
 

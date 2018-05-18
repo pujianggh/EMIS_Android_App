@@ -22,6 +22,6 @@ public class FeedbackActivity extends BaseActivity {
         setContentView(R.layout.activity_feedback);
         ButterKnife.bind(this);
 
-        setTitleBarLayout(R.drawable.selector_title_back, "意见反馈", "返回", true);
+        setTitleBarLayout(R.drawable.icon_back_white_bar, null, "返回", true);
     }
 }

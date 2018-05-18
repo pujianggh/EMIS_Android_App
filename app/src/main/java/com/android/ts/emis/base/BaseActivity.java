@@ -57,6 +57,7 @@ public abstract class BaseActivity extends CommonBaseSwipeBackActivity {
     protected void setTitleBarLayout(int leftDrawable, String title, String leftText, boolean isUse) {
         setTitleBarLayout(title, isUse);
         mTitleBar.setLeftDrawable(leftDrawable);
+        mTitleBar.getLeftCtv().setTextSize(18);
         if (!TextUtils.isEmpty(leftText))
             mTitleBar.setLeftText(leftText);
     }

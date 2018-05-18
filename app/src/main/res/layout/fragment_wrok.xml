@@ -6,7 +6,7 @@
 
     <RelativeLayout
         style="@style/MatchMatch.Horizontal"
-        android:layout_height="240dp"
+        android:layout_height="220dp"
         android:background="@drawable/ic_main_work_background">
 
         <RelativeLayout
@@ -17,8 +17,8 @@
             android:background="@color/color_black_bg">
 
             <ImageView
-                android:layout_width="18dp"
-                android:layout_height="18dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/item_dp20"
                 android:src="@drawable/icon_home_work_count" />

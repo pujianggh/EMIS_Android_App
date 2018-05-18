@@ -28,7 +28,7 @@ public class AboutUsActivity extends BaseActivity {
         setContentView(R.layout.activity_about_us);
         ButterKnife.bind(this);
 
-        setTitleBarLayout(R.drawable.selector_title_back, "关于", "返回", true);
+        setTitleBarLayout(R.drawable.icon_back_white_bar, null, "返回", true);
         tvVersion.setText("V" + APPToolsUtil.getAppVersionName(APPApplication.getInstance()));
     }
 }

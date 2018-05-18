@@ -45,6 +45,7 @@ dependencies {
     api project(':lib-pullrefresh')
     api project(':lib-banner')
     api project(':lib-styleplug')
+    api project(':lib-swipeitemlayout')
 }
 repositories {
     mavenCentral()

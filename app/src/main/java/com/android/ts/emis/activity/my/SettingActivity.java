@@ -48,7 +48,7 @@ public class SettingActivity extends BaseActivity {
         setContentView(R.layout.activity_setting);
         ButterKnife.bind(this);
 
-        setTitleBarLayout(R.drawable.selector_title_back, "设置", "返回", true);
+        setTitleBarLayout(R.drawable.icon_back_white_bar, null, "设置", true);
         tvVersion.setText(APPToolsUtil.getAppVersionName(APPApplication.getInstance()));
     }
 
@@ -57,7 +57,7 @@ public class SettingActivity extends BaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.rly_clear_cache:
-
+                showToast("清除完成");
                 break;
             case R.id.rly_push_switch:
 
