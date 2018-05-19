@@ -34,10 +34,16 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
 
+        <!-- 首页-多项目信息 -->
+        <activity
+            android:name=".activity.home.ProjectMessageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Transparent"
+            android:windowSoftInputMode="stateHidden" />
+
         <!-- 通用H5加载 -->
         <activity
             android:name=".activity.common.CommonWebActivity"
-            android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Transparent"
             android:windowSoftInputMode="adjustResize" />
@@ -45,7 +51,6 @@
         <!-- 我的-设置 -->
         <activity
             android:name=".activity.my.SettingActivity"
-            android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Transparent"
             android:windowSoftInputMode="adjustResize" />

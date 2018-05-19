@@ -13,21 +13,19 @@
 
         <TextView
             style="@style/WrapMatch"
-            android:layout_margin="5dp"
-            android:background="@drawable/selector_item_list"
+            android:background="@color/text_blue"
             android:clickable="true"
             android:gravity="center"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:text="删除2"
+            android:text="标记"
             android:textColor="@android:color/white"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/tv_delete"
             style="@style/WrapMatch"
-            android:layout_margin="5dp"
-            android:background="@drawable/selector_item_list"
+            android:background="@color/red_text"
             android:clickable="true"
             android:gravity="center"
             android:paddingLeft="20dp"

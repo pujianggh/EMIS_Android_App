@@ -1,6 +1,7 @@
 package com.android.ts.emis.config;
 
 import com.android.ts.emis.mode.MessageInfoBean;
+import com.android.ts.emis.mode.ProjectMessageBean;
 import com.android.ts.emis.mode.WorkModuleBean;
 
 import java.util.ArrayList;
@@ -15,6 +16,67 @@ import java.util.List;
  * @Description:
  */
 public class DataCenter {
+
+    /**
+     * 获取消息中心数据
+     */
+    public static ProjectMessageBean getProjectMessageModuleData() {
+        ProjectMessageBean dataBean = new ProjectMessageBean();
+        dataBean.setTotal(20);
+
+        List<ProjectMessageBean.Data> list = new ArrayList<>();
+        ProjectMessageBean.Data data;
+        for (int i = 0; i < 6; i++) {
+            data = new ProjectMessageBean.Data();
+            if (i == 0) {
+                data.setName("晶融汇广场");
+                data.setProvince("四川");
+                data.setCity("成都市");
+                data.setArea("武侯区");
+                data.setImgeURL("http://pic.58pic.com/58pic/12/85/53/06k58PICXIH.jpg");
+                data.setMsgCount(3);
+            } else if (i == 1) {
+                data.setName("苏悦");
+                data.setProvince("上海");
+                data.setCity("上海");
+                data.setArea("长宁区");
+                data.setImgeURL("http://pic.58pic.com/58pic/12/85/89/48n58PICsRS.jpg");
+                data.setMsgCount(0);
+            } else if (i == 2) {
+                data.setName("乔布斯公馆");
+                data.setProvince("上海");
+                data.setCity("上海");
+                data.setArea("长宁区");
+                data.setImgeURL("http://pic.58pic.com/58pic/12/85/53/06k58PICXIH.jpg");
+                data.setMsgCount(129);
+            } else if (i == 3) {
+                data.setName("香港美心");
+                data.setProvince("香港");
+                data.setCity("香港");
+                data.setArea("九龙城区");
+                data.setImgeURL("http://pic.58pic.com/58pic/12/85/31/86g58PICUZb.jpg");
+                data.setMsgCount(1);
+            } else if (i == 4){
+                data.setName("前滩验房缺陷统计");
+                data.setProvince("上海");
+                data.setCity("上海");
+                data.setArea("浦东新区");
+                data.setImgeURL("http://pic.58pic.com/58pic/12/85/37/33x58PIC7gf.jpg");
+                data.setMsgCount(48);
+            }else {
+                data.setName("测试楼盘");
+                data.setProvince("江苏");
+                data.setCity("常州");
+                data.setArea("新区");
+                data.setImgeURL("http://pic8.nipic.com/20100727/2572038_010122214489_2.jpg");
+                data.setMsgCount(0);
+            }
+            list.add(data);
+        }
+
+        dataBean.setData(list);
+        return dataBean;
+    }
 
     /**
      * 获取消息中心数据

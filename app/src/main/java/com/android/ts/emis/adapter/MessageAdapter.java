@@ -14,7 +14,7 @@ import cn.bingoogolapple.androidcommon.adapter.BGAViewHolderHelper;
 import cn.bingoogolapple.swipeitemlayout.BGASwipeItemLayout;
 
 /**
- * 信息中心
+ * 多项目选择
  *
  * @author pujiang
  * @date 2018-5-18 16:15
@@ -64,7 +64,7 @@ public class MessageAdapter extends BGAAdapterViewAdapter<MessageInfoBean.Data> 
         }
         BGASwipeItemLayout swipeItemLayout = viewHolderHelper.getView(R.id.swipe_root);
         if (position % 3 == 0) {
-            swipeItemLayout.setSwipeAble(false);
+            swipeItemLayout.setSwipeAble(false);//不能滑动
         } else {
             swipeItemLayout.setSwipeAble(true);
         }

@@ -7,7 +7,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.ts.emis.R;
-import com.android.ts.emis.activity.common.CommonWebActivity;
+import com.android.ts.emis.activity.home.ProjectMessageActivity;
 import com.android.ts.emis.adapter.MessageAdapter;
 import com.android.ts.emis.base.BaseFragment;
 import com.android.ts.emis.config.DataCenter;
@@ -88,7 +88,7 @@ public class MessageFragment extends BaseFragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tv_title_bar:
-                startActivity(new Intent(getActivity(), CommonWebActivity.class));
+                startActivity(new Intent(getActivity(), ProjectMessageActivity.class));
                 break;
         }
     }

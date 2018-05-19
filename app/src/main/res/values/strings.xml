@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Kotlin安卓</string>
+
+    <string name="text_act_project_message_hint">请输入项目名(如创新园、cxy、chuangxinyuan)</string>
 </resources>
