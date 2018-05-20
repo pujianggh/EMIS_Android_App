@@ -4,7 +4,9 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Rect;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -21,11 +23,37 @@ import android.view.View;
 public class RecycleViewDivider extends RecyclerView.ItemDecoration {
     private static final int[] ATTRS = new int[]{android.R.attr.listDivider};
     private Drawable mDivider;
+    private int mDividerHeight = 2;//分割线高度，默认为1px
 
     public RecycleViewDivider(Context context) {
         final TypedArray a = context.obtainStyledAttributes(ATTRS);
         mDivider = a.getDrawable(0);
         a.recycle();
+    }
+
+    /**
+     * 自定义分割线
+     *
+     * @param context
+     * @param drawableId 分割线图片
+     */
+    public RecycleViewDivider(Context context, int drawableId) {
+        this(context);
+        mDivider = ContextCompat.getDrawable(context, drawableId);
+        mDividerHeight = mDivider.getIntrinsicHeight();
+    }
+
+    /**
+     * 自定义分割线
+     *
+     * @param context
+     * @param dividerHeight 分割线高度
+     * @param dividerColor  分割线颜色
+     */
+    public RecycleViewDivider(Context context, int dividerHeight, int dividerColor) {
+        this(context);
+        mDividerHeight = dividerHeight;
+        mDivider = new ColorDrawable(dividerColor);
     }
 
     @Override
@@ -48,7 +76,13 @@ public class RecycleViewDivider extends RecyclerView.ItemDecoration {
         return spanCount;
     }
 
-    public void drawHorizontal(Canvas c, RecyclerView parent) {
+    /**
+     * 绘制横向 item 分割线
+     *
+     * @param canvas
+     * @param parent
+     */
+    public void drawHorizontal(Canvas canvas, RecyclerView parent) {
         int childCount = parent.getChildCount();
         for (int i = 0; i < childCount; i++) {
             final View child = parent.getChildAt(i);
@@ -60,11 +94,17 @@ public class RecycleViewDivider extends RecyclerView.ItemDecoration {
             final int top = child.getBottom() + params.bottomMargin;
             final int bottom = top + mDivider.getIntrinsicHeight();
             mDivider.setBounds(left, top, right, bottom);
-            mDivider.draw(c);
+            mDivider.draw(canvas);
         }
     }
 
-    public void drawVertical(Canvas c, RecyclerView parent) {
+    /**
+     * 绘制竖向 item 分割线
+     *
+     * @param canvas
+     * @param parent
+     */
+    public void drawVertical(Canvas canvas, RecyclerView parent) {
         final int childCount = parent.getChildCount();
         for (int i = 0; i < childCount; i++) {
             final View child = parent.getChildAt(i);
@@ -77,7 +117,7 @@ public class RecycleViewDivider extends RecyclerView.ItemDecoration {
             final int right = left + mDivider.getIntrinsicWidth();
 
             mDivider.setBounds(left, top, right, bottom);
-            mDivider.draw(c);
+            mDivider.draw(canvas);
         }
     }
 
@@ -135,20 +175,33 @@ public class RecycleViewDivider extends RecyclerView.ItemDecoration {
         return false;
     }
 
+    /**
+     * 获取分割线尺寸
+     *
+     * @param outRect
+     * @param itemPosition
+     * @param parent
+     */
     @Override
     public void getItemOffsets(Rect outRect, int itemPosition,
                                RecyclerView parent) {
         int spanCount = getSpanCount(parent);
         int childCount = parent.getAdapter().getItemCount();
-        if (isLastRaw(parent, itemPosition, spanCount, childCount))// 如果是最后一行，则不需要绘制底部
-        {
-            outRect.set(0, 0, mDivider.getIntrinsicWidth(), 0);
-        } else if (isLastColum(parent, itemPosition, spanCount, childCount))// 如果是最后一列，则不需要绘制右边
-        {
-            outRect.set(0, 0, 0, mDivider.getIntrinsicHeight());
+//        if (isLastRaw(parent, itemPosition, spanCount, childCount)) {// 如果是最后一行，则不需要绘制底部
+//            outRect.set(0, 0, mDivider.getIntrinsicWidth(), 0);
+//        } else if (isLastColum(parent, itemPosition, spanCount, childCount)) {// 如果是最后一列，则不需要绘制右边
+//            outRect.set(0, 0, 0, mDivider.getIntrinsicHeight());
+//        } else {
+//            outRect.set(0, 0, mDivider.getIntrinsicWidth(),
+//                    mDivider.getIntrinsicHeight());
+//        }
+        if (isLastRaw(parent, itemPosition, spanCount, childCount)) {// 如果是最后一行，则不需要绘制底部
+            outRect.set(0, 0, mDividerHeight, 0);
+        } else if (isLastColum(parent, itemPosition, spanCount, childCount)) {// 如果是最后一列，则不需要绘制右边
+            outRect.set(0, 0, 0, mDividerHeight);
         } else {
-            outRect.set(0, 0, mDivider.getIntrinsicWidth(),
-                    mDivider.getIntrinsicHeight());
+            outRect.set(0, 0, mDividerHeight,
+                    mDividerHeight);
         }
     }
 }

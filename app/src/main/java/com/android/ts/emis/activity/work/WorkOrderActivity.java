@@ -50,7 +50,7 @@ public class WorkOrderActivity extends BaseActivity {
         GridLayoutManager layoutManager = new GridLayoutManager(this, 3);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         rlvContent.setLayoutManager(layoutManager);
-        rlvContent.addItemDecoration(new RecycleViewDivider(mAPPApplication));
+        rlvContent.addItemDecoration(new RecycleViewDivider(mAPPApplication, R.drawable.line_list_divider));
         mWorkModule2Adapter = new WorkModule2Adapter(this, moduleBean.getBody());
         rlvContent.setAdapter(mWorkModule2Adapter);
     }

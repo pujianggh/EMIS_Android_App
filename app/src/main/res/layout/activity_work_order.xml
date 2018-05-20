@@ -13,9 +13,10 @@
 
         <ImageView
             android:id="@+id/igv_ewm"
-            android:layout_width="@dimen/item_dp80"
-            android:layout_height="@dimen/item_dp80"
-            android:layout_centerInParent="true"
+            android:layout_width="@dimen/item_dp75"
+            android:layout_height="@dimen/item_dp75"
+            android:layout_marginTop="@dimen/item_dp35"
+            android:layout_centerHorizontal="true"
             android:src="@drawable/icon_home_work_ewm" />
 
         <TextView
