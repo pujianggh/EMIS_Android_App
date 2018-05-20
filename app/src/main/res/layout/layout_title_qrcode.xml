@@ -25,9 +25,10 @@
 
     <ImageView
         android:id="@+id/igv_icon"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="@dimen/item_dp35"
+        android:layout_height="@dimen/item_dp35"
         android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/spacing_min"
         android:layout_centerVertical="true"
         android:padding="@dimen/spacing_min"
         android:src="@drawable/icon_light_close" />

@@ -44,7 +44,6 @@ public class QRCodeActivity extends BaseActivity implements ZXingView.Delegate {
         ButterKnife.bind(this);
 
         mIgvIcon.setImageResource(R.drawable.icon_light_open);
-        mIgvIcon.getBackground().mutate().setAlpha(100);
         mZxvContent.setDelegate(this);
     }
 
