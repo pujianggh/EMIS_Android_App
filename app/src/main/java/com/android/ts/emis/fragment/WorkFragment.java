@@ -53,7 +53,7 @@ public class WorkFragment extends BaseFragment {
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         rlvContent.setLayoutManager(layoutManager);
         rlvContent.addItemDecoration(new RecycleViewDivider(mAPPApplication));
-        mWorkModuleAdapter = new WorkModuleAdapter(mAPPApplication, moduleBean.getBody());
+        mWorkModuleAdapter = new WorkModuleAdapter(getActivity(), moduleBean.getBody());
         rlvContent.setAdapter(mWorkModuleAdapter);
     }
 }

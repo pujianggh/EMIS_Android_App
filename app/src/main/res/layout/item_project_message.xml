@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/MatchWrap"
-    android:layout_height="@dimen/item_dp120"
-    android:background="@color/color_common_bg">
+    android:layout_height="@dimen/item_dp100"
+    android:background="@drawable/selector_item_list_gary">
 
     <LinearLayout
         style="@style/MatchMatch"
+        android:layout_height="@dimen/item_dp100"
         android:layout_marginBottom="@dimen/spacing_min"
         android:layout_marginLeft="@dimen/item_dp10"
         android:layout_marginRight="@dimen/item_dp15"
@@ -25,8 +26,9 @@
             <ImageView
                 android:id="@+id/igv_icon"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="@dimen/item_dp80"
                 android:layout_marginLeft="@dimen/spacing_min"
+                android:scaleType="centerCrop"
                 android:src="@drawable/ic_project_message_default" />
         </LinearLayout>
 
@@ -65,10 +67,10 @@
         android:layout_marginRight="@dimen/item_dp10"
         android:background="@drawable/shape_red_tips2"
         android:gravity="center"
-        android:paddingLeft="3dp"
-        android:paddingRight="3dp"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
         android:text=" 1 "
         android:textColor="@color/white"
-        android:textSize="@dimen/textSize_12"
+        android:textSize="@dimen/textSize_10"
         android:visibility="invisible" />
 </RelativeLayout>

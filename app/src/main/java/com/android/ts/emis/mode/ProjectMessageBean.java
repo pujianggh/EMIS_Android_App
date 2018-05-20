@@ -31,7 +31,7 @@ public class ProjectMessageBean extends BaseStateBean implements Serializable {
         Data = data;
     }
 
-    public static class Data {
+    public static class Data implements Serializable {
         private String name;
         private String province;
         private String city;

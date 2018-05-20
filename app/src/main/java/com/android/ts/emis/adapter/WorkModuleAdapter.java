@@ -1,6 +1,7 @@
 package com.android.ts.emis.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.ts.emis.R;
+import com.android.ts.emis.activity.work.WorkOrderActivity;
+import com.android.ts.emis.activity.work.WorkPollingActivity;
+import com.android.ts.emis.activity.work.WorkRepertoryActivity;
 import com.android.ts.emis.mode.WorkModuleBean;
 
 import java.util.ArrayList;
@@ -58,6 +62,7 @@ public class WorkModuleAdapter extends RecyclerView.Adapter<WorkModuleAdapter.Vi
             }
 
             switch (mode.getWorkCode()) {
+                //工作-模块
                 case 10001:
                     holder.igvIcon.setImageResource(R.drawable.icon_home_work_xj);
                     break;
@@ -80,7 +85,24 @@ public class WorkModuleAdapter extends RecyclerView.Adapter<WorkModuleAdapter.Vi
             holder.llyItem.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    switch (mode.getWorkCode()) {
+                        //工作-模块
+                        case 10001://巡检
+                            mContext.startActivity(new Intent(mContext, WorkPollingActivity.class));
+                            break;
+                        case 10002://工单
+                            mContext.startActivity(new Intent(mContext, WorkOrderActivity.class));
+                            break;
+                        case 10003:
+                            break;
+                        case 10004:
+                            break;
+                        case 10005://工单
+                            mContext.startActivity(new Intent(mContext, WorkRepertoryActivity.class));
+                            break;
+                        case 10008:
+                            break;
+                    }
                 }
             });
         }

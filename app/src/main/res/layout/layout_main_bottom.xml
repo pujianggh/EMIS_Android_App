@@ -36,8 +36,8 @@
     </RadioGroup>
 
     <LinearLayout
-        android:layout_height="@dimen/spacing_maxplus"
-        style="@style/MatchMatch.Horizontal">
+        style="@style/MatchMatch.Horizontal"
+        android:layout_height="@dimen/spacing_maxplus">
 
         <LinearLayout
             style="@style/AutoMatch"
@@ -50,12 +50,12 @@
                 android:layout_marginLeft="20dp"
                 android:background="@drawable/shape_red_tips2"
                 android:gravity="center"
-                android:paddingLeft="3dp"
-                android:paddingRight="3dp"
-                android:visibility="invisible"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
                 android:text=" 1 "
                 android:textColor="@color/white"
-                android:textSize="@dimen/textSize_12" />
+                android:textSize="@dimen/textSize_10"
+                android:visibility="invisible" />
         </LinearLayout>
 
         <LinearLayout
@@ -69,12 +69,12 @@
                 android:layout_marginLeft="20dp"
                 android:background="@drawable/shape_red_tips2"
                 android:gravity="center"
-                android:paddingLeft="3dp"
-                android:visibility="invisible"
-                android:paddingRight="3dp"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
                 android:text=" 1 "
                 android:textColor="@color/white"
-                android:textSize="@dimen/textSize_12" />
+                android:textSize="@dimen/textSize_10"
+                android:visibility="invisible" />
         </LinearLayout>
 
         <LinearLayout
@@ -88,12 +88,12 @@
                 android:layout_marginLeft="20dp"
                 android:background="@drawable/shape_red_tips2"
                 android:gravity="center"
-                android:paddingLeft="3dp"
-                android:visibility="invisible"
-                android:paddingRight="3dp"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
                 android:text=" 1 "
                 android:textColor="@color/white"
-                android:textSize="@dimen/textSize_12" />
+                android:textSize="@dimen/textSize_10"
+                android:visibility="invisible" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

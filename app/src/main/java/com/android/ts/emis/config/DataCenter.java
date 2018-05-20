@@ -56,14 +56,14 @@ public class DataCenter {
                 data.setArea("九龙城区");
                 data.setImgeURL("http://pic.58pic.com/58pic/12/85/31/86g58PICUZb.jpg");
                 data.setMsgCount(1);
-            } else if (i == 4){
+            } else if (i == 4) {
                 data.setName("前滩验房缺陷统计");
                 data.setProvince("上海");
                 data.setCity("上海");
                 data.setArea("浦东新区");
                 data.setImgeURL("http://pic.58pic.com/58pic/12/85/37/33x58PIC7gf.jpg");
                 data.setMsgCount(48);
-            }else {
+            } else {
                 data.setName("测试楼盘");
                 data.setProvince("江苏");
                 data.setCity("常州");
@@ -161,6 +161,163 @@ public class DataCenter {
         mDatas.add(bodyBean3);
         mDatas.add(bodyBean4);
         mDatas.add(bodyBean5);
+
+        workModuleBean.setBody(mDatas);
+        return workModuleBean;
+    }
+
+    /**
+     * 获取工作-巡检
+     */
+    public static WorkModuleBean getWorkPollingModuleData() {
+        WorkModuleBean workModuleBean = new WorkModuleBean();
+        workModuleBean.setBannerImgUrl("");
+        workModuleBean.setOrderNum(200);
+        workModuleBean.setOffOrderNum(130);
+
+        List<WorkModuleBean.BodyBean> mDatas = new ArrayList<>();
+        WorkModuleBean.BodyBean bodyBean = new WorkModuleBean.BodyBean();
+        bodyBean.setName("巡检任务");
+        bodyBean.setCount(41);
+        bodyBean.setImageURL("");
+        bodyBean.setWorkCode(20001);
+
+        WorkModuleBean.BodyBean bodyBean1 = new WorkModuleBean.BodyBean();
+        bodyBean1.setName("巡检查询");
+        bodyBean1.setCount(100);
+        bodyBean1.setImageURL("");
+        bodyBean1.setWorkCode(20002);
+
+        mDatas.add(bodyBean);
+        mDatas.add(bodyBean1);
+
+        workModuleBean.setBody(mDatas);
+        return workModuleBean;
+    }
+
+    /**
+     * 获取工作-工单
+     */
+    public static WorkModuleBean getWorkOrderModuleData() {
+        WorkModuleBean workModuleBean = new WorkModuleBean();
+        workModuleBean.setBannerImgUrl("");
+        workModuleBean.setOrderNum(200);
+        workModuleBean.setOffOrderNum(130);
+
+        List<WorkModuleBean.BodyBean> mDatas = new ArrayList<>();
+        WorkModuleBean.BodyBean bodyBean = new WorkModuleBean.BodyBean();
+        bodyBean.setName("创建工单");
+        bodyBean.setCount(2);
+        bodyBean.setImageURL("");
+        bodyBean.setWorkCode(30001);
+
+        WorkModuleBean.BodyBean bodyBean1 = new WorkModuleBean.BodyBean();
+        bodyBean1.setName("待处理工单");
+        bodyBean1.setCount(100);
+        bodyBean1.setImageURL("");
+        bodyBean1.setWorkCode(30002);
+
+        WorkModuleBean.BodyBean bodyBean2 = new WorkModuleBean.BodyBean();
+        bodyBean2.setName("待派工工单");
+        bodyBean2.setCount(0);
+        bodyBean2.setImageURL("");
+        bodyBean2.setWorkCode(30003);
+
+        WorkModuleBean.BodyBean bodyBean3 = new WorkModuleBean.BodyBean();
+        bodyBean3.setName("待审批工单");
+        bodyBean3.setCount(1);
+        bodyBean3.setImageURL("");
+        bodyBean3.setWorkCode(30004);
+
+        WorkModuleBean.BodyBean bodyBean4 = new WorkModuleBean.BodyBean();
+        bodyBean4.setName("待存档工单");
+        bodyBean4.setCount(0);
+        bodyBean4.setImageURL("");
+        bodyBean4.setWorkCode(30005);
+
+        WorkModuleBean.BodyBean bodyBean5 = new WorkModuleBean.BodyBean();
+        bodyBean5.setName("工单查询");
+        bodyBean5.setCount(2);
+        bodyBean5.setImageURL("");
+        bodyBean5.setWorkCode(30008);
+
+        mDatas.add(bodyBean);
+        mDatas.add(bodyBean1);
+        mDatas.add(bodyBean2);
+        mDatas.add(bodyBean3);
+        mDatas.add(bodyBean4);
+        mDatas.add(bodyBean5);
+
+        workModuleBean.setBody(mDatas);
+        return workModuleBean;
+    }
+
+    /**
+     * 获取工作-库存管理
+     */
+    public static WorkModuleBean getWorkRepertoryModuleData() {
+        WorkModuleBean workModuleBean = new WorkModuleBean();
+        workModuleBean.setBannerImgUrl("");
+        workModuleBean.setOrderNum(200);
+        workModuleBean.setOffOrderNum(130);
+
+        List<WorkModuleBean.BodyBean> mDatas = new ArrayList<>();
+        WorkModuleBean.BodyBean bodyBean = new WorkModuleBean.BodyBean();
+        bodyBean.setName("入库");
+        bodyBean.setCount(0);
+        bodyBean.setImageURL("");
+        bodyBean.setWorkCode(50001);
+
+        WorkModuleBean.BodyBean bodyBean1 = new WorkModuleBean.BodyBean();
+        bodyBean1.setName("出库");
+        bodyBean1.setCount(1);
+        bodyBean1.setImageURL("");
+        bodyBean1.setWorkCode(50002);
+
+        WorkModuleBean.BodyBean bodyBean2 = new WorkModuleBean.BodyBean();
+        bodyBean2.setName("移库");
+        bodyBean2.setCount(0);
+        bodyBean2.setImageURL("");
+        bodyBean2.setWorkCode(50003);
+
+        WorkModuleBean.BodyBean bodyBean3 = new WorkModuleBean.BodyBean();
+        bodyBean3.setName("盘点");
+        bodyBean3.setCount(0);
+        bodyBean3.setImageURL("");
+        bodyBean3.setWorkCode(50004);
+
+        WorkModuleBean.BodyBean bodyBean4 = new WorkModuleBean.BodyBean();
+        bodyBean4.setName("物资预定");
+        bodyBean4.setCount(0);
+        bodyBean4.setImageURL("");
+        bodyBean4.setWorkCode(50005);
+
+        WorkModuleBean.BodyBean bodyBean5 = new WorkModuleBean.BodyBean();
+        bodyBean5.setName("我的预定");
+        bodyBean5.setCount(0);
+        bodyBean5.setImageURL("");
+        bodyBean5.setWorkCode(50008);
+
+        WorkModuleBean.BodyBean bodyBean6 = new WorkModuleBean.BodyBean();
+        bodyBean5.setName("库存审核");
+        bodyBean5.setCount(0);
+        bodyBean5.setImageURL("");
+        bodyBean5.setWorkCode(50009);
+
+        WorkModuleBean.BodyBean bodyBean7 = new WorkModuleBean.BodyBean();
+        bodyBean5.setName("库存查询");
+        bodyBean5.setCount(0);
+        bodyBean5.setImageURL("");
+        bodyBean5.setWorkCode(50010);
+
+        mDatas.add(bodyBean);
+        mDatas.add(bodyBean1);
+        mDatas.add(bodyBean2);
+        mDatas.add(bodyBean3);
+        mDatas.add(bodyBean4);
+        mDatas.add(bodyBean5);
+        mDatas.add(bodyBean6);
+        mDatas.add(bodyBean7);
 
         workModuleBean.setBody(mDatas);
         return workModuleBean;

@@ -6,12 +6,15 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.android.kotlinapp.action.config.StrRes;
 import com.android.ts.emis.R;
 import com.android.ts.emis.activity.home.ProjectMessageActivity;
 import com.android.ts.emis.adapter.MessageAdapter;
 import com.android.ts.emis.base.BaseFragment;
 import com.android.ts.emis.config.DataCenter;
+import com.android.ts.emis.config.RequestCode;
 import com.android.ts.emis.mode.MessageInfoBean;
+import com.android.ts.emis.mode.ProjectMessageBean;
 import com.android.ts.emis.utils.ThreadUtil;
 import com.libcommon.action.utils.LogAPPUtil;
 
@@ -88,8 +91,19 @@ public class MessageFragment extends BaseFragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tv_title_bar:
-                startActivity(new Intent(getActivity(), ProjectMessageActivity.class));
+                startActivityForResult(new Intent(getActivity(), ProjectMessageActivity.class), RequestCode.INSTANCE.getResult_ProjectMessage());
                 break;
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == RequestCode.INSTANCE.getResult_ProjectMessage() && resultCode == getActivity().RESULT_OK && data != null) {
+            ProjectMessageBean.Data moduleBean = (ProjectMessageBean.Data) data.getSerializableExtra(StrRes.INSTANCE.getMode());
+            if (moduleBean != null) {
+                tvTitleBar.setText(moduleBean.getName());
+            }
         }
     }
 

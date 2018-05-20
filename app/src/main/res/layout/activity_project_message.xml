@@ -26,8 +26,10 @@
             android:layout_height="40dp"
             android:background="@null"
             android:hint="@string/text_act_project_message_hint"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
             android:lines="1"
-            android:textColor="@color/line_lightgray"
+            android:textColor="@color/text_contentgray"
             android:textColorHint="@color/line_lightgray"
             android:textSize="@dimen/textsize_bottom" />
     </LinearLayout>

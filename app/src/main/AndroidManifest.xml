@@ -34,6 +34,27 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
 
+        <!-- 工作-工单 -->
+        <activity
+            android:name=".activity.work.WorkOrderActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Transparent"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- 工作-巡检 -->
+        <activity
+            android:name=".activity.work.WorkPollingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Transparent"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- 工作-库存 -->
+        <activity
+            android:name=".activity.work.WorkRepertoryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Transparent"
+            android:windowSoftInputMode="adjustResize" />
+
         <!-- 首页-多项目信息 -->
         <activity
             android:name=".activity.home.ProjectMessageActivity"
