@@ -1,5 +1,6 @@
 package com.android.ts.emis.activity.work;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,9 +9,11 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.android.ts.emis.R;
+import com.android.ts.emis.activity.common.QRCodeActivity;
 import com.android.ts.emis.adapter.WorkModule2Adapter;
 import com.android.ts.emis.base.BaseActivity;
 import com.android.ts.emis.config.DataCenter;
+import com.android.ts.emis.config.RequestCode;
 import com.android.ts.emis.handle.RecycleViewDivider;
 import com.android.ts.emis.mode.WorkModuleBean;
 
@@ -59,7 +62,7 @@ public class WorkPollingActivity extends BaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.igv_ewm:
-                showToast("去扫一扫");
+                startActivityForResult(new Intent(this, QRCodeActivity.class), RequestCode.INSTANCE.getResult_QRCode());
                 break;
         }
     }

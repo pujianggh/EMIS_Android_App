@@ -46,6 +46,7 @@ dependencies {
     api project(':lib-banner')
     api project(':lib-styleplug')
     api project(':lib-swipeitemlayout')
+    api project(':lib-zxing')
 }
 repositories {
     mavenCentral()

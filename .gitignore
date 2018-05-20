@@ -8,13 +8,7 @@
 out
 gen
 .idea/workspace.xml
-app/src/main/java/com/android/ts/emis/activity/home/
-app/src/main/java/com/android/ts/emis/dialog/
-app/src/main/java/com/android/ts/emis/listeners/
-app/src/main/java/com/android/ts/emis/mvp/
-app/src/main/java/com/android/ts/emis/net/
-app/src/main/java/com/android/ts/emis/view/
-app/src/main/java/com/android/ts/emis/wxapi/
 build/kotlin/
 lib-common/libs/
-lib-common/src/main/res/drawable/
+src/main/java/
+src/main/res/drawable/

@@ -12,6 +12,8 @@
       <module fileurl="file://$PROJECT_DIR$/lib-styleplug/lib-styleplug.iml" filepath="$PROJECT_DIR$/lib-styleplug/lib-styleplug.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib-swipebacklayout/lib-swipebacklayout.iml" filepath="$PROJECT_DIR$/lib-swipebacklayout/lib-swipebacklayout.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib-swipeitemlayout/lib-swipeitemlayout.iml" filepath="$PROJECT_DIR$/lib-swipeitemlayout/lib-swipeitemlayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib-zxing/lib-zxing.iml" filepath="$PROJECT_DIR$/lib-zxing/lib-zxing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib-zxingview/lib-zxingview.iml" filepath="$PROJECT_DIR$/lib-zxingview/lib-zxingview.iml" />
     </modules>
   </component>
 </project>

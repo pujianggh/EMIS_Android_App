@@ -12,4 +12,6 @@ object RequestCode {
 
     val Result_ProjectMessage = 101
 
+    val Result_QRCode = 102
+
 }

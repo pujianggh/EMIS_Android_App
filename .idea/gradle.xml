@@ -17,6 +17,8 @@
             <option value="$PROJECT_DIR$/lib-styleplug" />
             <option value="$PROJECT_DIR$/lib-swipebacklayout" />
             <option value="$PROJECT_DIR$/lib-swipeitemlayout" />
+            <option value="$PROJECT_DIR$/lib-zxing" />
+            <option value="$PROJECT_DIR$/lib-zxingview" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

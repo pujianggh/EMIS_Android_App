@@ -69,6 +69,12 @@
             android:theme="@style/AppTheme.Transparent"
             android:windowSoftInputMode="adjustResize" />
 
+        <!-- 通用二维码扫描 -->
+        <activity
+            android:name=".activity.common.QRCodeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Transparent" />
+
         <!-- 我的-设置 -->
         <activity
             android:name=".activity.my.SettingActivity"
@@ -105,5 +111,6 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- 读取设备手机信息 - 隐私权限 -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-
+    <!-- 返回手机震动权限， 用于二维码扫描成功 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
 </manifest>
