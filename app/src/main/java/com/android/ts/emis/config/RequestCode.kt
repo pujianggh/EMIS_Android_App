@@ -14,4 +14,8 @@ object RequestCode {
 
     val Result_QRCode = 102
 
+    val Result_SignatureHand = 103
+
+    val Result_SignatureHand_Permission = 201
+
 }

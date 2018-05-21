@@ -165,6 +165,7 @@
     <orderEntry type="module" module-name="lib-styleplug" />
     <orderEntry type="module" module-name="lib-zxingview" />
     <orderEntry type="module" module-name="lib-zxing" />
+    <orderEntry type="module" module-name="lib-signature" />
     <orderEntry type="module" module-name="lib-andfix" />
     <orderEntry type="module" module-name="lib-swipebacklayout" />
     <orderEntry type="module" module-name="lib-pullrefresh" />

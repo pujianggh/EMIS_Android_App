@@ -106,10 +106,4 @@ public class MessageFragment extends BaseFragment {
             }
         }
     }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        if (unBinder != null) unBinder.unbind();
-    }
 }

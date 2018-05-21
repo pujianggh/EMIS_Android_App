@@ -55,6 +55,48 @@
             android:theme="@style/AppTheme.Transparent"
             android:windowSoftInputMode="adjustResize" />
 
+        <!-- 工作-计划性维护 -->
+        <activity
+            android:name=".activity.work.PlanMaintainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Transparent" />
+
+        <!-- 工作-资产管理 -->
+        <activity
+            android:name=".activity.work.PropertyManageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Transparent" />
+
+        <!-- 工作-巡检-巡检任务 -->
+        <activity
+            android:name=".activity.work.PollingTaskActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Transparent" />
+
+        <!-- 工作-巡检-巡检查询 -->
+        <activity
+            android:name=".activity.work.PollingQueryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Transparent" />
+
+        <!-- 工作-工单-创建 -->
+        <activity
+            android:name=".activity.work.WorkOrderCreateActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Transparent" />
+
+        <!-- 工作-工单-列表（包括处理、待处理、待审） -->
+        <activity
+            android:name=".activity.work.WorkOrderListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Transparent" />
+
+        <!-- 工作-工单-列表查询 -->
+        <activity
+            android:name=".activity.work.WorkOrderQueryListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Transparent" />
+
         <!-- 首页-多项目信息 -->
         <activity
             android:name=".activity.home.ProjectMessageActivity"
@@ -68,6 +110,12 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Transparent"
             android:windowSoftInputMode="adjustResize" />
+
+        <!-- 通用签名板 -->
+        <activity
+            android:name=".activity.common.SignatureHandActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.Transparent" />
 
         <!-- 通用二维码扫描 -->
         <activity

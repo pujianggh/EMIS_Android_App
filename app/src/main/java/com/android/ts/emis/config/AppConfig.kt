@@ -1,5 +1,8 @@
 package com.android.kotlinapp.action.config
 
+import com.libcommon.action.config.AppConfig
+import java.io.File
+
 /**
  * 生产环境配置config
  *
@@ -11,4 +14,7 @@ package com.android.kotlinapp.action.config
 object AppConfig {
     //SplashActivity默认启动时间
     val SPLASH_TIME = 2000L
+
+    //保存签名图片地址
+    val FILE_CACHE_PATH = AppConfig.FILE_CACHE_PATH + File.separator + "signature.png"
 }

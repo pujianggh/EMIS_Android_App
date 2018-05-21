@@ -1,6 +1,7 @@
 package com.android.ts.emis.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.ts.emis.R;
+import com.android.ts.emis.activity.work.PollingQueryActivity;
+import com.android.ts.emis.activity.work.PollingTaskActivity;
+import com.android.ts.emis.activity.work.WorkOrderCreateActivity;
+import com.android.ts.emis.activity.work.WorkOrderListActivity;
+import com.android.ts.emis.activity.work.WorkOrderQueryListActivity;
 import com.android.ts.emis.mode.WorkModuleBean;
 
 import java.util.List;
@@ -113,18 +119,31 @@ public class WorkModule2Adapter extends RecyclerView.Adapter<WorkModule2Adapter.
                 @Override
                 public void onClick(View v) {
                     switch (mode.getWorkCode()) {
+                        //工作-巡检
+                        case 20001://巡检任务
+                            mContext.startActivity(new Intent(mContext, PollingTaskActivity.class));
+                            break;
+                        case 20002://巡检查询
+                            mContext.startActivity(new Intent(mContext, PollingQueryActivity.class));
+                            break;
                         //工作-工单
-                        case 30001:
+                        case 30001://创建工单
+                            mContext.startActivity(new Intent(mContext, WorkOrderCreateActivity.class));
                             break;
-                        case 30002:
+                        case 30002://待处理工单
+                            mContext.startActivity(new Intent(mContext, WorkOrderListActivity.class));
                             break;
-                        case 30003:
+                        case 30003://待派批工单
+                            mContext.startActivity(new Intent(mContext, WorkOrderListActivity.class));
                             break;
-                        case 30004:
+                        case 30004://待审批工单
+                            mContext.startActivity(new Intent(mContext, WorkOrderListActivity.class));
                             break;
-                        case 30005:
+                        case 30005://待存档工单
+                            mContext.startActivity(new Intent(mContext, WorkOrderListActivity.class));
                             break;
-                        case 30008:
+                        case 30008://工单查询
+                            mContext.startActivity(new Intent(mContext, WorkOrderQueryListActivity.class));
                             break;
                     }
                 }

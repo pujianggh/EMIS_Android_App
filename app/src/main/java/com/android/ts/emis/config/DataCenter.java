@@ -144,23 +144,16 @@ public class DataCenter {
         bodyBean3.setWorkCode(10004);
 
         WorkModuleBean.BodyBean bodyBean4 = new WorkModuleBean.BodyBean();
-        bodyBean4.setName("厂库");
+        bodyBean4.setName("库存");
         bodyBean4.setCount(0);
         bodyBean4.setImageURL("");
         bodyBean4.setWorkCode(10005);
-
-        WorkModuleBean.BodyBean bodyBean5 = new WorkModuleBean.BodyBean();
-        bodyBean5.setName("厂库2");
-        bodyBean5.setCount(2);
-        bodyBean5.setImageURL("");
-        bodyBean5.setWorkCode(10008);
 
         mDatas.add(bodyBean);
         mDatas.add(bodyBean1);
         mDatas.add(bodyBean2);
         mDatas.add(bodyBean3);
         mDatas.add(bodyBean4);
-        mDatas.add(bodyBean5);
 
         workModuleBean.setBody(mDatas);
         return workModuleBean;

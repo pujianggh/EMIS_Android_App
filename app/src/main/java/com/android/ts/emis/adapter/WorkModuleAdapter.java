@@ -11,6 +11,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.ts.emis.R;
+import com.android.ts.emis.activity.work.PlanMaintainActivity;
+import com.android.ts.emis.activity.work.PropertyManageActivity;
 import com.android.ts.emis.activity.work.WorkOrderActivity;
 import com.android.ts.emis.activity.work.WorkPollingActivity;
 import com.android.ts.emis.activity.work.WorkRepertoryActivity;
@@ -93,14 +95,14 @@ public class WorkModuleAdapter extends RecyclerView.Adapter<WorkModuleAdapter.Vi
                         case 10002://工单
                             mContext.startActivity(new Intent(mContext, WorkOrderActivity.class));
                             break;
-                        case 10003:
+                        case 10003://计划性维护
+                            mContext.startActivity(new Intent(mContext, PlanMaintainActivity.class));
                             break;
-                        case 10004:
+                        case 10004://资产管理
+                            mContext.startActivity(new Intent(mContext, PropertyManageActivity.class));
                             break;
-                        case 10005://工单
+                        case 10005://库存
                             mContext.startActivity(new Intent(mContext, WorkRepertoryActivity.class));
-                            break;
-                        case 10008:
                             break;
                     }
                 }
