@@ -3,6 +3,7 @@ package com.android.ts.emis.config;
 import com.android.ts.emis.mode.MessageInfoBean;
 import com.android.ts.emis.mode.ProjectMessageBean;
 import com.android.ts.emis.mode.WorkModuleBean;
+import com.android.ts.emis.mode.WorkOrderListBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +17,61 @@ import java.util.List;
  * @Description:
  */
 public class DataCenter {
+
+    /**
+     * 获取工单数据
+     */
+    public static WorkOrderListBean getWorkOrderListModuleData() {
+        List<WorkOrderListBean.Data> list = new ArrayList<>();
+        WorkOrderListBean dataBean = new WorkOrderListBean();
+        dataBean.setTotal(30);
+
+        WorkOrderListBean.Data data;
+        for (int i = 0; i < 15; i++) {
+            data = new WorkOrderListBean.Data();
+            if (i < 2) {
+                data.setCreateTime("2018-03-24 12:40");
+                data.setOrderCode("CM0201803004" + i);
+                data.setOrderDescribe("停电");
+                data.setPfmCode("SZ001-20180328-161" + i);
+                data.setOrderStatus("1普通");
+                data.setState("" + i);
+            } else if (i < 5) {
+                data.setCreateTime("2018-01-20 8:40");
+                data.setOrderCode("CM02018030234");
+                data.setOrderDescribe("楼道漏水");
+                data.setPfmCode("SZ001-20180422-1321");
+                data.setOrderStatus("紧急处理");
+                data.setState("0");
+            } else if (i < 9) {
+                data.setCreateTime("2018-03-28 17:40");
+                data.setOrderCode("CM02018030345");
+                data.setOrderDescribe("没有按规定处理");
+                data.setPfmCode("SZ001-20180328-1618");
+                data.setOrderStatus("1普通");
+                data.setState("2");
+            } else if (i < 12) {
+                data.setCreateTime("2018-02-28 9:40");
+                data.setOrderCode("CM02018030545");
+                data.setOrderDescribe("地板有垃圾未处理");
+                data.setPfmCode("SZ001-20180328-1618");
+                data.setOrderStatus("比较急");
+                data.setState("4");
+            } else {
+                data.setCreateTime("2018-03-28 16:40");
+                data.setOrderCode("CM02018030623");
+                data.setOrderDescribe("停电");
+                data.setPfmCode("SZ001-20180328-1618");
+                data.setOrderStatus("1普通");
+                data.setState("3");
+            }
+            data.setId("10000" + i);
+            list.add(data);
+        }
+
+        dataBean.setData(list);
+        return dataBean;
+    }
 
     /**
      * 获取消息中心数据
