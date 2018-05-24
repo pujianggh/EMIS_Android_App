@@ -6,4 +6,59 @@
 
     <include layout="@layout/layout_title_bar" />
 
+    <LinearLayout
+        style="@style/MatchWrap.Horizontal"
+        android:layout_height="@dimen/item_dp35"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_agoMonth"
+            style="@style/AutoMatch"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_line_gray"
+            android:gravity="center"
+            android:text="上一月"
+            android:textSize="@dimen/textSize_14" />
+
+        <TextView
+            android:id="@+id/tv_newMonth"
+            style="@style/AutoMatch"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_line_gray"
+            android:gravity="center"
+            android:text="2018年3月"
+            android:textSize="@dimen/textSize_14" />
+
+        <TextView
+            android:id="@+id/tv_nextMonth"
+            style="@style/AutoMatch"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_line_gray"
+            android:gravity="center"
+            android:text="下一月"
+            android:textSize="@dimen/textSize_14" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line_lightgray" />
+
+    <cn.bingoogolapple.refreshlayout.BGARefreshLayout
+        android:id="@+id/rl_root_refresh"
+        style="@style/MatchMatch">
+
+        <ListView
+            android:id="@+id/lv_list_data"
+            style="@style/MatchAuto"
+            android:background="@null"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:overScrollMode="never"
+            android:scrollbars="none" />
+    </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
+
 </LinearLayout>

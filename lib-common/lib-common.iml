@@ -170,5 +170,6 @@
     <orderEntry type="module" module-name="lib-swipebacklayout" />
     <orderEntry type="module" module-name="lib-pullrefresh" />
     <orderEntry type="module" module-name="lib-swipeitemlayout" />
+    <orderEntry type="module" module-name="lib-stypewheelpicker" />
   </component>
 </module>

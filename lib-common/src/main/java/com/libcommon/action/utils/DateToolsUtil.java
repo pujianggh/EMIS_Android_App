@@ -1,5 +1,6 @@
 package com.libcommon.action.utils;
 
+import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
 
@@ -128,12 +129,26 @@ public class DateToolsUtil {
      *
      * @return
      */
-    public static String getSimpleDate() {
+    @NonNull
+    public static String getNewDate() {
         Calendar now = Calendar.getInstance();
         int year = now.get(Calendar.YEAR);
         int month = now.get(Calendar.MONTH) + 1;
         int day = now.get(Calendar.DAY_OF_MONTH);
         return year + "年" + month + "月" + day + "日";
+    }
+
+    /**
+     * 返回当前的年月
+     *
+     * @return
+     */
+    @NonNull
+    public static String getNewDateYM() {
+        Calendar now = Calendar.getInstance();
+        int year = now.get(Calendar.YEAR);
+        int month = now.get(Calendar.MONTH) + 1;
+        return year + "年" + month + "月";
     }
 
     /**
@@ -245,5 +260,27 @@ public class DateToolsUtil {
             e.printStackTrace();
         }
         return false;
+    }
+
+    /**
+     * 获取指定日期格式
+     *
+     * @param date
+     * @param formatter
+     * @return
+     */
+    public static String getDateFormatter(Date date, String formatter) {
+        String typeDef = "yyyy-MM-dd";
+        if (!TextUtils.isEmpty(formatter)) {
+            typeDef = formatter;
+        }
+        String dateTime = "";
+        try {
+            SimpleDateFormat mFormatter = new SimpleDateFormat(typeDef);
+            dateTime = mFormatter.format(date);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return dateTime;
     }
 }
