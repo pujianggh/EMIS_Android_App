@@ -11,7 +11,7 @@ import java.util.List;
  * @mail 515210530@qq.com
  * @Description:
  */
-public class WorkModuleBean extends BaseStateBean implements Serializable {
+public class WorkModuleBean extends BaseBean implements Serializable {
     private String BannerImgUrl;
     private int OrderNum;
     private int OffOrderNum;

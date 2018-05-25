@@ -188,6 +188,15 @@ public class DateToolsUtil {
     }
 
     /**
+     * 获取当前年月日
+     * @return
+     */
+    public static Date getNewTime() {
+        Calendar calendar = Calendar.getInstance();
+        return calendar.getTime();
+    }
+
+    /**
      * 返回天
      *
      * @param year

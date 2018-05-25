@@ -96,6 +96,7 @@ def excludes = {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "com.android.support:appcompat-v7:${LIBRARY_SUPPORT_APPCOMPAT_V7}"
+    implementation "com.android.support:design:${LIBRARY_SUPPORT_DESIGN}"
     implementation "com.android.support:recyclerview-v7:${LIBRARY_SUPPORT_RECYCLERVIEW_V7}"
     implementation "com.android.support.constraint:constraint-layout:${LIBRARY_SUPPORT_CONSTRAINT_LAYOUT}"
     androidTestImplementation "com.android.support.test:runner:${LIBRARY_SUPPORT_TEST_RUNNER}"

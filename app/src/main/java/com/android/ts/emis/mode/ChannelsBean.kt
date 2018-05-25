@@ -10,7 +10,7 @@ import java.io.Serializable
  * @mail 515210530@qq.com
  * @Description:
  */
-class ChannelsBean : BaseStateBean(), Serializable {
+class ChannelsBean : BaseBean(), Serializable {
     var body: BodyBean? = null
 
     class BodyBean : Serializable {

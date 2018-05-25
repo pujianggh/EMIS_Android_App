@@ -1,6 +1,7 @@
 package com.android.ts.emis.handle;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 
@@ -26,29 +27,32 @@ public class DatePickerHandle {
     private Context mContext;
     public TextView tvDateView;
     private TimePickerView mTimePickerView;
+    private String dateFormatter = "yyyy-MM-dd";
 
-    public DatePickerHandle(Context mContext) {
+    public DatePickerHandle(Context mContext, boolean isYear, boolean isMouth, boolean isDay) {
         this.mContext = mContext;
-        initTimePicker();
+        initTimePicker(isYear, isMouth, isDay);
     }
 
-    public DatePickerHandle(Context mContext, TextView tvDateView) {
-        this(mContext);
+    public DatePickerHandle(Context mContext, TextView tvDateView, boolean isYear, boolean isMouth, boolean isDay) {
+        this(mContext, isYear, isMouth, isDay);
         this.tvDateView = tvDateView;
     }
 
     /**
      * 显示选择器
      */
-    public void showTimePicker() {
+    public void showTimePicker(String dateFormatter) {
         if (mTimePickerView != null)
             mTimePickerView.show();
+        if (!TextUtils.isEmpty(dateFormatter))
+            this.dateFormatter = dateFormatter;
     }
 
     /**
      * 显示对话框
      */
-    public void initTimePicker() {
+    public void initTimePicker(boolean isYear, boolean isMouth, final boolean isDay) {
         Calendar selectedDate = Calendar.getInstance();//系统当前时间
         Calendar startDate = Calendar.getInstance();
         startDate.set(1998, 1, 1);
@@ -58,7 +62,11 @@ public class DatePickerHandle {
         mTimePickerView = new TimePickerBuilder(mContext, new OnTimeSelectListener() {
             @Override
             public void onTimeSelect(Date date, View v) {//选中事件回调
-                tvDateView.setText(DateToolsUtil.getDateFormatter(date, "yyyy年MM月"));
+                if (isDay) {
+                    tvDateView.setText(DateToolsUtil.getDateFormatter(date, dateFormatter));
+                } else {
+                    tvDateView.setText(DateToolsUtil.getDateFormatter(date, "yyyy年MM月"));
+                }
             }
         })
                 .setDate(selectedDate)
@@ -84,7 +92,7 @@ public class DatePickerHandle {
                         });
                     }
                 })
-                .setType(new boolean[]{true, true, false, false, false, false})
+                .setType(new boolean[]{isYear, isMouth, isDay, false, false, false})
                 .isCenterLabel(false) //是否只显示中间选中项的label文字，false则每项item全部都带有label。
                 .setDividerColor(mContext.getResources().getColor(R.color.line_gray))
                 .build();

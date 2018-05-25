@@ -11,7 +11,7 @@ import java.util.List;
  * @mail 515210530@qq.com
  * @Description:
  */
-public class WorkOrderListBean extends BaseStateBean implements Serializable {
+public class WorkOrderListBean extends BaseBean implements Serializable {
     private int Total;
     private List<Data> Data;
 

@@ -2,6 +2,7 @@ package com.android.ts.emis.config;
 
 import com.android.ts.emis.mode.MessageInfoBean;
 import com.android.ts.emis.mode.ProjectMessageBean;
+import com.android.ts.emis.mode.StateInfoBean;
 import com.android.ts.emis.mode.WorkModuleBean;
 import com.android.ts.emis.mode.WorkOrderListBean;
 
@@ -370,5 +371,77 @@ public class DataCenter {
 
         workModuleBean.setBody(mDatas);
         return workModuleBean;
+    }
+
+    /**
+     * 获取优先级数据
+     */
+    public static StateInfoBean getPriorityStateInfoBeanModuleData() {
+        StateInfoBean dataBean = new StateInfoBean();
+        List<StateInfoBean.Data> list = new ArrayList<>();
+
+        StateInfoBean.Data data = new StateInfoBean.Data();
+        data.setName("不限");
+        StateInfoBean.Data data1 = new StateInfoBean.Data();
+        data1.setName("V应急");
+        StateInfoBean.Data data2 = new StateInfoBean.Data();
+        data2.setName("1普通");
+        StateInfoBean.Data data3 = new StateInfoBean.Data();
+        data3.setName("2紧急关键");
+        StateInfoBean.Data data4 = new StateInfoBean.Data();
+        data4.setName("3紧急重大");
+        StateInfoBean.Data data5 = new StateInfoBean.Data();
+        data5.setName("客户报修");
+
+        list.add(data);
+        list.add(data1);
+        list.add(data2);
+        list.add(data3);
+        list.add(data4);
+        list.add(data5);
+        dataBean.setData(list);
+        return dataBean;
+    }
+
+    /**
+     * 获取订单状态数据
+     */
+    public static StateInfoBean getOrderStateStateInfoBeanModuleData() {
+        StateInfoBean dataBean = new StateInfoBean();
+        List<StateInfoBean.Data> list = new ArrayList<>();
+
+        StateInfoBean.Data data = new StateInfoBean.Data();
+        data.setName("不限");
+        StateInfoBean.Data data1 = new StateInfoBean.Data();
+        data1.setName("已创建");
+        StateInfoBean.Data data2 = new StateInfoBean.Data();
+        data2.setName("已派工");
+        StateInfoBean.Data data3 = new StateInfoBean.Data();
+        data3.setName("处理中");
+        StateInfoBean.Data data4 = new StateInfoBean.Data();
+        data4.setName("已暂停");
+        StateInfoBean.Data data5 = new StateInfoBean.Data();
+        data5.setName("已终止");
+        StateInfoBean.Data data6 = new StateInfoBean.Data();
+        data6.setName("已完成");
+        StateInfoBean.Data data7 = new StateInfoBean.Data();
+        data7.setName("已验证");
+        StateInfoBean.Data data8 = new StateInfoBean.Data();
+        data8.setName("已存档");
+        StateInfoBean.Data data9 = new StateInfoBean.Data();
+        data9.setName("待审批");
+
+        list.add(data);
+        list.add(data1);
+        list.add(data2);
+        list.add(data3);
+        list.add(data4);
+        list.add(data5);
+        list.add(data6);
+        list.add(data7);
+        list.add(data8);
+        list.add(data9);
+        dataBean.setData(list);
+        return dataBean;
     }
 }

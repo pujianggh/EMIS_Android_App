@@ -1,14 +1,22 @@
 package com.android.ts.emis.activity.work;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.widget.DrawerLayout;
+import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.android.kotlinapp.action.config.StrRes;
 import com.android.ts.emis.R;
 import com.android.ts.emis.adapter.WorkOrderQueryListAdapter;
 import com.android.ts.emis.base.BaseActivity;
 import com.android.ts.emis.config.DataCenter;
+import com.android.ts.emis.fragment.WorkOrderQueryFragment;
 import com.android.ts.emis.handle.DatePickerHandle;
 import com.android.ts.emis.mode.WorkOrderListBean;
 import com.android.ts.emis.utils.ThreadUtil;
@@ -39,6 +47,12 @@ public class WorkOrderQueryListActivity extends BaseActivity {
     TextView tvNewMonth;
     @BindView(R.id.tv_nextMonth)
     TextView tvNextMonth;
+    @BindView(R.id.igv_query)
+    ImageView igvQuery;
+    @BindView(R.id.frm_content)
+    FrameLayout frmContent;
+    @BindView(R.id.drawer_layout)
+    DrawerLayout drawerLayout;
 
     private WorkOrderQueryListAdapter mAdapter;
     private WorkOrderListBean moduleBean;
@@ -51,24 +65,50 @@ public class WorkOrderQueryListActivity extends BaseActivity {
         setTitleBarLayout(R.drawable.icon_back_white_bar, null, "工单查询", true);
 
         initData();
+        initFrameLayout();
     }
 
-    @OnClick({R.id.tv_agoMonth, R.id.tv_newMonth, R.id.tv_nextMonth})
+    @OnClick({R.id.tv_agoMonth, R.id.tv_newMonth, R.id.tv_nextMonth, R.id.igv_query})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tv_agoMonth:
                 break;
             case R.id.tv_newMonth:
-                mDatePickerHandle.showTimePicker();
+                mDatePickerHandle.showTimePicker("yyyy年MM月");
                 break;
             case R.id.tv_nextMonth:
+                break;
+            case R.id.igv_query:
+                drawerLayout.openDrawer(Gravity.RIGHT);
                 break;
         }
     }
 
     private void initData() {
         tvNewMonth.setText(DateToolsUtil.getNewDateYM());
-        mDatePickerHandle = new DatePickerHandle(this, tvNewMonth);
+        mDatePickerHandle = new DatePickerHandle(this, tvNewMonth, true, true, false);
+        drawerLayout.addDrawerListener(new DrawerLayout.DrawerListener() {
+            @Override
+            public void onDrawerSlide(@NonNull View drawerView, float slideOffset) {
+                if (slideOffset > 0f) {
+                    igvQuery.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onDrawerOpened(@NonNull View drawerView) {
+                igvQuery.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onDrawerClosed(@NonNull View drawerView) {
+                igvQuery.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onDrawerStateChanged(int newState) {
+            }
+        });
         rlRootRefresh.setRefreshViewHolder(new BGANormalRefreshViewHolder(mAPPApplication, true));
         rlRootRefresh.setDelegate(new BGARefreshLayout.BGARefreshLayoutDelegate() {
             @Override
@@ -98,5 +138,29 @@ public class WorkOrderQueryListActivity extends BaseActivity {
         lvListData.setAdapter(mAdapter);
         moduleBean = DataCenter.getWorkOrderListModuleData();
         mAdapter.setData(moduleBean.getData());
+    }
+
+    /**
+     * 查询条件初始化
+     */
+    private void initFrameLayout() {
+        WorkOrderQueryFragment fragment = new WorkOrderQueryFragment();
+        Bundle bundle = new Bundle();
+        bundle.putInt(StrRes.INSTANCE.getType(), 1);
+        fragment.setArguments(bundle);
+        getSupportFragmentManager().beginTransaction().replace(R.id.frm_content, fragment).commit();
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && drawerLayout.isDrawerOpen(Gravity.RIGHT)) {
+            drawerLayout.closeDrawer(Gravity.RIGHT);
+            return false;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    public void setQueryInfo() {
+        drawerLayout.closeDrawer(Gravity.RIGHT);
     }
 }

@@ -105,4 +105,40 @@
         <item name="android:textSize">@dimen/textsize_normal</item>
     </style>
 
+    <!-- 通用TextView样式 -->
+    <style name="Text_MatchWrap_Style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_contentgray</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:textSize">@dimen/textsize_normal</item>
+        <item name="android:layout_marginTop">@dimen/item_dp10</item>
+        <item name="android:layout_marginBottom">@dimen/item_dp10</item>
+    </style>
+
+    <!-- 通用EditText样式 -->
+    <style name="Edit_MatchWrap_Style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/item_dp35</item>
+        <item name="android:lines">1</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:textColor">@color/text_contentgray</item>
+        <item name="android:textColorHint">@color/text_gray</item>
+        <item name="android:textSize">@dimen/textsize_normal</item>
+        <item name="android:paddingLeft">@dimen/item_dp10</item>
+        <item name="android:paddingRight">@dimen/item_dp10</item>
+        <item name="android:background">@drawable/shape_edit_bg</item>
+    </style>
+
+    <!-- 通用Button样式 -->
+    <style name="Button_Common_Style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/item_dp35</item>
+        <item name="android:lines">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/textsize_normal</item>
+        <item name="android:background">@drawable/selector_button_bg</item>
+    </style>
+
 </resources>

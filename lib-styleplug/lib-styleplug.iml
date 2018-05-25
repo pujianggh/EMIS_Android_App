@@ -131,5 +131,6 @@
     <orderEntry type="library" scope="TEST" name="Gradle: com.android.support:support-compat-26.1.0" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-annotations:27.0.2@jar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:common:1.0.3@jar" level="project" />
+    <orderEntry type="module" module-name="lib-stypewheelpicker" />
   </component>
 </module>

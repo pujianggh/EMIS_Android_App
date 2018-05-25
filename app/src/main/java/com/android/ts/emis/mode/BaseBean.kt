@@ -10,7 +10,7 @@ import java.io.Serializable
  * @mail 515210530@qq.com
  * @Description:
  */
-open class BaseStateBean : Serializable {
+open class BaseBean : Serializable {
     private val AppCode: String? = null
     private val ResponseDate: String? = null
     private val Sign: String? = null

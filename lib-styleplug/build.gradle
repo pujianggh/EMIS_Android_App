@@ -19,4 +19,5 @@ android {
 dependencies {
     compileOnly "com.android.support:appcompat-v7:${LIBRARY_SUPPORT_APPCOMPAT_V7}"
     implementation "com.pnikosis:materialish-progress:${LIBRARY_PNIKOSIS_MATERIALISH_PROGRESS}"
+    api project(':lib-stypewheelpicker')
 }
