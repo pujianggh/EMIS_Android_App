@@ -25,8 +25,18 @@ public class StateInfoBean extends BaseBean implements Serializable {
     public static class Data implements Serializable {
         private String name;
         private String code;
+        private String address;
         private String id;
         private boolean isChecked = false;
+        private List<Data> data;
+
+        public List<Data> getData() {
+            return data;
+        }
+
+        public void setData(List<Data> data) {
+            this.data = data;
+        }
 
         public String getName() {
             return name;
@@ -58,6 +68,14 @@ public class StateInfoBean extends BaseBean implements Serializable {
 
         public void setChecked(boolean checked) {
             isChecked = checked;
+        }
+
+        public String getAddress() {
+            return address;
+        }
+
+        public void setAddress(String address) {
+            this.address = address;
         }
     }
 }

@@ -8,8 +8,7 @@ import android.widget.TextView;
 
 import com.android.kotlinapp.action.config.StrRes;
 import com.android.ts.emis.R;
-import com.android.ts.emis.activity.home.ProjectMessageActivity;
-import com.android.ts.emis.activity.work.WorkOrderQueryListActivity;
+import com.android.ts.emis.activity.work.WorkOrderCreateActivity;
 import com.android.ts.emis.adapter.MessageAdapter;
 import com.android.ts.emis.base.BaseFragment;
 import com.android.ts.emis.config.DataCenter;
@@ -17,7 +16,6 @@ import com.android.ts.emis.config.RequestCode;
 import com.android.ts.emis.mode.MessageInfoBean;
 import com.android.ts.emis.mode.ProjectMessageBean;
 import com.android.ts.emis.utils.ThreadUtil;
-import com.libcommon.action.utils.LogAPPUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -50,16 +48,9 @@ public class MessageFragment extends BaseFragment {
         unBinder = ButterKnife.bind(this, mContentView);
 
         rlRootRefresh.setRefreshViewHolder(new BGANormalRefreshViewHolder(mAPPApplication, true));
-        rlRootRefresh.setRefreshScaleDelegate(new BGARefreshLayout.BGARefreshScaleDelegate() {
-            @Override
-            public void onRefreshScaleChanged(float scale, int moveYDistance) {
-                LogAPPUtil.i("@----->setRefreshScaleDelegate----->scale:" + scale + " moveYDistance:" + moveYDistance);
-            }
-        });
         rlRootRefresh.setDelegate(new BGARefreshLayout.BGARefreshLayoutDelegate() {
             @Override
             public void onBGARefreshLayoutBeginRefreshing(BGARefreshLayout refreshLayout) {
-                showToast("下拉加载最新");
                 ThreadUtil.INSTANCE.runInUIThread(new Runnable() {
                     @Override
                     public void run() {
@@ -71,7 +62,6 @@ public class MessageFragment extends BaseFragment {
 
             @Override
             public boolean onBGARefreshLayoutBeginLoadingMore(BGARefreshLayout refreshLayout) {
-                showToast("上拉加载最新");
                 ThreadUtil.INSTANCE.runInUIThread(new Runnable() {
                     @Override
                     public void run() {
@@ -82,7 +72,7 @@ public class MessageFragment extends BaseFragment {
             }
         });
 
-        mAdapter = new MessageAdapter(mAPPApplication);
+        mAdapter = new MessageAdapter(getActivity());
         moduleBean = DataCenter.getMessageModuleData();
         lvListData.setAdapter(mAdapter);
         mAdapter.setData(moduleBean.getData());
@@ -92,7 +82,8 @@ public class MessageFragment extends BaseFragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tv_title_bar:
-                startActivityForResult(new Intent(getActivity(), ProjectMessageActivity.class), RequestCode.INSTANCE.getResult_ProjectMessage());
+                startActivityForResult(new Intent(getActivity(), WorkOrderCreateActivity.class), RequestCode.INSTANCE.getResult_ProjectMessage());
+                //startActivityForResult(new Intent(getActivity(), ProjectMessageActivity.class), RequestCode.INSTANCE.getResult_ProjectMessage());
                 break;
         }
     }

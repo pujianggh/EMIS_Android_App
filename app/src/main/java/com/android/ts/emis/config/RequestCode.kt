@@ -18,4 +18,18 @@ object RequestCode {
 
     val Result_SignatureHand_Permission = 201
 
+    val Result_StateQueryCode = 105
+
+    val Result_StateDepartment = 150
+
+    val Result_StateLocation = 152
+
+    val Result_StateWorkOrderType = 153
+
+    val Result_StateServerType = 154
+
+    val Result_StatePriority = 155
+
+    val Result_Device = 156
+
 }

@@ -62,6 +62,23 @@ public abstract class BaseActivity extends CommonBaseSwipeBackActivity {
             mTitleBar.setLeftText(leftText);
     }
 
+    /**
+     * 设置Title样式
+     *
+     * @param leftDrawable
+     * @param title
+     * @param leftText
+     * @param isUse
+     */
+    protected void setTitleBarLayout(int leftDrawable, String title, String leftText, String rightText, boolean isUse) {
+        setTitleBarLayout(leftDrawable, title, leftText, isUse);
+        if (!TextUtils.isEmpty(rightText)) {
+            mTitleBar.getRightCtv().setText(rightText);
+            mTitleBar.getRightCtv().setTextSize(14);
+            mTitleBar.getRightCtv().setVisibility(View.VISIBLE);
+        }
+    }
+
     protected void showToast(String text) {
         ToastUtil.INSTANCE.show(text);
     }

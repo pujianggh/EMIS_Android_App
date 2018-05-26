@@ -15,6 +15,7 @@
     <dimen name="item_dp25">25dp</dimen>
     <dimen name="item_dp35">35dp</dimen>
     <dimen name="item_dp45">45dp</dimen>
+    <dimen name="item_dp30">30dp</dimen>
     <dimen name="item_dp50">50dp</dimen>
     <dimen name="item_dp55">55dp</dimen>
     <dimen name="item_dp65">65dp</dimen>
@@ -23,6 +24,7 @@
     <dimen name="item_dp100">100dp</dimen>
     <dimen name="item_dp120">120dp</dimen>
     <dimen name="item_dp160">160dp</dimen>
+    <dimen name="item_dp180">180dp</dimen>
 
     <!-- 通用-文字常用大小值 -->
     <dimen name="textsize_huge">40sp</dimen>

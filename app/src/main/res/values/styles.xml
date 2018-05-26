@@ -130,6 +130,19 @@
         <item name="android:background">@drawable/shape_edit_bg</item>
     </style>
 
+    <!-- 通用EditText2样式 -->
+    <style name="Edit_MatchWrap_Style2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_contentgray</item>
+        <item name="android:textColorHint">@color/line_gray</item>
+        <item name="android:textSize">@dimen/textsize_bottom</item>
+        <item name="android:paddingLeft">@dimen/item_dp10</item>
+        <item name="android:paddingRight">@dimen/item_dp10</item>
+        <item name="android:background">@drawable/shape_edit_bg</item>
+    </style>
+
+
     <!-- 通用Button样式 -->
     <style name="Button_Common_Style">
         <item name="android:layout_width">match_parent</item>
@@ -139,6 +152,15 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/textsize_normal</item>
         <item name="android:background">@drawable/selector_button_bg</item>
+    </style>
+
+    <!-- 通用View LineView样式 -->
+    <style name="View_Line_Common_Style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/item_dp10</item>
+        <item name="android:layout_marginRight">@dimen/item_dp10</item>
+        <item name="android:background">@drawable/ic_line_list_divider</item>
     </style>
 
 </resources>

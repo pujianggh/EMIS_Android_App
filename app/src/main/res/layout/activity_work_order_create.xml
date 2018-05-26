@@ -1,12 +1,323 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/MatchMatch.Vertical"
     android:background="@color/color_common_bg">
 
-    <include layout="@layout/layout_title_bar" />
+    <include
+        android:id="@+id/lly_title"
+        layout="@layout/layout_title_bar" />
 
-    <LinearLayout style="@style/MatchMatch.Vertical">
+    <ScrollView
+        style="@style/MatchMatch"
+        android:layout_below="@+id/lly_title"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout style="@style/MatchMatch.Vertical">
+
+            <TextView
+                style="@style/Text_MatchWrap_Style"
+                android:layout_marginLeft="@dimen/item_dp10"
+                android:layout_marginRight="@dimen/item_dp10"
+                android:text="基本信息"
+                android:textColor="@color/text_gray" />
+
+            <LinearLayout
+                style="@style/MatchWrap.Vertical"
+                android:background="@color/white"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    style="@style/LinearLayout_Child_Style"
+                    android:layout_height="@dimen/item_dp45">
+
+                    <TextView
+                        style="@style/Text_Common_Style"
+                        android:layout_marginLeft="@dimen/item_dp10"
+                        android:text="申请人" />
+
+                    <TextView
+                        android:id="@+id/tv_createrName"
+                        style="@style/Text_Common_Style"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/item_dp25"
+                        android:text="" />
+                </RelativeLayout>
+
+                <View style="@style/View_Line_Common_Style" />
+
+                <RelativeLayout
+                    style="@style/LinearLayout_Child_Style"
+                    android:layout_height="@dimen/item_dp45">
+
+                    <TextView
+                        style="@style/Text_Common_Style"
+                        android:layout_marginLeft="@dimen/item_dp10"
+                        android:text="联系电话" />
+
+                    <EditText
+                        android:id="@+id/edt_phoneNumber"
+                        style="@style/Edit_MatchWrap_Style"
+                        android:layout_width="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/item_dp100"
+                        android:layout_marginRight="@dimen/item_dp15"
+                        android:background="@android:color/transparent"
+                        android:gravity="right|center_vertical"
+                        android:inputType="phone"
+                        android:maxLength="11"
+                        android:textCursorDrawable="@drawable/cursor_color_red" />
+                </RelativeLayout>
+
+                <View style="@style/View_Line_Common_Style" />
+
+                <RelativeLayout
+                    android:id="@+id/rly_department"
+                    style="@style/LinearLayout_Child_Style"
+                    android:layout_height="@dimen/item_dp45">
+
+                    <TextView
+                        style="@style/Text_Common_Style"
+                        android:layout_marginLeft="@dimen/item_dp10"
+                        android:text="部门" />
+
+                    <TextView
+                        android:id="@+id/tv_department"
+                        style="@style/Text_Common_Style"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/item_dp25"
+                        android:text="" />
+
+                    <ImageView
+                        android:layout_width="@dimen/item_dp20"
+                        android:layout_height="@dimen/item_dp20"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/item_dp10"
+                        android:background="@drawable/icon_indicator2" />
+                </RelativeLayout>
+
+                <View style="@style/View_Line_Common_Style" />
+
+                <RelativeLayout
+                    android:id="@+id/rly_location"
+                    style="@style/LinearLayout_Child_Style"
+                    android:layout_height="@dimen/item_dp45">
+
+                    <TextView
+                        style="@style/Text_Common_Style"
+                        android:layout_marginLeft="@dimen/item_dp10"
+                        android:text="位置" />
+
+                    <TextView
+                        android:id="@+id/tv_location"
+                        style="@style/Text_Common_Style"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/item_dp25"
+                        android:text="" />
+
+                    <ImageView
+                        android:layout_width="@dimen/item_dp20"
+                        android:layout_height="@dimen/item_dp20"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/item_dp10"
+                        android:background="@drawable/icon_indicator2" />
+                </RelativeLayout>
+
+                <View style="@style/View_Line_Common_Style" />
+
+                <RelativeLayout
+                    android:id="@+id/rly_workOrderType"
+                    style="@style/LinearLayout_Child_Style"
+                    android:layout_height="@dimen/item_dp45">
+
+                    <TextView
+                        style="@style/Text_Common_Style"
+                        android:layout_marginLeft="@dimen/item_dp10"
+                        android:text="工单类型" />
+
+                    <TextView
+                        android:id="@+id/tv_workOrderType"
+                        style="@style/Text_Common_Style"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/item_dp25"
+                        android:text="" />
+
+                    <ImageView
+                        android:layout_width="@dimen/item_dp20"
+                        android:layout_height="@dimen/item_dp20"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/item_dp10"
+                        android:background="@drawable/icon_indicator2" />
+                </RelativeLayout>
+
+                <View style="@style/View_Line_Common_Style" />
+
+                <RelativeLayout
+                    android:id="@+id/rly_serverType"
+                    style="@style/LinearLayout_Child_Style"
+                    android:layout_height="@dimen/item_dp45">
+
+                    <TextView
+                        style="@style/Text_Common_Style"
+                        android:layout_marginLeft="@dimen/item_dp10"
+                        android:text="服务类型" />
+
+                    <TextView
+                        android:id="@+id/tv_serverType"
+                        style="@style/Text_Common_Style"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/item_dp25"
+                        android:text="" />
+
+                    <ImageView
+                        android:layout_width="@dimen/item_dp20"
+                        android:layout_height="@dimen/item_dp20"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/item_dp10"
+                        android:background="@drawable/icon_indicator2" />
+                </RelativeLayout>
+
+                <View style="@style/View_Line_Common_Style" />
+
+                <RelativeLayout
+                    android:id="@+id/rly_priority"
+                    style="@style/LinearLayout_Child_Style"
+                    android:layout_height="@dimen/item_dp45">
+
+                    <TextView
+                        style="@style/Text_Common_Style"
+                        android:layout_marginLeft="@dimen/item_dp10"
+                        android:text="优先级" />
+
+                    <TextView
+                        android:id="@+id/tv_priority"
+                        style="@style/Text_Common_Style"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/item_dp25"
+                        android:text="" />
+
+                    <ImageView
+                        android:layout_width="@dimen/item_dp20"
+                        android:layout_height="@dimen/item_dp20"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/item_dp10"
+                        android:background="@drawable/icon_indicator2" />
+                </RelativeLayout>
+
+                <View
+                    style="@style/View_Line_Common_Style"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
+                    android:background="@color/line_lightgray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lly_device"
+                style="@style/MatchMatch.Vertical"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/Text_MatchWrap_Style"
+                    android:layout_marginLeft="@dimen/item_dp10"
+                    android:layout_marginRight="@dimen/item_dp10"
+                    android:text="故障设备"
+                    android:textColor="@color/text_gray" />
+
+                <LinearLayout
+                    style="@style/MatchWrap.Vertical"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:paddingBottom="@dimen/spacing_min"
+                    android:paddingTop="@dimen/spacing_min">
+
+                    <com.android.ts.emis.view.ExpandListView
+                        android:id="@+id/lv_list_data"
+                        style="@style/MatchWrap"
+                        android:background="@null"
+                        android:divider="@drawable/ic_line_list_divider"
+                        android:dividerHeight="0dp"
+                        android:overScrollMode="never"
+                        android:scrollbars="none" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/MatchMatch.Vertical"
+                android:visibility="visible">
+
+                <TextView
+                    style="@style/Text_MatchWrap_Style"
+                    android:layout_marginLeft="@dimen/item_dp10"
+                    android:layout_marginRight="@dimen/item_dp10"
+                    android:text="问题描述"
+                    android:textColor="@color/text_gray" />
+
+                <RelativeLayout
+                    style="@style/MatchWrap.Vertical"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:minHeight="@dimen/item_dp180">
+
+                    <EditText
+                        android:id="@+id/edt_content"
+                        style="@style/Edit_MatchWrap_Style2"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="@dimen/spacing_min"
+                        android:layout_marginRight="@dimen/spacing_min"
+                        android:background="@color/white"
+                        android:hint="请输入内容"
+                        android:inputType="textMultiLine"
+                        android:paddingBottom="@dimen/item_dp30"
+                        android:paddingTop="@dimen/item_dp10"
+                        android:textCursorDrawable="@drawable/cursor_color_red" />
+
+                    <TextView
+                        android:id="@+id/tv_contentTip"
+                        style="@style/Text_MatchWrap_Style"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/item_dp10"
+                        android:paddingBottom="@dimen/item_dp10"
+                        android:text="最多可以输入1000字符"
+                        android:textColor="@color/text_gray"
+                        android:textSize="@dimen/textSize_12" />
+
+                    <View
+                        style="@style/View_Line_Common_Style"
+                        android:layout_height="1px"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="0dp"
+                        android:background="@color/line_lightgray" />
+                </RelativeLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/igv_addDevice"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/item_dp20"
+        android:layout_marginRight="@dimen/item_dp10"
+        android:src="@drawable/selector_workorder_create_add" />
+
+    <LinearLayout
+        style="@style/MatchMatch.Vertical"
+        android:visibility="gone">
 
         <TextView
             style="@style/MatchWrap.Vertical"
@@ -23,4 +334,4 @@
             android:background="#FFFFFF"
             android:scaleType="centerInside" />
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>
