@@ -16,7 +16,9 @@ public final class AppConfig {
     //首先默认缓存文件路径
     private static final String FILE_CACHE_PATH_ROOT = FileUtil.getCachePath();//保存到SD卡
     //文件路径保存的确切位置
-    public static final String FILE_CACHE_PATH = FILE_CACHE_PATH_ROOT + "/JRTZ_Cache";
+    public static final String FILE_CACHE_PATH = FILE_CACHE_PATH_ROOT + "/EMIS_Cache";
+    //图片地址
+    public static final String FILE_PHOTO_PATH = FILE_CACHE_PATH + "/photo";
     //版本更新APK文件位置
     public static final String FILE_APK_PATH = FILE_CACHE_PATH + "/apkfile";
     //版本更新APK文件名称

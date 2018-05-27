@@ -135,6 +135,7 @@
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.2.10@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:animated-vector-drawable-27.0.2" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-compat-27.0.2" level="project" />
+    <orderEntry type="library" name="Gradle: cn.bingoogolapple:bga-baseadapter-1.2.7" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.core:common:1.0.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:multidex-1.0.2" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-media-compat-27.0.2" level="project" />
@@ -167,6 +168,7 @@
     <orderEntry type="module" module-name="lib-zxing" />
     <orderEntry type="module" module-name="lib-signature" />
     <orderEntry type="module" module-name="lib-andfix" />
+    <orderEntry type="module" module-name="lib-photopicker" />
     <orderEntry type="module" module-name="lib-swipebacklayout" />
     <orderEntry type="module" module-name="lib-pullrefresh" />
     <orderEntry type="module" module-name="lib-swipeitemlayout" />

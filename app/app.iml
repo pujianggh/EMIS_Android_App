@@ -221,6 +221,7 @@
     <orderEntry type="library" name="Gradle: com.android.support:support-compat-27.1.1" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:viewmodel-1.1.0" level="project" />
     <orderEntry type="library" name="Gradle: com.jakewharton:butterknife-annotations:8.8.1@jar" level="project" />
+    <orderEntry type="library" name="Gradle: cn.bingoogolapple:bga-baseadapter-1.2.7" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-vector-drawable-27.1.1" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-core-utils-27.1.1" level="project" />
     <orderEntry type="library" name="Gradle: cn.bingoogolapple:bga-adapter-1.1.8" level="project" />
@@ -237,17 +238,18 @@
     <orderEntry type="library" scope="TEST" name="Gradle: org.hamcrest:hamcrest-library:1.3@jar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.core:common:1.1.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.okhttp3:logging-interceptor:3.4.1@jar" level="project" />
-    <orderEntry type="module" module-name="lib-banner" />
     <orderEntry type="module" module-name="lib-okhttputils" />
-    <orderEntry type="module" module-name="lib-styleplug" />
-    <orderEntry type="module" module-name="lib-common" />
-    <orderEntry type="module" module-name="lib-zxingview" />
     <orderEntry type="module" module-name="lib-zxing" />
-    <orderEntry type="module" module-name="lib-signature" />
     <orderEntry type="module" module-name="lib-andfix" />
-    <orderEntry type="module" module-name="lib-swipebacklayout" />
+    <orderEntry type="module" module-name="lib-photopicker" />
     <orderEntry type="module" module-name="lib-pullrefresh" />
     <orderEntry type="module" module-name="lib-swipeitemlayout" />
     <orderEntry type="module" module-name="lib-stypewheelpicker" />
+    <orderEntry type="module" module-name="lib-banner" />
+    <orderEntry type="module" module-name="lib-styleplug" />
+    <orderEntry type="module" module-name="lib-common" />
+    <orderEntry type="module" module-name="lib-zxingview" />
+    <orderEntry type="module" module-name="lib-signature" />
+    <orderEntry type="module" module-name="lib-swipebacklayout" />
   </component>
 </module>

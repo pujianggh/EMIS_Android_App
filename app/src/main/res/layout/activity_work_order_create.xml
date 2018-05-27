@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/MatchMatch.Vertical"
     android:background="@color/color_common_bg">
 
-    <include
-        android:id="@+id/lly_title"
-        layout="@layout/layout_title_bar" />
+    <include layout="@layout/layout_title_bar" />
 
     <ScrollView
         style="@style/MatchMatch"
-        android:layout_below="@+id/lly_title"
+        android:layout_below="@+id/layout_titleBar"
+        android:clipChildren="false"
+        android:clipToPadding="false"
         android:overScrollMode="never"
         android:scrollbars="none">
 
@@ -25,7 +26,7 @@
             <LinearLayout
                 style="@style/MatchWrap.Vertical"
                 android:background="@color/white"
-                android:visibility="visible">
+                android:visibility="gone">
 
                 <RelativeLayout
                     style="@style/LinearLayout_Child_Style"
@@ -300,8 +301,32 @@
                         android:layout_marginRight="0dp"
                         android:background="@color/line_lightgray" />
                 </RelativeLayout>
-            </LinearLayout>
 
+                <LinearLayout
+                    style="@style/MatchWrap.Vertical"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white">
+
+                    <cn.bingoogolapple.photopicker.widget.BGASortableNinePhotoLayout
+                        android:id="@+id/snpl_moment_add_photos"
+                        style="@style/MatchWrap"
+                        android:layout_margin="10dp"
+                        app:bga_snpl_deleteDrawable="@drawable/icon_delete_red_normal"
+                        app:bga_snpl_deleteDrawableOverlapQuarter="false"
+                        app:bga_snpl_editable="true"
+                        app:bga_snpl_itemCornerRadius="0dp"
+                        app:bga_snpl_itemSpanCount="4"
+                        app:bga_snpl_itemWhiteSpacing="4dp"
+                        app:bga_snpl_itemWidth="0dp"
+                        app:bga_snpl_maxItemCount="9"
+                        app:bga_snpl_otherWhiteSpacing="10dp"
+                        app:bga_snpl_placeholderDrawable="@mipmap/bga_pp_ic_holder_light"
+                        app:bga_snpl_plusDrawable="@drawable/icon_take_photo_focus"
+                        app:bga_snpl_plusEnable="true"
+                        app:bga_snpl_sortable="true" />
+                </LinearLayout>
+
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

@@ -39,6 +39,7 @@ dependencies {
     api "com.android.support:multidex:${LIBRARY_SUPPORT_MULTIDEX_VIERSION}"
     api "com.jaeger.statusbaruitl:library:${LIBRARY_JAEGER_STATUSBARUITL_LIBRARY}"
     api "com.github.bumptech.glide:glide:${LIBRARY_BUMPTECH_GLIDE}"
+    api 'cn.bingoogolapple:bga-baseadapter:1.2.7@aar'
     api project(':lib-swipebacklayout')
     api project(':lib-okhttputils')
     api project(':lib-andfix')
@@ -48,6 +49,7 @@ dependencies {
     api project(':lib-swipeitemlayout')
     api project(':lib-zxing')
     api project(':lib-signature')
+    api project(':lib-photopicker')
 }
 repositories {
     mavenCentral()

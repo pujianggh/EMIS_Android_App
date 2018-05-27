@@ -83,7 +83,8 @@
         <activity
             android:name=".activity.work.WorkOrderCreateActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Transparent" />
+            android:theme="@style/AppTheme.Transparent"
+            android:windowSoftInputMode="stateHidden" />
 
         <!-- 工作-工单-列表（包括处理、待处理、待审） -->
         <activity

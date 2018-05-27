@@ -32,4 +32,11 @@ object RequestCode {
 
     val Result_Device = 156
 
+    val Result_PhotoChoice = 501
+
+    val Result_PhotoPreview = 503
+
+    val Result_PhotoTake = 502
+
+    val Result_TakePhotoChoice = 500
 }

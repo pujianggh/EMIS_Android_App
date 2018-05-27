@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/lib-banner/lib-banner.iml" filepath="$PROJECT_DIR$/lib-banner/lib-banner.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib-common/lib-common.iml" filepath="$PROJECT_DIR$/lib-common/lib-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib-okhttputils/lib-okhttputils.iml" filepath="$PROJECT_DIR$/lib-okhttputils/lib-okhttputils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib-photopicker/lib-photopicker.iml" filepath="$PROJECT_DIR$/lib-photopicker/lib-photopicker.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib-pullrefresh/lib-pullrefresh.iml" filepath="$PROJECT_DIR$/lib-pullrefresh/lib-pullrefresh.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib-signature/lib-signature.iml" filepath="$PROJECT_DIR$/lib-signature/lib-signature.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib-styleplug/lib-styleplug.iml" filepath="$PROJECT_DIR$/lib-styleplug/lib-styleplug.iml" />
