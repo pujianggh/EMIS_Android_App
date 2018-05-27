@@ -46,7 +46,7 @@ public class ProjectMessageActivity extends BaseActivity {
     }
 
     private void initData() {
-        rlRootRefresh.setRefreshViewHolder(new BGANormalRefreshViewHolder(mAPPApplication, true));
+        rlRootRefresh.setRefreshViewHolder(new BGANormalRefreshViewHolder(this, true));
         rlRootRefresh.setDelegate(new BGARefreshLayout.BGARefreshLayoutDelegate() {
             @Override
             public void onBGARefreshLayoutBeginRefreshing(BGARefreshLayout refreshLayout) {
@@ -65,7 +65,7 @@ public class ProjectMessageActivity extends BaseActivity {
             }
         });
 
-        mAdapter = new ProjectMessageAdapter(mAPPApplication);
+        mAdapter = new ProjectMessageAdapter(this);
         lvListData.setAdapter(mAdapter);
         moduleBean = DataCenter.getProjectMessageModuleData();
         mAdapter.setData(moduleBean.getData());

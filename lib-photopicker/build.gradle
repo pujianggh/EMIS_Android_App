@@ -31,12 +31,12 @@ android {
 }
 
 dependencies {
-    implementation 'com.android.support:appcompat-v7:27.0.2'
-    implementation 'com.android.support:support-v4:27.0.2'
-    implementation 'com.android.support:recyclerview-v7:27.0.2'
+    implementation "com.android.support:appcompat-v7:${LIBRARY_SUPPORT_APPCOMPAT_V7}"
+    implementation "com.android.support:support-v4:${LIBRARY_SUPPORT_V4}"
+    implementation "com.android.support:recyclerview-v7:${LIBRARY_SUPPORT_RECYCLERVIEW_V7}"
     implementation 'cn.bingoogolapple:bga-baseadapter:1.2.7@aar'
-    implementation 'com.github.bumptech.glide:glide:4.5.0'
-    implementation 'com.squareup.picasso:picasso:2.5.2'
-    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
-    implementation 'org.xutils:xutils:3.5.0'
+    compileOnly "com.github.bumptech.glide:glide:${LIBRARY_BUMPTECH_GLIDE_NEW}"
+    implementation "com.squareup.picasso:picasso:${LIBRARY_SQUAREUP_PICASSO}"
+    implementation "com.nostra13.universalimageloader:universal-image-loader:${LIBRARY_UNIVERSAL_IMAGE_LOADER}"
+    implementation "org.xutils:xutils:${LIBRARY_ORG_XUTILS}"
 }

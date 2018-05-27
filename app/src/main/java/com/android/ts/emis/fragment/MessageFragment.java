@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.android.kotlinapp.action.config.StrRes;
 import com.android.ts.emis.R;
-import com.android.ts.emis.activity.work.WorkOrderCreateActivity;
+import com.android.ts.emis.activity.home.ProjectMessageActivity;
 import com.android.ts.emis.adapter.MessageAdapter;
 import com.android.ts.emis.base.BaseFragment;
 import com.android.ts.emis.config.DataCenter;
@@ -82,8 +82,7 @@ public class MessageFragment extends BaseFragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tv_title_bar:
-                startActivityForResult(new Intent(getActivity(), WorkOrderCreateActivity.class), RequestCode.INSTANCE.getResult_ProjectMessage());
-                //startActivityForResult(new Intent(getActivity(), ProjectMessageActivity.class), RequestCode.INSTANCE.getResult_ProjectMessage());
+                startActivityForResult(new Intent(getActivity(), ProjectMessageActivity.class), RequestCode.INSTANCE.getResult_ProjectMessage());
                 break;
         }
     }

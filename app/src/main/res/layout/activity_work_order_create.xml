@@ -26,7 +26,7 @@
             <LinearLayout
                 style="@style/MatchWrap.Vertical"
                 android:background="@color/white"
-                android:visibility="gone">
+                android:visibility="visible">
 
                 <RelativeLayout
                     style="@style/LinearLayout_Child_Style"
