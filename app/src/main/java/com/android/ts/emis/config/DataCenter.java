@@ -1,6 +1,7 @@
 package com.android.ts.emis.config;
 
 import com.android.ts.emis.mode.MessageInfoBean;
+import com.android.ts.emis.mode.PollingInfoListBean;
 import com.android.ts.emis.mode.ProjectMessageBean;
 import com.android.ts.emis.mode.StateInfoBean;
 import com.android.ts.emis.mode.WorkModuleBean;
@@ -18,6 +19,64 @@ import java.util.List;
  * @Description:
  */
 public class DataCenter {
+
+    /**
+     * 获取巡检信息数据
+     */
+    public static PollingInfoListBean getPollingInfoListModuleData() {
+        List<PollingInfoListBean.Data> list = new ArrayList<>();
+        PollingInfoListBean dataBean = new PollingInfoListBean();
+        dataBean.setTotal(10);
+
+        PollingInfoListBean.Data data;
+        for (int i = 0; i < 15; i++) {
+            data = new PollingInfoListBean.Data();
+            data.setId("" + i);
+            data.setPollPersonnel("Rain.HAO");
+            if (i < 2) {
+                data.setPollName("便利店设备巡检(新)");
+                data.setPollPersonnel("JIANG.PU");
+                data.setPollStartTime("2018-05-28 13:00");
+                data.setPollEndTime("2018-05-29 00:00");
+                data.setPollocation("1个点位");
+                data.setPollStatus("1");
+                data.setPollDevice("2");
+            } else if (i < 5) {
+                data.setPollName("计划巡检测试(新)");
+                data.setPollStartTime("2018-05-18 13:00");
+                data.setPollEndTime("2018-05-19 00:00");
+                data.setPollocation("1个点位");
+                data.setPollStatus("1");
+                data.setPollDevice("2");
+            } else if (i < 9) {
+                data.setPollName("便商场客服巡检(新)");
+                data.setPollStartTime("2018-04-18 13:00");
+                data.setPollEndTime("2018-04-19 00:00");
+                data.setPollocation("1个点位");
+                data.setPollStatus("1");
+                data.setPollDevice("2");
+            } else if (i < 12) {
+                data.setPollName("全家店面设备巡检(新)");
+                data.setPollStartTime("2018-05-28 13:00");
+                data.setPollEndTime("2018-05-29 00:00");
+                data.setPollocation("1个点位");
+                data.setPollStatus("0");
+                data.setPollDevice("1");
+            } else {
+                data.setPollName("楼道保洁巡检(新)");
+                data.setPollPersonnel("JIANG.PU");
+                data.setPollStartTime("2018-05-28 13:00");
+                data.setPollEndTime("2018-05-29 00:00");
+                data.setPollocation("2个点位");
+                data.setPollStatus("2");
+                data.setPollDevice("0");
+            }
+            list.add(data);
+        }
+
+        dataBean.setData(list);
+        return dataBean;
+    }
 
     /**
      * 获取工单数据
