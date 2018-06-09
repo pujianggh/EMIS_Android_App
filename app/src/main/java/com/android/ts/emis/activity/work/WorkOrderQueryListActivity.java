@@ -62,7 +62,7 @@ public class WorkOrderQueryListActivity extends BaseActivity {
     protected void initView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_work_order_query_list);
         ButterKnife.bind(this);
-        setTitleBarLayout(R.drawable.icon_back_white_bar, null, "工单查询", true);
+        setTitleBarLayout(R.drawable.icon_back_white_bar, "工单查询", null, true);
 
         initData();
         initFrameLayout();

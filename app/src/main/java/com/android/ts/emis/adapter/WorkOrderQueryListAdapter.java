@@ -41,13 +41,13 @@ public class WorkOrderQueryListAdapter extends CommonBaseAdapter<WorkOrderListBe
             viewHolder.tvOrderCode.setText(bean.getOrderCode());
             viewHolder.tvOrderStatus.setText(bean.getOrderStatus());
             if ("0".equals(bean.getState())) {
-                viewHolder.tvState.setText("处理中");
+                viewHolder.tvState.setText("已创建");
             } else if ("1".equals(bean.getState())) {
                 viewHolder.tvState.setText("暂停");
             } else if ("2".equals(bean.getState())) {
                 viewHolder.tvState.setText("待处理");
             } else {
-                viewHolder.tvState.setText("完成");
+                viewHolder.tvState.setText("已创建");
             }
             viewHolder.tvPfmCode.setText(bean.getPfmCode());
             viewHolder.tvOrderDescribe.setText(bean.getOrderDescribe());

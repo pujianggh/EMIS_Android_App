@@ -45,9 +45,8 @@ public class WorkFragment extends BaseFragment {
     }
 
     private void initData() {
-        rlyWorkBill.getBackground().mutate().setAlpha(100);
+        //rlyWorkBill.getBackground().mutate().setAlpha(100);
         moduleBean = DataCenter.getWorkModuleData();
-        tvCount.setText(moduleBean.getOffOrderNum() + "/" + moduleBean.getOrderNum());
 
         GridLayoutManager layoutManager = new GridLayoutManager(mAPPApplication, 3);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);

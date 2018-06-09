@@ -29,7 +29,7 @@ public class CommonWebActivity extends BaseActivity {
     @BindView(R.id.wv_content)
     WebView wvContent;
 
-    private String mH5URL = "https://thz-uat.vjiehu.com/thz/index.html#/home";//Web地址
+    private String mH5URL = "http://news.baidu.com";//Web地址
 
     @Override
     protected void initView(Bundle savedInstanceState) {

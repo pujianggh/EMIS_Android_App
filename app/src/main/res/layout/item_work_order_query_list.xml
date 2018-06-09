@@ -33,10 +33,10 @@
             android:layout_width="@dimen/item_dp45"
             android:layout_alignParentRight="true"
             android:layout_margin="@dimen/spacing_min"
-            android:background="@color/red_text"
+            android:background="@color/color_green"
             android:gravity="center"
             android:padding="3dp"
-            android:text="处理中"
+            android:text="已创建"
             android:textColor="@color/white"
             android:textSize="@dimen/textsize_min" />
     </RelativeLayout>

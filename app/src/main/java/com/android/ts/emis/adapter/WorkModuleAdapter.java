@@ -66,22 +66,31 @@ public class WorkModuleAdapter extends RecyclerView.Adapter<WorkModuleAdapter.Vi
             switch (mode.getWorkCode()) {
                 //工作-模块
                 case 10001:
-                    holder.igvIcon.setImageResource(R.drawable.icon_home_work_xj);
+                    holder.igvIcon.setImageResource(R.drawable.icon_home_work_xdrw);
                     break;
                 case 10002:
-                    holder.igvIcon.setImageResource(R.drawable.icon_home_work_gd);
+                    holder.igvIcon.setImageResource(R.drawable.icon_home_work_gdrw);
                     break;
                 case 10003:
-                    holder.igvIcon.setImageResource(R.drawable.icon_home_work_jhxwh);
+                    holder.igvIcon.setImageResource(R.drawable.icon_home_work_xjrw);
                     break;
                 case 10004:
-                    holder.igvIcon.setImageResource(R.drawable.icon_home_work_zc);
+                    holder.igvIcon.setImageResource(R.drawable.icon_home_work_xcsl);
                     break;
                 case 10005:
-                    holder.igvIcon.setImageResource(R.drawable.ic_home_function_inventories);
+                    holder.igvIcon.setImageResource(R.drawable.icon_home_work_jhxwh);
+                    break;
+                case 10006:
+                    holder.igvIcon.setImageResource(R.drawable.icon_home_work_ckwl);
+                    break;
+                case 10007:
+                    holder.igvIcon.setImageResource(R.drawable.icon_home_work_nygl);
                     break;
                 case 10008:
-                    holder.igvIcon.setImageResource(R.drawable.ic_home_function_inventories);
+                    holder.igvIcon.setImageResource(R.drawable.icon_home_work_zcgl);
+                    break;
+                case 10009:
+                    holder.igvIcon.setImageResource(R.drawable.icon_home_work_ckbb);
                     break;
             }
             holder.llyItem.setOnClickListener(new View.OnClickListener() {
@@ -89,19 +98,19 @@ public class WorkModuleAdapter extends RecyclerView.Adapter<WorkModuleAdapter.Vi
                 public void onClick(View v) {
                     switch (mode.getWorkCode()) {
                         //工作-模块
-                        case 10001://巡检
-                            mContext.startActivity(new Intent(mContext, WorkPollingActivity.class));
-                            break;
-                        case 10002://工单
+                        case 10002://工单任务
                             mContext.startActivity(new Intent(mContext, WorkOrderActivity.class));
                             break;
-                        case 10003://计划性维护
+                        case 10003://巡检任务
+                            mContext.startActivity(new Intent(mContext, WorkPollingActivity.class));
+                            break;
+                        case 10005://计划性维护
                             mContext.startActivity(new Intent(mContext, PlanMaintainActivity.class));
                             break;
-                        case 10004://资产管理
+                        case 10008://资产管理
                             mContext.startActivity(new Intent(mContext, PropertyManageActivity.class));
                             break;
-                        case 10005://库存
+                        case 10006://厂库材料
                             mContext.startActivity(new Intent(mContext, WorkRepertoryActivity.class));
                             break;
                     }

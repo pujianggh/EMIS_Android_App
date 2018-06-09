@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.android.kotlinapp.action.config.StrRes;
 import com.android.ts.emis.R;
 import com.android.ts.emis.activity.work.PollingQueryActivity;
 import com.android.ts.emis.activity.work.PollingTaskActivity;
@@ -131,16 +132,10 @@ public class WorkModule2Adapter extends RecyclerView.Adapter<WorkModule2Adapter.
                             mContext.startActivity(new Intent(mContext, WorkOrderCreateActivity.class));
                             break;
                         case 30002://待处理工单
-                            mContext.startActivity(new Intent(mContext, WorkOrderListActivity.class));
-                            break;
                         case 30003://待派批工单
-                            mContext.startActivity(new Intent(mContext, WorkOrderListActivity.class));
-                            break;
                         case 30004://待审批工单
-                            mContext.startActivity(new Intent(mContext, WorkOrderListActivity.class));
-                            break;
                         case 30005://待存档工单
-                            mContext.startActivity(new Intent(mContext, WorkOrderListActivity.class));
+                            mContext.startActivity(new Intent(mContext, WorkOrderListActivity.class).putExtra(StrRes.INSTANCE.getType(), mode.getWorkCode()));
                             break;
                         case 30008://工单查询
                             mContext.startActivity(new Intent(mContext, WorkOrderQueryListActivity.class));

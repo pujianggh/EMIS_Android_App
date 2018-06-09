@@ -23,7 +23,7 @@ import android.view.View;
 public class RecycleViewDivider extends RecyclerView.ItemDecoration {
     private static final int[] ATTRS = new int[]{android.R.attr.listDivider};
     private Drawable mDivider;
-    private int mDividerHeight = 2;//分割线高度，默认为1px
+    private int mDividerHeight = 4;//分割线高度，默认为1px
 
     public RecycleViewDivider(Context context) {
         final TypedArray a = context.obtainStyledAttributes(ATTRS);

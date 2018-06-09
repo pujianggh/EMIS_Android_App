@@ -17,6 +17,7 @@ import com.android.kotlinapp.action.config.AppConfig;
 import com.android.kotlinapp.action.config.StateType;
 import com.android.kotlinapp.action.config.StrRes;
 import com.android.ts.emis.R;
+import com.android.ts.emis.activity.common.QRCodeActivity;
 import com.android.ts.emis.activity.common.SignatureHandActivity;
 import com.android.ts.emis.adapter.WorkOrderDeviceAdapter;
 import com.android.ts.emis.base.BaseActivity;
@@ -24,6 +25,7 @@ import com.android.ts.emis.config.RequestCode;
 import com.android.ts.emis.config.ResultCode;
 import com.android.ts.emis.handle.EditTextListener;
 import com.android.ts.emis.mode.StateInfoBean;
+import com.android.ts.emis.utils.PopupWindowUtil;
 import com.android.ts.emis.view.ExpandListView;
 
 import java.io.File;
@@ -46,6 +48,8 @@ import cn.bingoogolapple.photopicker.widget.BGASortableNinePhotoLayout;
  * @Description:
  */
 public class WorkOrderCreateActivity extends BaseActivity {
+    @BindView(R.id.layout_titleBar)
+    LinearLayout layoutTitleBar;
     @BindView(R.id.igv_signHand)
     ImageView mIgvSignHand;
     @BindView(R.id.tv_createrName)
@@ -75,6 +79,7 @@ public class WorkOrderCreateActivity extends BaseActivity {
 
     private WorkOrderDeviceAdapter mAdapter;
     private List<StateInfoBean.Data> datas;
+    private PopupWindowUtil mPopupWindowUtil = null;
     private String[] perms = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA};
 
     @Override
@@ -89,12 +94,27 @@ public class WorkOrderCreateActivity extends BaseActivity {
     private void initData() {
         tvCreaterName.setText("JIANG.PU");
         EditTextListener.setEditTextUpdateTipListener(edtContent, tvContentTip, 1000);
-        setTitleBarLayout(R.drawable.icon_back_white_bar, null, "创建工单", "提交", true);
+        setTitleBarLayout(R.drawable.icon_back_white_bar, "创建工单", null, "···", true);
         mTitleBar.getRightCtv().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showToast("提交");
-                onBackPressed();
+                if (mPopupWindowUtil == null)
+                    mPopupWindowUtil = new PopupWindowUtil(mContext);
+                mPopupWindowUtil.showWorkOrderCreateWindow(layoutTitleBar, new PopupWindowUtil.OnPopuwindowClick() {
+                    @Override
+                    public void onPopuwindowClick(int id) {
+                        switch (id) {
+                            case R.id.igv_add:
+                                Intent intent = new Intent(mContext, StateQueryListActivity.class);
+                                intent.putExtra(StrRes.INSTANCE.getType(), StateType.INSTANCE.getDevice());
+                                startActivityForResult(intent, RequestCode.INSTANCE.getResult_Device());
+                                break;
+                            case R.id.igv_ewm:
+                                startActivityForResult(new Intent(mContext, QRCodeActivity.class), RequestCode.INSTANCE.getResult_QRCode());
+                                break;
+                        }
+                    }
+                });
             }
         });
 
@@ -164,10 +184,13 @@ public class WorkOrderCreateActivity extends BaseActivity {
     }
 
     @OnClick({R.id.igv_signHand, R.id.igv_addDevice, R.id.rly_department, R.id.rly_location,
-            R.id.rly_workOrderType, R.id.rly_serverType, R.id.rly_priority})
+            R.id.rly_workOrderType, R.id.rly_serverType, R.id.rly_priority, R.id.btn_next})
     public void onClick(View view) {
         Intent intent = new Intent(this, StateQueryListActivity.class);
         switch (view.getId()) {
+            case R.id.btn_next:
+                onBackPressed();
+                break;
             case R.id.rly_department:
                 intent.putExtra(StrRes.INSTANCE.getType(), StateType.INSTANCE.getDepartmentInfo());
                 startActivityForResult(intent, RequestCode.INSTANCE.getResult_StateDepartment());

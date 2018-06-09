@@ -26,13 +26,13 @@
             android:id="@+id/rb_main_work"
             style="@style/Tab_Main_RadioButton_Style"
             android:drawableTop="@drawable/selector_index_work"
-            android:text="工作" />
+            android:text="我的" />
 
         <RadioButton
             android:id="@+id/rb_main_my"
             style="@style/Tab_Main_RadioButton_Style"
             android:drawableTop="@drawable/selector_index_my"
-            android:text="我的" />
+            android:text="设置" />
     </RadioGroup>
 
     <LinearLayout

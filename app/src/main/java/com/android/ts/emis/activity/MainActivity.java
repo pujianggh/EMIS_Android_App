@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -58,6 +59,10 @@ public class MainActivity extends BaseActivity {
         ButterKnife.bind(this);
 
         initFragment(savedInstanceState);
+        tvMainMessageCount.setVisibility(View.VISIBLE);
+        tvMainMessageCount.setText("99+");
+        tvMainMyCount.setVisibility(View.VISIBLE);
+        tvMainMyCount.setText(" 2 ");
     }
 
     /**

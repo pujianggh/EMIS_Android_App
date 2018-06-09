@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/MatchMatch.Vertical"
-    android:background="@color/color_common_bg">
+    android:background="@color/color_black_bg">
 
     <include layout="@layout/layout_title_bar" />
 

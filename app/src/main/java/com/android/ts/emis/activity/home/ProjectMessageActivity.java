@@ -40,7 +40,7 @@ public class ProjectMessageActivity extends BaseActivity {
     protected void initView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_project_message);
         ButterKnife.bind(this);
-        setTitleBarLayout(R.drawable.icon_back_white_bar, null, "项目选择", true);
+        setTitleBarLayout(R.drawable.icon_back_white_bar, "项目选择", null, true);
 
         initData();
     }

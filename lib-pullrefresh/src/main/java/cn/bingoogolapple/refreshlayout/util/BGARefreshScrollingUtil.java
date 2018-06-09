@@ -34,9 +34,10 @@ import java.lang.reflect.Field;
 import cn.bingoogolapple.refreshlayout.BGAStickyNavLayout;
 
 /**
- * 作者:王浩 邮件:bingoogolapple@gmail.com
- * 创建时间:15/10/28 上午2:26
- * 描述:
+ * @author pujiang
+ * @date 2018-5-31 09:28
+ * @mail 515210530@qq.com
+ * @Description:
  */
 public class BGARefreshScrollingUtil {
 

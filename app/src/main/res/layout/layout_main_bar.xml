@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/MatchWrap.Vertical"
     android:layout_height="@dimen/spacing_maxplus"
-    android:background="@color/color_black_deep"
+    android:background="@color/color_title_bg"
     android:gravity="center_vertical">
 
     <TextView

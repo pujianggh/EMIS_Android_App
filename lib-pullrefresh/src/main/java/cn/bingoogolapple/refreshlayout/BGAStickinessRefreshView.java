@@ -33,8 +33,11 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
- * 作者:王浩 邮件:bingoogolapple@gmail.com
- * 创建时间:15/5/21 22:34
+ /**
+ * @author pujiang
+ * @date 2018-5-31 09:28
+ * @mail 515210530@qq.com
+ * @Description:
  * 描述:黏性下拉刷新控件
  */
 public class BGAStickinessRefreshView extends View {

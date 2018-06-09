@@ -2,12 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/MatchMatch.Vertical"
-    android:background="@color/color_common_bg">
+    android:background="@color/color_black_bg">
 
     <include layout="@layout/layout_title_bar" />
 
     <ScrollView
         style="@style/MatchMatch"
+        android:layout_above="@+id/lly_bottom"
         android:layout_below="@+id/layout_titleBar"
         android:clipChildren="false"
         android:clipToPadding="false"
@@ -21,7 +22,7 @@
                 android:layout_marginLeft="@dimen/item_dp10"
                 android:layout_marginRight="@dimen/item_dp10"
                 android:text="基本信息"
-                android:textColor="@color/text_gray" />
+                android:textColor="@color/white" />
 
             <LinearLayout
                 style="@style/MatchWrap.Vertical"
@@ -260,7 +261,7 @@
                     android:layout_marginLeft="@dimen/item_dp10"
                     android:layout_marginRight="@dimen/item_dp10"
                     android:text="问题描述"
-                    android:textColor="@color/text_gray" />
+                    android:textColor="@color/white" />
 
                 <RelativeLayout
                     style="@style/MatchWrap.Vertical"
@@ -334,11 +335,29 @@
         android:id="@+id/igv_addDevice"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:visibility="gone"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="@dimen/item_dp20"
+        android:layout_marginBottom="@dimen/item_dp65"
         android:layout_marginRight="@dimen/item_dp10"
         android:src="@drawable/selector_workorder_create_add" />
+
+    <LinearLayout
+        android:id="@+id/lly_bottom"
+        style="@style/MatchWrap.Vertical"
+        android:layout_height="@dimen/item_dp50"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:gravity="center"
+        android:visibility="visible">
+
+        <Button
+            android:id="@+id/btn_next"
+            style="@style/Button_Common_Style_Black"
+            android:layout_marginLeft="@dimen/item_dp10"
+            android:layout_marginRight="@dimen/item_dp10"
+            android:text="提交" />
+    </LinearLayout>
 
     <LinearLayout
         style="@style/MatchMatch.Vertical"

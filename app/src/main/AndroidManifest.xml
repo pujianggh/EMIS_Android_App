@@ -32,128 +32,135 @@
             android:name=".activity.MainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppThemeDefaultStyle" />
+
+        <!-- 登录 -->
+        <activity
+            android:name=".activity.common.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Transparent"
+            android:windowSoftInputMode="stateHidden" />
 
         <!-- 工作-工单 -->
         <activity
             android:name=".activity.work.WorkOrderActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Transparent"
+            android:theme="@style/AppThemeDefaultStyle"
             android:windowSoftInputMode="adjustResize" />
 
         <!-- 工作-巡检 -->
         <activity
             android:name=".activity.work.WorkPollingActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Transparent"
+            android:theme="@style/AppThemeDefaultStyle"
             android:windowSoftInputMode="adjustResize" />
 
         <!-- 工作-库存 -->
         <activity
             android:name=".activity.work.WorkRepertoryActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Transparent"
+            android:theme="@style/AppThemeDefaultStyle"
             android:windowSoftInputMode="adjustResize" />
 
         <!-- 工作-计划性维护 -->
         <activity
             android:name=".activity.work.PlanMaintainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Transparent" />
+            android:theme="@style/AppThemeDefaultStyle" />
 
         <!-- 工作-资产管理 -->
         <activity
             android:name=".activity.work.PropertyManageActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Transparent" />
+            android:theme="@style/AppThemeDefaultStyle" />
 
         <!-- 工作-巡检-巡检任务 -->
         <activity
             android:name=".activity.work.PollingTaskActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Transparent" />
+            android:theme="@style/AppThemeDefaultStyle" />
 
         <!-- 工作-巡检-巡检查询 -->
         <activity
             android:name=".activity.work.PollingQueryActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Transparent" />
+            android:theme="@style/AppThemeDefaultStyle" />
 
         <!-- 工作-工单-创建 -->
         <activity
             android:name=".activity.work.WorkOrderCreateActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Transparent"
+            android:theme="@style/AppThemeDefaultStyle"
             android:windowSoftInputMode="stateHidden" />
 
         <!-- 工作-工单-列表（包括处理、待处理、待审） -->
         <activity
             android:name=".activity.work.WorkOrderListActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Transparent" />
+            android:theme="@style/AppThemeDefaultStyle" />
 
         <!-- 工作-工单-列表查询 -->
         <activity
             android:name=".activity.work.WorkOrderQueryListActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Transparent" />
+            android:theme="@style/AppThemeDefaultStyle" />
 
         <!-- 首页-多项目信息 -->
         <activity
             android:name=".activity.home.ProjectMessageActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Transparent"
+            android:theme="@style/AppThemeDefaultStyle"
             android:windowSoftInputMode="stateHidden" />
 
         <!-- 通用H5加载 -->
         <activity
             android:name=".activity.common.CommonWebActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Transparent"
+            android:theme="@style/AppThemeDefaultStyle"
             android:windowSoftInputMode="adjustResize" />
 
         <!-- 通用状态选择器 -->
         <activity
             android:name=".activity.work.StateQueryListActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Transparent" />
+            android:theme="@style/AppThemeDefaultStyle" />
 
         <!-- 通用签名板 -->
         <activity
             android:name=".activity.common.SignatureHandActivity"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.Transparent" />
+            android:theme="@style/AppThemeDefaultStyle" />
 
         <!-- 通用二维码扫描 -->
         <activity
             android:name=".activity.common.QRCodeActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Transparent" />
+            android:theme="@style/AppThemeDefaultStyle" />
 
         <!-- 我的-设置 -->
         <activity
             android:name=".activity.my.SettingActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Transparent"
+            android:theme="@style/AppThemeDefaultStyle"
             android:windowSoftInputMode="adjustResize" />
 
         <!-- 我的设置-关于 -->
         <activity
             android:name=".activity.my.AboutUsActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Transparent" />
+            android:theme="@style/AppThemeDefaultStyle" />
 
         <!-- 我的设置-分享 -->
         <activity
             android:name=".activity.my.SharedActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Transparent" />
+            android:theme="@style/AppThemeDefaultStyle" />
 
         <!-- 我的设置-意见反馈 -->
         <activity
             android:name=".activity.my.FeedbackActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Transparent"
+            android:theme="@style/AppThemeDefaultStyle"
             android:windowSoftInputMode="adjustResize" />
     </application>
 

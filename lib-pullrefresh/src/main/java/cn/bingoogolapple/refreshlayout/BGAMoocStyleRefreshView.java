@@ -31,8 +31,11 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
- * 作者:王浩 邮件:bingoogolapple@gmail.com
- * 创建时间:15/5/21 10:43
+ * @author pujiang
+ * @date 2018-5-31 09:28
+ * @mail 515210530@qq.com
+ * @Description:
+ *
  * 描述:慕课网下拉刷新风格控件
  */
 public class BGAMoocStyleRefreshView extends View {

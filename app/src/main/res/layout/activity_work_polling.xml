@@ -2,14 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/MatchMatch.Vertical"
-    android:background="@color/color_common_bg">
+    android:background="@color/color_black_bg">
 
     <include layout="@layout/layout_title_bar" />
 
     <RelativeLayout
         style="@style/MatchMatch.Horizontal"
         android:layout_height="@dimen/item_dp160"
-        android:background="@color/color_black_deep">
+        android:background="@color/colorBlackBg">
 
         <ImageView
             android:id="@+id/igv_ewm"

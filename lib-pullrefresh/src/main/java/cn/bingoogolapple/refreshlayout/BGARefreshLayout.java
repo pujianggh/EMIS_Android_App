@@ -36,8 +36,11 @@ import java.lang.reflect.Field;
 import cn.bingoogolapple.refreshlayout.util.BGARefreshScrollingUtil;
 
 /**
- * 作者:王浩 邮件:bingoogolapple@gmail.com
- * 创建时间:15/5/21 22:35
+ * @author pujiang
+ * @date 2018-5-31 09:28
+ * @mail 515210530@qq.com
+ * @Description:
+ *
  * 描述:下拉刷新、上拉加载更多、可添加自定义（固定、可滑动）头部控件（例如慕课网app顶部的广告位）
  */
 public class BGARefreshLayout extends LinearLayout {

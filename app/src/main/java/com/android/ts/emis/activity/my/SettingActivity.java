@@ -7,8 +7,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.android.ts.emis.R;
+import com.android.ts.emis.activity.common.LoginActivity;
 import com.android.ts.emis.app.APPApplication;
 import com.android.ts.emis.base.BaseActivity;
+import com.android.ts.emis.utils.SPUtil;
 import com.libcommon.action.utils.APPToolsUtil;
 
 import butterknife.BindView;
@@ -77,6 +79,11 @@ public class SettingActivity extends BaseActivity {
                 showLoadingDialog();
                 break;
             case R.id.rly_exit_login:
+                mUserPasswrd.setPassword("");
+                SPUtil.INSTANCE.putAllModle(mAPPApplication, mUserPasswrd);
+                startActivity(new Intent(this, LoginActivity.class));
+                onBackPressed();
+                onBackPressed();
                 break;
         }
     }

@@ -1,76 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/MatchWrap"
-    android:layout_height="@dimen/item_dp100"
-    android:background="@drawable/selector_item_list_gary">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatchWrap.Vertical">
 
-    <LinearLayout
-        style="@style/MatchMatch"
-        android:layout_height="@dimen/item_dp100"
-        android:layout_marginBottom="@dimen/spacing_min"
+    <TextView
+        android:id="@+id/tv_sign"
+        style="@style/Text_WrapWrap_Style"
+        android:layout_alignParentTop="true"
         android:layout_marginLeft="@dimen/item_dp10"
-        android:layout_marginRight="@dimen/item_dp15"
-        android:layout_marginTop="@dimen/spacing_min"
-        android:background="@drawable/shape_white_gary"
-        android:gravity="center_vertical">
+        android:text="J"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textsize_normalplus" />
 
-        <LinearLayout
-            style="@style/MatchMatch.Vertical"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:gravity="center_vertical"
-            android:orientation="vertical"
-            android:padding="@dimen/spacing_min">
+    <RelativeLayout
+        style="@style/MatchWrap"
+        android:background="@drawable/selector_item_list_gary">
 
-            <ImageView
-                android:id="@+id/igv_icon"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/item_dp80"
-                android:layout_marginLeft="@dimen/spacing_min"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_project_message_default" />
-        </LinearLayout>
-
-        <LinearLayout
-            style="@style/MatchMatch.Vertical"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="3"
-            android:gravity="center_vertical"
-            android:orientation="vertical"
+        <RelativeLayout
+            style="@style/MatchWrap"
+            android:layout_marginBottom="@dimen/spacing_min"
+            android:layout_marginLeft="@dimen/item_dp10"
+            android:layout_marginRight="@dimen/item_dp15"
+            android:layout_marginTop="@dimen/spacing_min"
+            android:background="@drawable/shape_white_gary"
+            android:paddingBottom="@dimen/spacing_min"
             android:paddingLeft="@dimen/item_dp10"
-            android:paddingRight="@dimen/item_dp10">
+            android:paddingTop="@dimen/spacing_min">
 
             <TextView
                 android:id="@+id/tv_name"
                 style="@style/Text_WrapWrap_Style"
-                android:layout_margin="@dimen/spacing_min"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/item_dp10"
                 android:text="苏悦"
                 android:textColor="@color/color_black_bg"
                 android:textSize="@dimen/textsize_normalplus" />
 
             <TextView
-                android:id="@+id/tv_address"
-                style="@style/Text_WrapWrap_Style"
-                android:layout_margin="@dimen/spacing_min"
-                android:text="上海   黄浦区"
-                android:textColor="@color/text_contentgray"
-                android:textSize="@dimen/textsize_supersmall" />
-        </LinearLayout>
-    </LinearLayout>
+                android:id="@+id/tv_message_count"
+                style="@style/WrapWrap"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/item_dp10"
+                android:background="@drawable/shape_red_tips2"
+                android:gravity="center"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:text=" 1 "
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize_10"
+                android:visibility="visible" />
+        </RelativeLayout>
 
-    <TextView
-        android:id="@+id/tv_message_count"
-        style="@style/WrapWrap"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="@dimen/item_dp10"
-        android:background="@drawable/shape_red_tips2"
-        android:gravity="center"
-        android:paddingLeft="2dp"
-        android:paddingRight="2dp"
-        android:text=" 1 "
-        android:textColor="@color/white"
-        android:textSize="@dimen/textSize_10"
-        android:visibility="invisible" />
-</RelativeLayout>
+        <TextView
+            android:id="@+id/tv_state"
+            style="@style/Text_WrapWrap_Style"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/item_dp10"
+            android:layout_marginTop="@dimen/spacing_min"
+            android:background="@drawable/shape_green_state"
+            android:padding="2dp"
+            android:text="混合"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textsize_bigsmall" />
+    </RelativeLayout>
+</LinearLayout>

@@ -21,7 +21,7 @@ public class PlanMaintainActivity extends BaseActivity {
     protected void initView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_plan_maintain);
         ButterKnife.bind(this);
-        setTitleBarLayout(R.drawable.icon_back_white_bar, null, "计划性维护", true);
+        setTitleBarLayout(R.drawable.icon_back_white_bar, "计划性维护", null, true);
 
         initData();
     }

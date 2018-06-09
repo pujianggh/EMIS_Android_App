@@ -21,7 +21,7 @@ public class PropertyManageActivity extends BaseActivity {
     protected void initView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_property_manage);
         ButterKnife.bind(this);
-        setTitleBarLayout(R.drawable.icon_back_white_bar, null, "资产管理", true);
+        setTitleBarLayout(R.drawable.icon_back_white_bar, "资产管理", null, true);
 
         initData();
     }

@@ -41,7 +41,7 @@ public class PollingTaskActivity extends BaseActivity {
     protected void initView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_polling_task);
         ButterKnife.bind(this);
-        setTitleBarLayout(R.drawable.icon_back_white_bar, null, "巡检任务", true);
+        setTitleBarLayout(R.drawable.icon_back_white_bar, "巡检任务", null, true);
 
         initData();
     }
@@ -50,13 +50,13 @@ public class PollingTaskActivity extends BaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_tabLeft:
-                setCurrentPage(0);
+                vpView.setCurrentItem(0);
                 break;
             case R.id.btn_tabCenter:
-                setCurrentPage(1);
+                vpView.setCurrentItem(1);
                 break;
             case R.id.btn_tabRight:
-                setCurrentPage(2);
+                vpView.setCurrentItem(2);
                 break;
         }
     }
@@ -66,18 +66,21 @@ public class PollingTaskActivity extends BaseActivity {
         btnTabCenter.setText("未同步(0)");
         btnTabRight.setText("未完成(15)");
         fragments = new Fragment[3];
-        Bundle bundle = new Bundle();
+
         fragments[0] = new PollTaskListFragment();//完成
-        bundle.putInt(StrRes.INSTANCE.getType(), 1);
-        fragments[0].setArguments(bundle);
+        Bundle bundle1 = new Bundle();
+        bundle1.putInt(StrRes.INSTANCE.getType(), 0);
+        fragments[0].setArguments(bundle1);
 
         fragments[1] = new PollTaskListFragment();//未同步
-        bundle.putInt(StrRes.INSTANCE.getType(), 2);
-        fragments[1].setArguments(bundle);
+        Bundle bundle2 = new Bundle();
+        bundle2.putInt(StrRes.INSTANCE.getType(), 1);
+        fragments[1].setArguments(bundle2);
 
         fragments[2] = new PollTaskListFragment();//未完成
-        bundle.putInt(StrRes.INSTANCE.getType(), 3);
-        fragments[2].setArguments(bundle);
+        Bundle bundle3 = new Bundle();
+        bundle3.putInt(StrRes.INSTANCE.getType(), 2);
+        fragments[2].setArguments(bundle3);
 
         mContentPagerAdapter = new ContentPagerAdapter(getSupportFragmentManager(), fragments);
         vpView.setAdapter(mContentPagerAdapter);

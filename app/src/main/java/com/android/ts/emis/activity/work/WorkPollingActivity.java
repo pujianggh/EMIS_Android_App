@@ -42,7 +42,7 @@ public class WorkPollingActivity extends BaseActivity {
     protected void initView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_work_polling);
         ButterKnife.bind(this);
-        setTitleBarLayout(R.drawable.icon_back_white_bar, null, "巡检", true);
+        setTitleBarLayout(R.drawable.icon_back_white_bar, "巡检任务", null, true);
 
         initData();
     }
@@ -53,7 +53,7 @@ public class WorkPollingActivity extends BaseActivity {
         GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         rlvContent.setLayoutManager(layoutManager);
-        rlvContent.addItemDecoration(new RecycleViewDivider(mAPPApplication, R.drawable.line_list_divider));
+        rlvContent.addItemDecoration(new RecycleViewDivider(mAPPApplication));
         mWorkModule2Adapter = new WorkModule2Adapter(this, moduleBean.getBody());
         rlvContent.setAdapter(mWorkModule2Adapter);
     }

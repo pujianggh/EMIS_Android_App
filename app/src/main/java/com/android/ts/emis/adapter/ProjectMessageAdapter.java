@@ -1,16 +1,13 @@
 package com.android.ts.emis.adapter;
 
 import android.content.Context;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.ts.emis.R;
 import com.android.ts.emis.mode.ProjectMessageBean;
-import com.bumptech.glide.Glide;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -42,15 +39,29 @@ public class ProjectMessageAdapter extends CommonBaseAdapter<ProjectMessageBean.
         ProjectMessageBean.Data bean = data.get(position);
         if (viewHolder != null && bean != null) {
             viewHolder.tvName.setText(bean.getName());
-            viewHolder.tvAddress.setText(bean.getCity() + "    " + bean.getArea());
 
             // 这里不知道当前图片的尺寸，加载成功后会乱跳
-            if (!TextUtils.isEmpty(bean.getImgeURL()) && bean.getImgeURL().startsWith("http")) {
-                Glide.with(mContext).load(bean.getImgeURL())
-                        .placeholder(R.drawable.ic_project_message_default)
-                        .error(R.drawable.ic_project_message_default)
-                        .dontAnimate()
-                        .into(viewHolder.igvIcon);
+//            if (!TextUtils.isEmpty(bean.getImgeURL()) && bean.getImgeURL().startsWith("http")) {
+//                Glide.with(mContext).load(bean.getImgeURL())
+//                        .placeholder(R.drawable.ic_project_message_default)
+//                        .error(R.drawable.ic_project_message_default)
+//                        .dontAnimate()
+//                        .into(viewHolder.igvIcon);
+//            }
+            viewHolder.tvSate.setText("混合");
+            viewHolder.tvSign.setVisibility(View.GONE);
+            if (position == 0) {
+                viewHolder.tvSign.setText("J");
+                viewHolder.tvSign.setVisibility(View.VISIBLE);
+            } else if (position == 1) {
+                viewHolder.tvSign.setText("S");
+                viewHolder.tvSign.setVisibility(View.VISIBLE);
+            } else if (position == 2) {
+                viewHolder.tvSign.setText("Q");
+                viewHolder.tvSign.setVisibility(View.VISIBLE);
+            } else if (position == 4) {
+                viewHolder.tvSign.setText("x");
+                viewHolder.tvSign.setVisibility(View.VISIBLE);
             }
 
             viewHolder.tvMessageCount.setVisibility(View.INVISIBLE);
@@ -68,14 +79,14 @@ public class ProjectMessageAdapter extends CommonBaseAdapter<ProjectMessageBean.
     }
 
     class ViewHolder {
-        @BindView(R.id.igv_icon)
-        ImageView igvIcon;
         @BindView(R.id.tv_name)
         TextView tvName;
-        @BindView(R.id.tv_address)
-        TextView tvAddress;
+        @BindView(R.id.tv_state)
+        TextView tvSate;
         @BindView(R.id.tv_message_count)
         TextView tvMessageCount;
+        @BindView(R.id.tv_sign)
+        TextView tvSign;
 
         ViewHolder(View view) {
             ButterKnife.bind(this, view);

@@ -62,7 +62,7 @@ public class PollingQueryActivity extends BaseActivity {
     protected void initView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_polling_query);
         ButterKnife.bind(this);
-        setTitleBarLayout(R.drawable.icon_back_white_bar, null, "巡检查询", true);
+        setTitleBarLayout(R.drawable.icon_back_white_bar, "巡检查询", null, true);
 
         initData();
         initFrameLayout();

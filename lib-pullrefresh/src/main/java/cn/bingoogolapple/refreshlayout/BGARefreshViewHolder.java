@@ -25,8 +25,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
- * 作者:王浩 邮件:bingoogolapple@gmail.com
- * 创建时间:15/5/21 12:56
+ * @author pujiang
+ * @date 2018-5-31 09:28
+ * @mail 515210530@qq.com
+ * @Description:
+ *
  * 描述:继承该抽象类实现响应的抽象方法，做出各种下拉刷新效果。参考BGANormalRefreshViewHolder、BGAStickinessRefreshViewHolder、BGAMoocStyleRefreshViewHolder、BGAMeiTuanRefreshViewHolder
  */
 public abstract class BGARefreshViewHolder {

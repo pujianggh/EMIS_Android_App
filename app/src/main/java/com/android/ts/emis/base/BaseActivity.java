@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 
 import com.android.ts.emis.R;
 import com.android.ts.emis.app.APPApplication;
+import com.android.ts.emis.mode.UserPasswordBean;
 import com.android.ts.emis.utils.ToastUtil;
 import com.libcommon.action.base.CommonBaseSwipeBackActivity;
 
@@ -23,15 +24,18 @@ import cn.bingoogolapple.titlebar.BGATitleBar;
  * @Description:
  */
 public abstract class BaseActivity extends CommonBaseSwipeBackActivity {
+    protected BaseActivity mContext;
     protected APPApplication mAPPApplication;
     private SweetAlertDialog mLoadingDialog;
     protected BGATitleBar mTitleBar;
     private LinearLayout mTitleBarLayer;
+    protected UserPasswordBean mUserPasswrd = new UserPasswordBean();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mAPPApplication = APPApplication.getInstance();
+        mContext = this;
 
         initView(savedInstanceState);
     }

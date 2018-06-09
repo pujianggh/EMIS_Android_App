@@ -13,6 +13,7 @@ import com.android.ts.emis.base.BaseFragment;
 import com.android.ts.emis.config.DataCenter;
 import com.android.ts.emis.mode.PollingInfoListBean;
 import com.android.ts.emis.utils.ThreadUtil;
+import com.libcommon.action.utils.LogAPPUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -46,14 +47,9 @@ public class PollTaskListFragment extends BaseFragment {
         setContentView(R.layout.fragment_polltask_list);
         unBinder = ButterKnife.bind(this, mContentView);
 
-        int Type = getArguments().getInt(StrRes.INSTANCE.getType(), 0);
-        if (Type == 0) {
-            lvListData.setVisibility(View.GONE);
-            llyDataNull.setVisibility(View.VISIBLE);
-            tvMessageTip.setText("暂无巡检任务");
-        } else {
-            initData();
-        }
+        Type = getArguments().getInt(StrRes.INSTANCE.getType(), 0);
+        initData();
+        LogAPPUtil.i("@-->Type="+Type);
     }
 
     private void initData() {
@@ -86,5 +82,11 @@ public class PollTaskListFragment extends BaseFragment {
         lvListData.setAdapter(mAdapter);
         moduleBean = DataCenter.getPollingInfoListModuleData();
         mAdapter.setData(moduleBean.getData());
+
+        if (Type == 1) {
+            lvListData.setVisibility(View.GONE);
+            llyDataNull.setVisibility(View.VISIBLE);
+            tvMessageTip.setText("暂无巡检任务");
+        }
     }
 }

@@ -4,9 +4,18 @@
     style="@style/MatchMatch.Vertical"
     android:background="@color/color_black_bg">
 
+    <TextView
+        style="@style/Font_MatchWrap_Style"
+        android:layout_height="@dimen/item_dp50"
+        android:layout_alignParentTop="true"
+        android:background="@color/color_title_bg"
+        android:gravity="center"
+        android:text="我的"
+        android:textSize="@dimen/textsize_title_big" />
+
     <RelativeLayout
         style="@style/MatchMatch.Horizontal"
-        android:layout_height="220dp"
+        android:layout_height="180dp"
         android:background="@drawable/ic_main_work_background">
 
         <RelativeLayout
@@ -14,7 +23,8 @@
             style="@style/MatchMatch.Horizontal"
             android:layout_height="@dimen/item_dp50"
             android:layout_alignParentBottom="true"
-            android:background="@color/color_black_bg">
+            android:background="@color/color_black_bg"
+            android:visibility="gone">
 
             <ImageView
                 android:layout_width="20dp"

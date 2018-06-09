@@ -3,7 +3,7 @@
     android:id="@+id/layout_titleBar"
     style="@style/MatchWrap"
     android:layout_height="@dimen/item_dp50"
-    android:background="@color/color_black_deep">
+    android:background="@color/color_title_bg">
 
     <ImageView
         android:id="@+id/igv_back"

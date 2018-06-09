@@ -166,14 +166,14 @@ public class DataCenter {
                 data.setImgeURL("http://pic.58pic.com/58pic/12/85/53/06k58PICXIH.jpg");
                 data.setMsgCount(129);
             } else if (i == 3) {
-                data.setName("香港美心");
+                data.setName("前滩验房缺陷统计");
                 data.setProvince("香港");
                 data.setCity("香港");
                 data.setArea("九龙城区");
                 data.setImgeURL("http://pic.58pic.com/58pic/12/85/31/86g58PICUZb.jpg");
                 data.setMsgCount(1);
             } else if (i == 4) {
-                data.setName("前滩验房缺陷统计");
+                data.setName("香港美心");
                 data.setProvince("上海");
                 data.setCity("上海");
                 data.setArea("浦东新区");
@@ -236,40 +236,68 @@ public class DataCenter {
 
         List<WorkModuleBean.BodyBean> mDatas = new ArrayList<>();
         WorkModuleBean.BodyBean bodyBean = new WorkModuleBean.BodyBean();
-        bodyBean.setName("巡检");
+        bodyBean.setName("巡店任务");
         bodyBean.setCount(2);
         bodyBean.setImageURL("");
         bodyBean.setWorkCode(10001);
 
         WorkModuleBean.BodyBean bodyBean1 = new WorkModuleBean.BodyBean();
-        bodyBean1.setName("工单");
+        bodyBean1.setName("工单任务");
         bodyBean1.setCount(100);
         bodyBean1.setImageURL("");
         bodyBean1.setWorkCode(10002);
 
         WorkModuleBean.BodyBean bodyBean2 = new WorkModuleBean.BodyBean();
-        bodyBean2.setName("计划性维护");
+        bodyBean2.setName("巡检任务");
         bodyBean2.setCount(0);
         bodyBean2.setImageURL("");
         bodyBean2.setWorkCode(10003);
 
         WorkModuleBean.BodyBean bodyBean3 = new WorkModuleBean.BodyBean();
-        bodyBean3.setName("资产");
+        bodyBean3.setName("现场收楼");
         bodyBean3.setCount(1);
         bodyBean3.setImageURL("");
         bodyBean3.setWorkCode(10004);
 
         WorkModuleBean.BodyBean bodyBean4 = new WorkModuleBean.BodyBean();
-        bodyBean4.setName("库存");
+        bodyBean4.setName("计划性维护");
         bodyBean4.setCount(0);
         bodyBean4.setImageURL("");
         bodyBean4.setWorkCode(10005);
+
+        WorkModuleBean.BodyBean bodyBean5 = new WorkModuleBean.BodyBean();
+        bodyBean5.setName("厂库物料");
+        bodyBean5.setCount(0);
+        bodyBean5.setImageURL("");
+        bodyBean5.setWorkCode(10006);
+
+        WorkModuleBean.BodyBean bodyBean6 = new WorkModuleBean.BodyBean();
+        bodyBean6.setName("能源管理");
+        bodyBean6.setCount(0);
+        bodyBean6.setImageURL("");
+        bodyBean6.setWorkCode(10007);
+
+        WorkModuleBean.BodyBean bodyBean7 = new WorkModuleBean.BodyBean();
+        bodyBean7.setName("资产管理");
+        bodyBean7.setCount(0);
+        bodyBean7.setImageURL("");
+        bodyBean7.setWorkCode(10008);
+
+        WorkModuleBean.BodyBean bodyBean8 = new WorkModuleBean.BodyBean();
+        bodyBean8.setName("查看报表");
+        bodyBean8.setCount(0);
+        bodyBean8.setImageURL("");
+        bodyBean8.setWorkCode(10009);
 
         mDatas.add(bodyBean);
         mDatas.add(bodyBean1);
         mDatas.add(bodyBean2);
         mDatas.add(bodyBean3);
         mDatas.add(bodyBean4);
+        mDatas.add(bodyBean5);
+        mDatas.add(bodyBean6);
+        mDatas.add(bodyBean7);
+        mDatas.add(bodyBean8);
 
         workModuleBean.setBody(mDatas);
         return workModuleBean;

@@ -4,9 +4,25 @@
     <!-- 深黑色 -->
     <color name="color_black_deep">#262b2e</color>
     <!-- 统一背景颜色 -->
-    <color name="color_black_bg">#393939</color>
+    <color name="color_black_bg">#2b2c30</color>
     <!-- 底黑色 -->
     <color name="color_black_bar">#515151</color>
+    <!-- 统一title背景颜色 -->
+    <color name="color_title_bg">#3f4042</color>
+    <!-- 统一bottom背景颜色 -->
+    <color name="color_bottom_bg">#1a1a1a</color>
+    <!-- 输入框背景颜色 -->
+    <color name="color_edit_contentbg">#404145</color>
+    <!-- 输入框边框line颜色 -->
+    <color name="color_edit_linebg">#7f8084</color>
+    <!-- 输入框边框Hint颜色 -->
+    <color name="color_edit_hint">#646466</color>
+    <!-- 橙色 -->
+    <color name="color_orange">#e5a34f</color>
+    <!-- 橙色 -->
+    <color name="color_orange_gray">#f5cc99</color>
+    <!-- 绿色 -->
+    <color name="color_green">#21b875</color>
     <!-- 字体蓝色 -->
     <color name="text_blue_common">#2EABE3</color>
     <!-- 字体蓝色 -->
@@ -35,10 +51,13 @@
     <color name="line_gray">#C8C7CC</color>
     <!-- line2 -->
     <color name="line_lightgray">#DEDEDE</color>
+    <!-- line3 -->
+    <color name="line_deep">#3c3d41</color>
 
     <color name="white">#FFFFFF</color>
     <color name="red_tips">#F5565C</color>
     <color name="nocolor">#00FFFFFF</color>
+    <color name="colorBlackBg">#333333</color>
     <color name="selector_bar_select">#EFEFEF</color>
     <color name="colorPrimaryDark">#00ae7d</color>
     <color name="colorPrimary">#00ce7d</color>

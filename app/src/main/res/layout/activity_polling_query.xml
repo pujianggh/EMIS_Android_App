@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/MatchMatch.Vertical"
-    android:background="@color/color_common_bg">
+    android:background="@color/color_black_bg">
 
     <include layout="@layout/layout_title_bar" />
 
@@ -26,6 +26,7 @@
                     android:background="@drawable/selector_line_gray"
                     android:gravity="center"
                     android:text="上一月"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/textSize_14" />
 
                 <TextView
@@ -36,6 +37,7 @@
                     android:background="@drawable/selector_line_gray"
                     android:gravity="center"
                     android:text="2018年05月"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/textSize_14" />
 
                 <TextView
@@ -46,6 +48,7 @@
                     android:background="@drawable/selector_line_gray"
                     android:gravity="center"
                     android:text="下一月"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/textSize_14" />
             </LinearLayout>
 
@@ -54,7 +57,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="1px"
                 android:layout_below="@+id/lly_date"
-                android:background="@color/line_lightgray" />
+                android:background="@color/line_lightgray"
+                android:visibility="invisible" />
 
             <cn.bingoogolapple.refreshlayout.BGARefreshLayout
                 android:id="@+id/rl_root_refresh"
@@ -66,7 +70,7 @@
                     style="@style/MatchAuto"
                     android:background="@null"
                     android:divider="@null"
-                    android:dividerHeight="0dp"
+                    android:dividerHeight="10dp"
                     android:overScrollMode="never"
                     android:scrollbars="none" />
             </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
