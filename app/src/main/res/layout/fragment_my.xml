@@ -1,200 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<cn.bingoogolapple.refreshlayout.BGARefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/rl_root_refresh"
-    style="@style/MatchMatch"
+    style="@style/MatchMatch.Vertical"
     android:background="@color/color_black_bg">
 
-    <ScrollView
-        style="@style/MatchAuto"
+    <TextView
+        style="@style/Font_MatchWrap_Style"
+        android:layout_height="@dimen/item_dp50"
+        android:layout_alignParentTop="true"
+        android:background="@color/color_title_bg"
+        android:gravity="center"
+        android:text="我的"
+        android:textSize="@dimen/textsize_title_big" />
+
+    <RelativeLayout
+        style="@style/MatchMatch.Horizontal"
+        android:layout_height="180dp"
+        android:background="@drawable/ic_main_work_background">
+
+        <RelativeLayout
+            android:id="@+id/rly_work_bill"
+            style="@style/MatchMatch.Horizontal"
+            android:layout_height="@dimen/item_dp50"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_black_bg"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/item_dp20"
+                android:src="@drawable/icon_home_work_count" />
+
+            <TextView
+                style="@style/Text_Common_Style"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/item_dp50"
+                android:text="今日工单"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_count"
+                style="@style/Text_WrapWrap_Style"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/item_dp75"
+                android:text="0/0"
+                android:textColor="@color/white" />
+
+            <TextView
+                style="@style/Text_WrapWrap_Style"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/item_dp20"
+                android:text="(完成/总数)"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize_supersmall" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rlv_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
         android:overScrollMode="never"
-        android:scrollbars="none">
-
-        <LinearLayout style="@style/MatchMatch.Vertical">
-
-            <LinearLayout
-                style="@style/MatchMatch.Horizontal"
-                android:layout_height="200dp"
-                android:background="@drawable/ic_main_my_background"
-                android:gravity="center_vertical">
-
-                <ImageView
-                    android:id="@+id/igv_my_head"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginLeft="25dp"
-                    android:src="@drawable/icon_my_default_head" />
-
-                <TextView
-                    android:id="@+id/tv_my_userName"
-                    style="@style/Font_MatchWrap_Style"
-                    android:layout_marginLeft="25dp"
-                    android:ellipsize="end"
-                    android:lines="1"
-                    android:text="EMIS" />
-            </LinearLayout>
-
-            <LinearLayout style="@style/MatchMatch.Vertical">
-
-                <RelativeLayout
-                    android:id="@+id/rly_myGuarantee"
-                    style="@style/LinearLayout_Table_Style"
-                    android:layout_height="@dimen/spacing_maxplus"
-                    android:background="@drawable/selector_item_bg">
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/icon_main_my_bz" />
-
-                    <TextView
-                        style="@style/Font_MatchWrap_Style"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="35dp"
-                        android:text="我的保障" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/icon_arrow_white" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1px"
-                        android:layout_alignParentBottom="true"
-                        android:background="@color/color_black_bar" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/rly_bindPhone"
-                    style="@style/LinearLayout_Table_Style"
-                    android:layout_height="@dimen/spacing_maxplus"
-                    android:background="@drawable/selector_item_bg">
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/icon_main_my_bdsj" />
-
-                    <TextView
-                        style="@style/Font_MatchWrap_Style"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="35dp"
-                        android:text="绑定手机" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/icon_arrow_white" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1px"
-                        android:layout_alignParentBottom="true"
-                        android:background="@color/color_black_bar" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/rly_restPassword"
-                    style="@style/LinearLayout_Table_Style"
-                    android:layout_height="@dimen/spacing_maxplus"
-                    android:background="@drawable/selector_item_bg">
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/icon_main_my_czmm" />
-
-                    <TextView
-                        style="@style/Font_MatchWrap_Style"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="35dp"
-                        android:text="重置密码" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/icon_arrow_white" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1px"
-                        android:layout_alignParentBottom="true"
-                        android:background="@color/color_black_bar" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/rly_offlineDownload"
-                    style="@style/LinearLayout_Table_Style"
-                    android:layout_height="@dimen/spacing_maxplus"
-                    android:background="@drawable/selector_item_bg">
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/icon_main_my_lxxz" />
-
-                    <TextView
-                        style="@style/Font_MatchWrap_Style"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="35dp"
-                        android:text="离线下载" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/icon_arrow_white" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1px"
-                        android:layout_alignParentBottom="true"
-                        android:background="@color/color_black_bar" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/rly_setting"
-                    style="@style/LinearLayout_Table_Style"
-                    android:layout_height="@dimen/spacing_maxplus"
-                    android:background="@drawable/selector_item_bg">
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/icon_main_my_setting" />
-
-                    <TextView
-                        style="@style/Font_MatchWrap_Style"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="35dp"
-                        android:text="设置" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/icon_arrow_white" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1px"
-                        android:layout_alignParentBottom="true"
-                        android:background="@color/color_black_bar" />
-                </RelativeLayout>
-            </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
-</cn.bingoogolapple.refreshlayout.BGARefreshLayout>
+        android:scrollbars="none" />
+</LinearLayout>

@@ -40,19 +40,37 @@
         android:background="@drawable/selector_item_list"
         android:gravity="center_vertical">
 
-        <ImageView
-            android:id="@+id/igv_icon"
-            android:layout_width="@dimen/item_dp35"
-            android:layout_height="@dimen/item_dp35"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="@dimen/spacing_normal"
-            android:src="@drawable/icon_home_message_wei" />
+        <LinearLayout
+            style="@style/MatchMatch.Vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="85dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/igv_icon"
+                android:layout_width="@dimen/item_dp30"
+                android:layout_height="@dimen/item_dp35"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/spacing_min"
+                android:layout_marginLeft="@dimen/item_dp15"
+                android:layout_marginRight="@dimen/item_dp15"
+                android:src="@drawable/icon_message_sh" />
+
+            <TextView
+                android:id="@+id/tv_state"
+                style="@style/Text_WrapWrap_Style"
+                android:layout_margin="@dimen/spacing_min"
+                android:text="审核"
+                android:textColor="@color/text_brown2"
+                android:textSize="@dimen/textsize_min" />
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/lly_item"
             style="@style/MatchMatch.Vertical"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="85dp"
             android:gravity="center_vertical"
             android:orientation="vertical">
 
@@ -61,8 +79,8 @@
                 <TextView
                     android:id="@+id/tv_title"
                     style="@style/Text_WrapWrap_Style"
-                    android:layout_margin="@dimen/spacing_min"
                     android:text="EMIS"
+                    android:layout_marginLeft="@dimen/spacing_min"
                     android:textColor="@color/white"
                     android:textSize="@dimen/textsize_normalplus" />
 
@@ -76,7 +94,9 @@
                     android:textSize="@dimen/textsize_normalplus" />
             </RelativeLayout>
 
-            <RelativeLayout style="@style/MatchAuto">
+            <RelativeLayout
+                android:layout_marginBottom="@dimen/spacing_min"
+                style="@style/MatchAuto">
 
                 <TextView
                     android:id="@+id/tv_message"

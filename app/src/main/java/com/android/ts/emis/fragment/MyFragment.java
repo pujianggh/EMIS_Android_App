@@ -1,18 +1,21 @@
 package com.android.ts.emis.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.android.ts.emis.R;
-import com.android.ts.emis.activity.common.CommonWebActivity;
-import com.android.ts.emis.activity.my.SettingActivity;
+import com.android.ts.emis.adapter.WorkModuleAdapter;
 import com.android.ts.emis.base.BaseFragment;
+import com.android.ts.emis.config.DataCenter;
+import com.android.ts.emis.handle.RecycleViewDivider;
+import com.android.ts.emis.mode.WorkModuleBean;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * 首页-工作信息
@@ -23,42 +26,33 @@ import butterknife.OnClick;
  * @Description:
  */
 public class MyFragment extends BaseFragment {
-    @BindView(R.id.rly_myGuarantee)
-    RelativeLayout rlyMyGuarantee;
-    @BindView(R.id.rly_bindPhone)
-    RelativeLayout rlyBindPhone;
-    @BindView(R.id.rly_restPassword)
-    RelativeLayout rlyRestPassword;
-    @BindView(R.id.rly_offlineDownload)
-    RelativeLayout rlyOfflineDownload;
-    @BindView(R.id.rly_setting)
-    RelativeLayout rlySetting;
+    @BindView(R.id.rly_work_bill)
+    RelativeLayout rlyWorkBill;
+    @BindView(R.id.tv_count)
+    TextView tvCount;
+    @BindView(R.id.rlv_content)
+    RecyclerView rlvContent;
+
+    private WorkModuleAdapter mWorkModuleAdapter;
+    private WorkModuleBean moduleBean;
 
     @Override
     protected void initView(Bundle savedInstanceState) {
         setContentView(R.layout.fragment_my);
         unBinder = ButterKnife.bind(this, mContentView);
+
+        initData();
     }
 
-    @OnClick({R.id.rly_myGuarantee, R.id.rly_bindPhone, R.id.rly_restPassword, R.id.rly_offlineDownload,
-            R.id.rly_setting})
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.rly_myGuarantee:
-                startActivity(new Intent(getActivity(), CommonWebActivity.class));
-                break;
-            case R.id.rly_bindPhone:
-                startActivity(new Intent(getActivity(), CommonWebActivity.class));
-                break;
-            case R.id.rly_restPassword:
-                startActivity(new Intent(getActivity(), CommonWebActivity.class));
-                break;
-            case R.id.rly_offlineDownload:
-                startActivity(new Intent(getActivity(), CommonWebActivity.class));
-                break;
-            case R.id.rly_setting:
-                startActivity(new Intent(getActivity(), SettingActivity.class));
-                break;
-        }
+    private void initData() {
+        //rlyWorkBill.getBackground().mutate().setAlpha(100);
+        moduleBean = DataCenter.getWorkModuleData();
+
+        GridLayoutManager layoutManager = new GridLayoutManager(mAPPApplication, 3);
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        rlvContent.setLayoutManager(layoutManager);
+        rlvContent.addItemDecoration(new RecycleViewDivider(mAPPApplication));
+        mWorkModuleAdapter = new WorkModuleAdapter(getActivity(), moduleBean.getBody());
+        rlvContent.setAdapter(mWorkModuleAdapter);
     }
 }

@@ -12,8 +12,8 @@ import android.widget.TextView;
 import com.android.ts.emis.R;
 import com.android.ts.emis.base.BaseActivity;
 import com.android.ts.emis.fragment.MessageFragment;
+import com.android.ts.emis.fragment.SetFragment;
 import com.android.ts.emis.fragment.MyFragment;
-import com.android.ts.emis.fragment.WorkFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,19 +34,19 @@ public class MainActivity extends BaseActivity {
     FrameLayout fmMainIndex;
     @BindView(R.id.rg_main)
     RadioGroup rgMain;
-    @BindView(R.id.tv_main_message_count)
-    TextView tvMainMessageCount;
-    @BindView(R.id.tv_main_work_count)
-    TextView tvMainWorkCount;
-    @BindView(R.id.tv_main_my_count)
-    TextView tvMainMyCount;
+    @BindView(R.id.tv_messageCount)
+    TextView tvMessageCount;
+    @BindView(R.id.tv_myCount)
+    TextView tvMyCount;
+    @BindView(R.id.tv_setCount)
+    TextView tvSetCount;
 
     private FragmentManager fragmentManager;
     private FragmentTransaction transition;
     private List<Fragment> fragments;
     private MessageFragment messageFragment;
-    private WorkFragment workFragment;
     private MyFragment myFragment;
+    private SetFragment setFragment;
 
     @Override
     public boolean isSupportSwipeBack() {
@@ -59,10 +59,10 @@ public class MainActivity extends BaseActivity {
         ButterKnife.bind(this);
 
         initFragment(savedInstanceState);
-        tvMainMessageCount.setVisibility(View.VISIBLE);
-        tvMainMessageCount.setText("99+");
-        tvMainMyCount.setVisibility(View.VISIBLE);
-        tvMainMyCount.setText(" 2 ");
+        tvMessageCount.setVisibility(View.VISIBLE);
+        tvMessageCount.setText("99+");
+        tvSetCount.setVisibility(View.VISIBLE);
+        tvSetCount.setText(" 2 ");
     }
 
     /**
@@ -74,7 +74,7 @@ public class MainActivity extends BaseActivity {
         fragmentManager = getSupportFragmentManager();
         fragments = new ArrayList<>();
 
-        rgMain.check(R.id.rb_main_message);
+        rgMain.check(R.id.rb_mainMessage);
         messageFragment = new MessageFragment();
         fragments.add(messageFragment);
         hideOthersFragment(messageFragment, true);
@@ -83,25 +83,25 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
-                    case R.id.rb_main_message://消息中心
+                    case R.id.rb_mainMessage://消息中心
                         hideOthersFragment(messageFragment, false);
                         break;
-                    case R.id.rb_main_work://工作信息
-                        if (workFragment == null) {
-                            workFragment = new WorkFragment();
-                            fragments.add(workFragment);
-                            hideOthersFragment(workFragment, true);
-                        } else {
-                            hideOthersFragment(workFragment, false);
-                        }
-                        break;
-                    case R.id.rb_main_my://我的
+                    case R.id.rb_mainMy://我的-工作中心
                         if (myFragment == null) {
                             myFragment = new MyFragment();
                             fragments.add(myFragment);
                             hideOthersFragment(myFragment, true);
                         } else {
                             hideOthersFragment(myFragment, false);
+                        }
+                        break;
+                    case R.id.rb_mainSet://设置
+                        if (setFragment == null) {
+                            setFragment = new SetFragment();
+                            fragments.add(setFragment);
+                            hideOthersFragment(setFragment, true);
+                        } else {
+                            hideOthersFragment(setFragment, false);
                         }
                         break;
                 }

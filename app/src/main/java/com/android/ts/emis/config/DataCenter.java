@@ -436,16 +436,16 @@ public class DataCenter {
         bodyBean5.setWorkCode(50008);
 
         WorkModuleBean.BodyBean bodyBean6 = new WorkModuleBean.BodyBean();
-        bodyBean5.setName("库存审核");
-        bodyBean5.setCount(0);
-        bodyBean5.setImageURL("");
-        bodyBean5.setWorkCode(50009);
+        bodyBean6.setName("库存审核");
+        bodyBean6.setCount(0);
+        bodyBean6.setImageURL("");
+        bodyBean6.setWorkCode(50009);
 
         WorkModuleBean.BodyBean bodyBean7 = new WorkModuleBean.BodyBean();
-        bodyBean5.setName("库存查询");
-        bodyBean5.setCount(0);
-        bodyBean5.setImageURL("");
-        bodyBean5.setWorkCode(50010);
+        bodyBean7.setName("库存查询");
+        bodyBean7.setCount(0);
+        bodyBean7.setImageURL("");
+        bodyBean7.setWorkCode(50010);
 
         mDatas.add(bodyBean);
         mDatas.add(bodyBean1);

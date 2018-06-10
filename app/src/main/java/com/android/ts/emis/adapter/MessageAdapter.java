@@ -68,6 +68,20 @@ public class MessageAdapter extends BGAAdapterViewAdapter<MessageInfoBean.Data> 
         } else {
             swipeItemLayout.setSwipeAble(true);
         }
+
+        if (position < 2) {
+            viewHolderHelper.getImageView(R.id.igv_icon).setImageResource(R.drawable.icon_message_pd);
+            viewHolderHelper.setText(R.id.tv_state, "派工");
+        } else if (position < 4) {
+            viewHolderHelper.getImageView(R.id.igv_icon).setImageResource(R.drawable.icon_message_sh);
+            viewHolderHelper.setText(R.id.tv_state, "审核");
+        } else if (position < 5) {
+            viewHolderHelper.getImageView(R.id.igv_icon).setImageResource(R.drawable.icon_message_wg);
+            viewHolderHelper.setText(R.id.tv_state, "完工");
+        } else {
+            viewHolderHelper.getImageView(R.id.igv_icon).setImageResource(R.drawable.icon_message_yz);
+            viewHolderHelper.setText(R.id.tv_state, "验证");
+        }
     }
 
     /**

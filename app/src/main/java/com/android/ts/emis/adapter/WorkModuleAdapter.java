@@ -66,7 +66,7 @@ public class WorkModuleAdapter extends RecyclerView.Adapter<WorkModuleAdapter.Vi
             switch (mode.getWorkCode()) {
                 //工作-模块
                 case 10001:
-                    holder.igvIcon.setImageResource(R.drawable.icon_home_work_xdrw);
+                    holder.igvIcon.setImageResource(R.drawable.icon_home_work_gdrw);
                     break;
                 case 10002:
                     holder.igvIcon.setImageResource(R.drawable.icon_home_work_gdrw);

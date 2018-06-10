@@ -5,21 +5,21 @@
 
     <TextView
         style="@style/Font_MatchWrap_Style"
-        android:layout_alignParentTop="true"
         android:layout_height="@dimen/item_dp50"
+        android:layout_alignParentTop="true"
         android:gravity="center"
         android:text="登录"
         android:textSize="@dimen/textsize_title_big" />
 
     <LinearLayout
         style="@style/MatchWrap.Vertical"
-        android:layout_marginTop="@dimen/item_dp80"
+        android:layout_marginTop="@dimen/item_dp100"
         android:gravity="center_horizontal">
 
         <ImageView
-            android:layout_width="@dimen/item_dp80"
-            android:layout_height="@dimen/item_dp80"
-            android:src="@drawable/icon_login_account" />
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/item_dp100"
+            android:src="@drawable/ic_app_logo" />
 
         <LinearLayout
             android:layout_width="match_parent"

@@ -37,6 +37,7 @@ public class PopupWindowUtil {
         View view = LayoutInflater.from(mContext).inflate(R.layout.window_workorder_select, null);
         final ImageView igvAdd = (ImageView) view.findViewById(R.id.igv_add);
         final ImageView igvEwm = (ImageView) view.findViewById(R.id.igv_ewm);
+        final LinearLayout llyRoot = (LinearLayout) view.findViewById(R.id.lly_window_root);
         final PopupWindow popupWindow = new PopupWindow(mContext);
         popupWindow.setContentView(view);
         popupWindow.setTouchable(true);
@@ -46,6 +47,7 @@ public class PopupWindowUtil {
         Drawable drawable = resources.getDrawable(android.R.color.black);
         //popupWindow.setBackgroundDrawable(new BitmapDrawable());
         //drawable.mutate().setAlpha(80);
+        llyRoot.getBackground().mutate().setAlpha(80);
         popupWindow.setBackgroundDrawable(drawable);
 
         popupWindow.setOutsideTouchable(true);
