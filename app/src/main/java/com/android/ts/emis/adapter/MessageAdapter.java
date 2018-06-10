@@ -1,9 +1,13 @@
 package com.android.ts.emis.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 
+import com.android.kotlinapp.action.config.StrRes;
 import com.android.ts.emis.R;
+import com.android.ts.emis.activity.work.WorkOrderDetailsActivity;
+import com.android.ts.emis.activity.work.WorkPollingActivity;
 import com.android.ts.emis.mode.MessageInfoBean;
 
 import java.util.ArrayList;
@@ -53,7 +57,7 @@ public class MessageAdapter extends BGAAdapterViewAdapter<MessageInfoBean.Data> 
     }
 
     @Override
-    protected void fillData(BGAViewHolderHelper viewHolderHelper, int position, MessageInfoBean.Data model) {
+    protected void fillData(BGAViewHolderHelper viewHolderHelper, final int position, final MessageInfoBean.Data model) {
         viewHolderHelper.setText(R.id.tv_date, model.getDate());
         viewHolderHelper.setText(R.id.tv_title, model.getTitle());
         viewHolderHelper.setText(R.id.tv_message, model.getMessage());
@@ -82,6 +86,18 @@ public class MessageAdapter extends BGAAdapterViewAdapter<MessageInfoBean.Data> 
             viewHolderHelper.getImageView(R.id.igv_icon).setImageResource(R.drawable.icon_message_yz);
             viewHolderHelper.setText(R.id.tv_state, "验证");
         }
+
+        viewHolderHelper.getView(R.id.lly_item).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (position < 3) {
+                    mContext.startActivity(new Intent(mContext, WorkPollingActivity.class));
+                } else {
+                    mContext.startActivity(new Intent(mContext, WorkOrderDetailsActivity.class).putExtra(StrRes.INSTANCE.getTitle(), model.getTitle()));
+                }
+            }
+        });
+
     }
 
     /**

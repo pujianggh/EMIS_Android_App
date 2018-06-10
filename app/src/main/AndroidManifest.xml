@@ -90,7 +90,7 @@
         <activity
             android:name=".activity.work.WorkOrderCreateActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeDefaultStyle"
+            android:theme="@style/AppTheme_WindowBackGround_Black"
             android:windowSoftInputMode="stateHidden" />
 
         <!-- 工作-工单-列表（包括处理、待处理、待审） -->
@@ -104,6 +104,13 @@
             android:name=".activity.work.WorkOrderQueryListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeDefaultStyle" />
+
+        <!-- 工作-工单详情 -->
+        <activity
+            android:name=".activity.work.WorkOrderDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_WindowBackGround_Black"
+            android:windowSoftInputMode="stateHidden" />
 
         <!-- 首页-多项目信息 -->
         <activity

@@ -36,6 +36,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lly_item"
         style="@style/MatchMatch"
         android:background="@drawable/selector_item_list"
         android:gravity="center_vertical">
@@ -50,7 +51,7 @@
             <ImageView
                 android:id="@+id/igv_icon"
                 android:layout_width="@dimen/item_dp30"
-                android:layout_height="@dimen/item_dp35"
+                android:layout_height="@dimen/item_dp30"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/spacing_min"
                 android:layout_marginLeft="@dimen/item_dp15"
@@ -67,7 +68,6 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/lly_item"
             style="@style/MatchMatch.Vertical"
             android:layout_width="match_parent"
             android:layout_height="85dp"

@@ -86,7 +86,7 @@ public class WorkOrderListActivity extends BaseActivity {
             }
         });
 
-        mAdapter = new WorkOrderListAdapter(mAPPApplication);
+        mAdapter = new WorkOrderListAdapter(this);
         lvListData.setAdapter(mAdapter);
         moduleBean = DataCenter.getWorkOrderListModuleData();
         mAdapter.setData(moduleBean.getData());

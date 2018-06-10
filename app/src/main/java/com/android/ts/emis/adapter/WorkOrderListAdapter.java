@@ -1,12 +1,16 @@
 package com.android.ts.emis.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.android.kotlinapp.action.config.StrRes;
 import com.android.ts.emis.R;
+import com.android.ts.emis.activity.work.WorkOrderDetailsActivity;
 import com.android.ts.emis.mode.WorkOrderListBean;
 
 import butterknife.BindView;
@@ -36,7 +40,7 @@ public class WorkOrderListAdapter extends CommonBaseAdapter<WorkOrderListBean.Da
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        WorkOrderListBean.Data bean = data.get(position);
+        final WorkOrderListBean.Data bean = data.get(position);
         if (viewHolder != null && bean != null) {
             viewHolder.tvOrderCode.setText(bean.getOrderCode());
             viewHolder.tvOrderStatus.setText(bean.getOrderStatus());
@@ -52,11 +56,19 @@ public class WorkOrderListAdapter extends CommonBaseAdapter<WorkOrderListBean.Da
             viewHolder.tvPfmCode.setText(bean.getPfmCode());
             viewHolder.tvOrderDescribe.setText(bean.getOrderDescribe());
             viewHolder.tvCreateTime.setText(bean.getCreateTime());
+            viewHolder.llyItem.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mContext.startActivity(new Intent(mContext, WorkOrderDetailsActivity.class).putExtra(StrRes.INSTANCE.getTitle(), bean.getOrderCode()));
+                }
+            });
         }
         return convertView;
     }
 
     class ViewHolder {
+        @BindView(R.id.lly_item)
+        LinearLayout llyItem;
         @BindView(R.id.tv_orderCode)
         TextView tvOrderCode;
         @BindView(R.id.tv_orderStatus)

@@ -31,6 +31,8 @@
     <color name="text_blue_common">#2EABE3</color>
     <!-- 字体蓝色 -->
     <color name="text_blue">#0066E3</color>
+    <!-- 字体深蓝色 -->
+    <color name="text_deepblue">#29344A</color>
     <!-- 字体棕色 -->
     <color name="text_brown">#B0BA46</color>
     <!-- 字体淡棕色 -->

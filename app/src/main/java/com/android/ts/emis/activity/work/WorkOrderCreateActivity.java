@@ -83,6 +83,11 @@ public class WorkOrderCreateActivity extends BaseActivity {
     private String[] perms = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA};
 
     @Override
+    public boolean isSupportSwipeBack() {
+        return false;
+    }
+
+    @Override
     protected void initView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_work_order_create);
         ButterKnife.bind(this);

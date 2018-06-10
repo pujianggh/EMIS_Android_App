@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/MatchWrap.Vertical"
+    android:id="@+id/lly_item"
     android:background="@drawable/selector_item_list_gary">
 
     <LinearLayout
