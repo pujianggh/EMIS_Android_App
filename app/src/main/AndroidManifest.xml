@@ -68,6 +68,12 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeDefaultStyle" />
 
+        <!-- 工作-计划性维护详情 -->
+        <activity
+            android:name=".activity.work.PlanMaintainDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_WindowBackGround_Black" />
+
         <!-- 工作-资产管理 -->
         <activity
             android:name=".activity.work.PropertyManageActivity"
@@ -77,6 +83,12 @@
         <!-- 工作-巡检-巡检任务 -->
         <activity
             android:name=".activity.work.PollingTaskActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeDefaultStyle" />
+
+        <!-- 工作-巡检任务-项目详情 -->
+        <activity
+            android:name=".activity.work.PollingTaskDetailsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeDefaultStyle" />
 

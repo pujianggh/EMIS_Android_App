@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib-andfix/lib-andfix.iml" filepath="$PROJECT_DIR$/lib-andfix/lib-andfix.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib-banner/lib-banner.iml" filepath="$PROJECT_DIR$/lib-banner/lib-banner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib-calendar/lib-calendar.iml" filepath="$PROJECT_DIR$/lib-calendar/lib-calendar.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib-common/lib-common.iml" filepath="$PROJECT_DIR$/lib-common/lib-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib-okhttputils/lib-okhttputils.iml" filepath="$PROJECT_DIR$/lib-okhttputils/lib-okhttputils.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib-photopicker/lib-photopicker.iml" filepath="$PROJECT_DIR$/lib-photopicker/lib-photopicker.iml" />

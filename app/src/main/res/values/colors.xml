@@ -29,6 +29,8 @@
     <color name="color_green">#27B97A</color>
     <!-- 字体蓝色 -->
     <color name="text_blue_common">#2EABE3</color>
+    <!-- 字体蓝色亮 -->
+    <color name="text_blue_heigh">#06B0FE</color>
     <!-- 字体蓝色 -->
     <color name="text_blue">#0066E3</color>
     <!-- 字体深蓝色 -->
@@ -41,6 +43,8 @@
     <color name="text_brown2">#AFB85F</color>
     <!-- 字体红色 -->
     <color name="red_text">#E33881</color>
+    <!-- 字体红色2 -->
+    <color name="red_text2">#EF4D3D</color>
     <!-- 字体深黑 -->
     <color name="text_deepgray">#5e5e5e</color>
     <!-- 字体灰色 -->
@@ -51,8 +55,8 @@
     <color name="text_contentgray">#666666</color>
     <!-- 提现提示颜色 -->
     <color name="text_color_tips">#ADADAD</color>
-    <!-- 通用背景颜色 -->
-    <color name="color_common_bg">#fafafa</color>
+    <!-- 通用背景颜色 #fafafa -->
+    <color name="color_common_bg">@color/color_black_bg</color>
     <!-- 进度 -->
     <color name="text_prg_bg">#f78497</color>
     <!-- line1 -->

@@ -45,7 +45,9 @@
                 android:hint="请输入账号"
                 android:imeOptions="actionNext"
                 android:inputType="text"
-                android:textColorHint="@color/color_edit_hint" />
+                android:textColor="@color/white"
+                android:textColorHint="@color/color_edit_hint"
+                android:textCursorDrawable="@drawable/cursor_color_white" />
         </LinearLayout>
 
         <LinearLayout
@@ -72,7 +74,9 @@
                 android:hint="请输入密码"
                 android:imeOptions="actionNext"
                 android:inputType="textPassword"
-                android:textColorHint="@color/color_edit_hint" />
+                android:textColor="@color/white"
+                android:textColorHint="@color/color_edit_hint"
+                android:textCursorDrawable="@drawable/cursor_color_white" />
         </LinearLayout>
 
         <Button
@@ -86,6 +90,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/tv_company"
         style="@style/Font_MatchWrap_Style"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="@dimen/item_dp15"

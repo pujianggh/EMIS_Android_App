@@ -2,9 +2,12 @@ package com.android.ts.emis.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
@@ -29,6 +32,89 @@ public class PopupWindowUtil {
     //选择
     public interface OnPopuwindowClick {
         void onPopuwindowClick(int id);
+    }
+
+    /**
+     * 计划性维护详情
+     *
+     * @param locationView
+     * @param popuwindowClick
+     */
+    public void showPlanMaintainDetailsWindow(View locationView, final OnPopuwindowClick popuwindowClick) {
+        View view = LayoutInflater.from(mContext).inflate(R.layout.window_plan_maintain, null);
+        final ImageView igvDx = (ImageView) view.findViewById(R.id.igv_dx);
+        final ImageView igvWxgd = (ImageView) view.findViewById(R.id.igv_wxgd);
+        final LinearLayout llyRoot = (LinearLayout) view.findViewById(R.id.lly_window_root);
+        final PopupWindow popupWindow = new PopupWindow(mContext);
+        popupWindow.setContentView(view);
+        popupWindow.setTouchable(true);
+        popupWindow.setFocusable(true);
+        popupWindow.setOutsideTouchable(true);
+        backgroundAlpha(0.3f);
+        popupWindow.setAnimationStyle(R.style.Animal_Popuwindow_EnterOrExit);
+        popupWindow.setWidth(LinearLayout.LayoutParams.MATCH_PARENT);
+        popupWindow.setHeight(LinearLayout.LayoutParams.WRAP_CONTENT);
+        popupWindow.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+        popupWindow.showAtLocation(locationView, Gravity.BOTTOM, 0, 0);
+        popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+            @Override
+            public void onDismiss() {
+                backgroundAlpha(1f);
+            }
+        });
+        igvDx.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupWindow.dismiss();
+                popuwindowClick.onPopuwindowClick(v.getId());
+            }
+        });
+        igvWxgd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupWindow.dismiss();
+                popuwindowClick.onPopuwindowClick(v.getId());
+            }
+        });
+    }
+
+    /**
+     * 展示设置连接地址
+     */
+    public void showSetConnectURLWindow() {
+        View view = LayoutInflater.from(mContext).inflate(R.layout.window_set_connectset, null);
+        final EditText edtURL = (EditText) view.findViewById(R.id.edt_URL);
+        final Button btnCancel = (Button) view.findViewById(R.id.btn_cancel);
+        final Button btnConfirm = (Button) view.findViewById(R.id.btn_confirm);
+        final PopupWindow popupWindow = new PopupWindow(mContext);
+        popupWindow.setContentView(view);
+        popupWindow.setTouchable(true);
+        popupWindow.setFocusable(true);
+        popupWindow.setOutsideTouchable(true);
+        backgroundAlpha(0.3f);
+        popupWindow.setAnimationStyle(R.style.Animal_Popuwindow_EnterOrExit);
+        popupWindow.setWidth(LinearLayout.LayoutParams.MATCH_PARENT);
+        popupWindow.setHeight(LinearLayout.LayoutParams.WRAP_CONTENT);
+        popupWindow.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+        popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+            @Override
+            public void onDismiss() {
+                backgroundAlpha(1f);
+            }
+        });
+        popupWindow.showAsDropDown(view);
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupWindow.dismiss();
+            }
+        });
+        btnConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupWindow.dismiss();
+            }
+        });
     }
 
     /**
@@ -90,21 +176,12 @@ public class PopupWindowUtil {
         popupWindow.setContentView(view);
         popupWindow.setTouchable(true);
         popupWindow.setFocusable(true);
-        /**
-         Resources resources = mContext.getResources();
-         Drawable drawable = resources.getDrawable(android.R.color.black);
-         //popupWindow.setBackgroundDrawable(new BitmapDrawable());
-         //drawable.mutate().setAlpha(80);
-         llyRoot.getBackground().mutate().setAlpha(80);
-         popupWindow.setBackgroundDrawable(drawable);
-         **/
         popupWindow.setOutsideTouchable(true);
         backgroundAlpha(0.3f);
         popupWindow.setAnimationStyle(R.style.Animal_Popuwindow_EnterOrExit);
         popupWindow.setWidth(LinearLayout.LayoutParams.MATCH_PARENT);
         popupWindow.setHeight(LinearLayout.LayoutParams.WRAP_CONTENT);
         popupWindow.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
-        //popupWindow.showAtLocation(locationView, Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 0);
         popupWindow.showAsDropDown(locationView);
         popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
             @Override

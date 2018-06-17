@@ -50,6 +50,7 @@ dependencies {
     api project(':lib-zxing')
     api project(':lib-signature')
     api project(':lib-photopicker')
+    api project(':lib-calendar')
 }
 repositories {
     mavenCentral()

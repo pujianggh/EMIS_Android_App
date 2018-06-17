@@ -161,17 +161,18 @@
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:runtime-1.0.3" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.okio:okio:1.9.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:common:1.0.3@jar" level="project" />
-    <orderEntry type="module" module-name="lib-banner" />
+    <orderEntry type="module" module-name="lib-calendar" />
     <orderEntry type="module" module-name="lib-okhttputils" />
-    <orderEntry type="module" module-name="lib-styleplug" />
-    <orderEntry type="module" module-name="lib-zxingview" />
     <orderEntry type="module" module-name="lib-zxing" />
-    <orderEntry type="module" module-name="lib-signature" />
     <orderEntry type="module" module-name="lib-andfix" />
     <orderEntry type="module" module-name="lib-photopicker" />
-    <orderEntry type="module" module-name="lib-swipebacklayout" />
     <orderEntry type="module" module-name="lib-pullrefresh" />
     <orderEntry type="module" module-name="lib-swipeitemlayout" />
     <orderEntry type="module" module-name="lib-stypewheelpicker" />
+    <orderEntry type="module" module-name="lib-banner" />
+    <orderEntry type="module" module-name="lib-styleplug" />
+    <orderEntry type="module" module-name="lib-zxingview" />
+    <orderEntry type="module" module-name="lib-signature" />
+    <orderEntry type="module" module-name="lib-swipebacklayout" />
   </component>
 </module>

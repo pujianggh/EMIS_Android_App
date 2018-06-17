@@ -38,8 +38,25 @@ public class PollingInfoListBean extends BaseBean implements Serializable {
         private String pollStartTime;
         private String pollEndTime;
         private String polLocation;//
+        private String location;//
         private String pollStatus;
         private String pollDevice;
+
+        public String getPolLocation() {
+            return polLocation;
+        }
+
+        public void setPolLocation(String polLocation) {
+            this.polLocation = polLocation;
+        }
+
+        public String getLocation() {
+            return location;
+        }
+
+        public void setLocation(String location) {
+            this.location = location;
+        }
 
         public String getId() {
             return id;

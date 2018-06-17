@@ -1,13 +1,17 @@
 package com.android.ts.emis.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.android.kotlinapp.action.config.StrRes;
 import com.android.ts.emis.R;
+import com.android.ts.emis.activity.work.PollingTaskDetailsActivity;
 import com.android.ts.emis.mode.PollingInfoListBean;
 
 import butterknife.BindView;
@@ -37,7 +41,7 @@ public class PollTaskListAdapter extends CommonBaseAdapter<PollingInfoListBean.D
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        PollingInfoListBean.Data bean = data.get(position);
+        final PollingInfoListBean.Data bean = data.get(position);
         if (viewHolder != null && bean != null) {
             viewHolder.tvPollName.setText(bean.getPollName());
             viewHolder.tvPollStartTime.setText(bean.getPollStartTime());
@@ -54,6 +58,12 @@ public class PollTaskListAdapter extends CommonBaseAdapter<PollingInfoListBean.D
             } else {
                 viewHolder.tvState.setText("完成");
             }
+            viewHolder.llyItem.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mContext.startActivity(new Intent(mContext, PollingTaskDetailsActivity.class).putExtra(StrRes.INSTANCE.getMode(), bean));
+                }
+            });
         }
         return convertView;
     }
@@ -75,6 +85,8 @@ public class PollTaskListAdapter extends CommonBaseAdapter<PollingInfoListBean.D
         TextView tvPollDevice;
         @BindView(R.id.rly_goLook)
         RelativeLayout rlyGoLook;
+        @BindView(R.id.lly_item)
+        LinearLayout llyItem;
 
         ViewHolder(View view) {
             ButterKnife.bind(this, view);

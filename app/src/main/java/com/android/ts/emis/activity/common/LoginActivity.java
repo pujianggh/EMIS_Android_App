@@ -8,10 +8,12 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.android.ts.emis.R;
 import com.android.ts.emis.activity.MainActivity;
 import com.android.ts.emis.base.BaseActivity;
+import com.android.ts.emis.utils.PopupWindowUtil;
 import com.android.ts.emis.utils.SPUtil;
 
 import butterknife.BindView;
@@ -33,14 +35,17 @@ public class LoginActivity extends BaseActivity {
     EditText edtPassword;
     @BindView(R.id.btn_next)
     Button btnNext;
+    @BindView(R.id.tv_company)
+    TextView tvCompany;
+
+    private PopupWindowUtil mPopupWindowUtil = null;
+    private boolean isShow = false;
 
     @Override
     protected void initView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
 
-        edtAccount.addTextChangedListener(new TextChangeListeners());
-        edtPassword.addTextChangedListener(new TextChangeListeners());
         mUserPasswrd = SPUtil.INSTANCE.getAllModle(mAPPApplication, mUserPasswrd);
         if (!TextUtils.isEmpty(mUserPasswrd.getUserName())) {
             edtAccount.setText(mUserPasswrd.getUserName());
@@ -48,11 +53,15 @@ public class LoginActivity extends BaseActivity {
         if (!TextUtils.isEmpty(mUserPasswrd.getPassword())) {
             edtPassword.setText(mUserPasswrd.getPassword());
         }
+        initEnvet();
     }
 
-    @OnClick({R.id.btn_next})
+    @OnClick({R.id.btn_next, R.id.tv_company})
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.tv_company:
+                isShow = true;
+                break;
             case R.id.btn_next:
                 if (TextUtils.isEmpty(edtAccount.getText().toString())) {
                     showToast("请输入账号");
@@ -76,6 +85,21 @@ public class LoginActivity extends BaseActivity {
         }
     }
 
+    private void initEnvet() {
+        edtAccount.addTextChangedListener(new TextChangeListeners());
+        edtPassword.addTextChangedListener(new TextChangeListeners());
+        tvCompany.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                if (isShow) {
+                    if (mPopupWindowUtil == null)
+                        mPopupWindowUtil = new PopupWindowUtil(mContext);
+                    mPopupWindowUtil.showSetConnectURLWindow();
+                }
+                return false;
+            }
+        });
+    }
 
     private class TextChangeListeners implements TextWatcher {
 

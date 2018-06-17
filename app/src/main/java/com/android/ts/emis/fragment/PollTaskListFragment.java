@@ -84,7 +84,7 @@ public class PollTaskListFragment extends BaseFragment {
         mAdapter.setData(moduleBean.getData());
 
         if (Type == 1) {
-            lvListData.setVisibility(View.GONE);
+            rlRootRefresh.setVisibility(View.GONE);
             llyDataNull.setVisibility(View.VISIBLE);
             tvMessageTip.setText("暂无巡检任务");
         }

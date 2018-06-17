@@ -19,5 +19,6 @@ object StrRes {
     val mode = base + "mode"
     val code = base + "code"
     val action = base + "action"
+    val id = base + "id"
 
 }

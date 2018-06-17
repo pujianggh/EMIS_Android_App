@@ -83,7 +83,6 @@ public class SettingActivity extends BaseActivity {
                 SPUtil.INSTANCE.putAllModle(mAPPApplication, mUserPasswrd);
                 startActivity(new Intent(this, LoginActivity.class));
                 onBackPressed();
-                onBackPressed();
                 break;
         }
     }

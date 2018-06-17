@@ -1,6 +1,7 @@
 package com.android.ts.emis.config;
 
 import com.android.ts.emis.mode.MessageInfoBean;
+import com.android.ts.emis.mode.PlanMaintainListBean;
 import com.android.ts.emis.mode.PollingInfoListBean;
 import com.android.ts.emis.mode.ProjectMessageBean;
 import com.android.ts.emis.mode.StateInfoBean;
@@ -19,6 +20,65 @@ import java.util.List;
  * @Description:
  */
 public class DataCenter {
+
+    /**
+     * 获取维护列表
+     */
+    public static PlanMaintainListBean getPlanMaintainListModuleData() {
+        List<PlanMaintainListBean.Data> list = new ArrayList<>();
+        PlanMaintainListBean dataBean = new PlanMaintainListBean();
+        dataBean.setTotal(10);
+
+        PlanMaintainListBean.Data data;
+        for (int i = 0; i < 15; i++) {
+            data = new PlanMaintainListBean.Data();
+            data.setId("" + i);
+            data.setPollPersonnel("Rain.HAO");
+            if (i < 2) {
+                data.setPollName("便利店设备巡检(新)");
+                data.setPollPersonnel("JIANG.PU");
+                data.setPollStartTime("2018-05-28 13:00");
+                data.setPollEndTime("2018-05-29 00:00");
+                data.setPollStatus("1");
+                data.setPollDevice("2");
+                data.setLocation("商贸广场18南楼/2");
+            } else if (i < 5) {
+                data.setPollName("计划巡检测试(新)");
+                data.setPollStartTime("2018-05-18 13:00");
+                data.setPollEndTime("2018-05-19 00:00");
+                data.setPollStatus("1");
+                data.setPollDevice("2");
+                data.setLocation("绿地商业广场");
+            } else if (i < 9) {
+                data.setPollName("便商场客服巡检(新)");
+                data.setPollStartTime("2018-04-18 13:00");
+                data.setPollEndTime("2018-04-19 00:00");
+                data.setPollStatus("1");
+                data.setPollDevice("2");
+                data.setLocation("SOHO广场");
+            } else if (i < 12) {
+                data.setPollName("全家店面设备巡检(新)");
+                data.setPollStartTime("2018-05-28 13:00");
+                data.setPollEndTime("2018-05-29 00:00");
+                data.setPollStatus("0");
+                data.setPollDevice("1");
+                data.setLocation("上海浦东大厦");
+            } else {
+                data.setPollName("楼道保洁巡检(新)");
+                data.setPollPersonnel("JIANG.PU");
+                data.setPollStartTime("2018-05-28 13:00");
+                data.setPollEndTime("2018-05-29 00:00");
+                data.setPollStatus("2");
+                data.setPollDevice("0");
+                data.setLocation("商贸广场99南楼/9");
+            }
+            list.add(data);
+        }
+
+        dataBean.setData(list);
+        return dataBean;
+    }
+
 
     /**
      * 获取巡检信息数据
@@ -41,6 +101,7 @@ public class DataCenter {
                 data.setPollocation("1个点位");
                 data.setPollStatus("1");
                 data.setPollDevice("2");
+                data.setLocation("商贸广场18南楼/2");
             } else if (i < 5) {
                 data.setPollName("计划巡检测试(新)");
                 data.setPollStartTime("2018-05-18 13:00");
@@ -48,6 +109,7 @@ public class DataCenter {
                 data.setPollocation("1个点位");
                 data.setPollStatus("1");
                 data.setPollDevice("2");
+                data.setLocation("绿地商业广场");
             } else if (i < 9) {
                 data.setPollName("便商场客服巡检(新)");
                 data.setPollStartTime("2018-04-18 13:00");
@@ -55,6 +117,7 @@ public class DataCenter {
                 data.setPollocation("1个点位");
                 data.setPollStatus("1");
                 data.setPollDevice("2");
+                data.setLocation("SOHO广场");
             } else if (i < 12) {
                 data.setPollName("全家店面设备巡检(新)");
                 data.setPollStartTime("2018-05-28 13:00");
@@ -62,6 +125,7 @@ public class DataCenter {
                 data.setPollocation("1个点位");
                 data.setPollStatus("0");
                 data.setPollDevice("1");
+                data.setLocation("上海浦东大厦");
             } else {
                 data.setPollName("楼道保洁巡检(新)");
                 data.setPollPersonnel("JIANG.PU");
@@ -70,6 +134,7 @@ public class DataCenter {
                 data.setPollocation("2个点位");
                 data.setPollStatus("2");
                 data.setPollDevice("0");
+                data.setLocation("商贸广场99南楼/9");
             }
             list.add(data);
         }

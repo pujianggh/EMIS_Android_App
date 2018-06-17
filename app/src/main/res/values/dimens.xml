@@ -10,6 +10,7 @@
 
     <!-- 通用-长度高度值 -->
     <dimen name="item_dp10">10dp</dimen>
+    <dimen name="item_dp12">12dp</dimen>
     <dimen name="item_dp15">15dp</dimen>
     <dimen name="item_dp20">20dp</dimen>
     <dimen name="item_dp25">25dp</dimen>
