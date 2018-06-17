@@ -171,11 +171,6 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/item_dp10"
-                    android:background="@color/color_common_bg" />
-
                 <ListView
                     android:id="@+id/lv_list_data"
                     style="@style/MatchAuto"
@@ -183,6 +178,7 @@
                     android:divider="@null"
                     android:dividerHeight="10dp"
                     android:overScrollMode="never"
+                    android:paddingTop="@dimen/item_dp10"
                     android:scrollbars="none" />
             </LinearLayout>
         </com.codbking.calendar.CalendarLayout>

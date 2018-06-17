@@ -3,9 +3,13 @@ package com.android.ts.emis.activity.work;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 
 import com.android.ts.emis.R;
+import com.android.ts.emis.adapter.PlanMaintainDetailStepAdapter;
 import com.android.ts.emis.base.BaseActivity;
+import com.android.ts.emis.config.DataCenter;
+import com.android.ts.emis.mode.PlanMaintainDetailStepBean;
 import com.android.ts.emis.utils.PopupWindowUtil;
 
 import butterknife.BindView;
@@ -22,8 +26,12 @@ import butterknife.ButterKnife;
 public class PlanMaintainDetailsActivity extends BaseActivity {
     @BindView(R.id.lly_root)
     LinearLayout llyToot;
+    @BindView(R.id.lv_list_data)
+    ListView lvListData;
 
     private PopupWindowUtil mPopupWindowUtil = null;
+    private PlanMaintainDetailStepAdapter mAdapter;
+    private PlanMaintainDetailStepBean moduleBean;
 
     @Override
     public boolean isSupportSwipeBack() {
@@ -37,6 +45,14 @@ public class PlanMaintainDetailsActivity extends BaseActivity {
         setTitleBarLayout(R.drawable.icon_back_white_bar, "计划性维护详情", null, "···", true);
 
         initData();
+        initListData();
+    }
+
+    private void initListData() {
+        mAdapter = new PlanMaintainDetailStepAdapter(this);
+        lvListData.setAdapter(mAdapter);
+        moduleBean = DataCenter.getPlanMaintainDetailStepModuleData();
+        mAdapter.setData(moduleBean.getData());
     }
 
     private void initData() {

@@ -80,6 +80,12 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeDefaultStyle" />
 
+        <!-- 工作-资产管理详情 -->
+        <activity
+            android:name=".activity.work.PropertyManageDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeDefaultStyle" />
+
         <!-- 工作-巡检-巡检任务 -->
         <activity
             android:name=".activity.work.PollingTaskActivity"

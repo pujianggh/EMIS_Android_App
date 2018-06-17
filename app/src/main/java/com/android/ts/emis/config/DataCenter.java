@@ -1,9 +1,11 @@
 package com.android.ts.emis.config;
 
 import com.android.ts.emis.mode.MessageInfoBean;
+import com.android.ts.emis.mode.PlanMaintainDetailStepBean;
 import com.android.ts.emis.mode.PlanMaintainListBean;
 import com.android.ts.emis.mode.PollingInfoListBean;
 import com.android.ts.emis.mode.ProjectMessageBean;
+import com.android.ts.emis.mode.PropertyManageBean;
 import com.android.ts.emis.mode.StateInfoBean;
 import com.android.ts.emis.mode.WorkModuleBean;
 import com.android.ts.emis.mode.WorkOrderListBean;
@@ -78,7 +80,6 @@ public class DataCenter {
         dataBean.setData(list);
         return dataBean;
     }
-
 
     /**
      * 获取巡检信息数据
@@ -593,6 +594,65 @@ public class DataCenter {
         list.add(data7);
         list.add(data8);
         list.add(data9);
+        dataBean.setData(list);
+        return dataBean;
+    }
+
+    /**
+     * 获取维护详情-步骤列表
+     */
+    public static PlanMaintainDetailStepBean getPlanMaintainDetailStepModuleData() {
+        List<PlanMaintainDetailStepBean.Data> list = new ArrayList<>();
+        PlanMaintainDetailStepBean dataBean = new PlanMaintainDetailStepBean();
+        dataBean.setTotal(10);
+
+        PlanMaintainDetailStepBean.Data data;
+        for (int i = 0; i < 4; i++) {
+            data = new PlanMaintainDetailStepBean.Data();
+            data.setId("" + i);
+            if (i == 0) {
+                data.setWorkGroupName("九龙区工程部");
+                data.setPlanContent("测试");
+            } else if (i == 1) {
+                data.setWorkGroupName("天府广场");
+                data.setPlanContent("维修天然气管道");
+            } else if (i == 2) {
+                data.setWorkGroupName("绿地商务广场");
+                data.setPlanContent("广场巡逻");
+            } else if (i >= 2) {
+                data.setWorkGroupName("陆家嘴商务中心");
+                data.setPlanContent("江边巡逻");
+            }
+            list.add(data);
+        }
+
+        dataBean.setData(list);
+        return dataBean;
+    }
+
+    /**
+     * 资产数据
+     */
+    public static PropertyManageBean getPropertyManageModuleData() {
+        List<PropertyManageBean.Data> list = new ArrayList<>();
+        PropertyManageBean dataBean = new PropertyManageBean();
+        dataBean.setTotal(10);
+
+        PropertyManageBean.Data data;
+        for (int i = 0; i < 4; i++) {
+            data = new PropertyManageBean.Data();
+            data.setId("" + i);
+            data.setMessage((i + 1) + "#监视中心管理服务");
+            if (i == 0) {
+                data.setInstalLosition("绿地中心");
+                data.setSystemClass("停车");
+            } else if (i > 0) {
+                data.setInstalLosition("商务广场");
+                data.setSystemClass("广告牌");
+            }
+            list.add(data);
+        }
+
         dataBean.setData(list);
         return dataBean;
     }
