@@ -74,7 +74,8 @@ public class StateQueryListActivity extends BaseActivity {
             moduleBean = DataStateQueryCenter.getBMModuleData();
         } else if (stateType == StateType.INSTANCE.getServerType()) {
             setTitleBarLayout(R.drawable.icon_back_white_bar, "服务类型", null, "确定", true);
-            moduleBean = DataStateQueryCenter.getFWLXModuleData();
+            //moduleBean = DataStateQueryCenter.getFWLXModuleData();
+            moduleBean = DataStateQueryCenter.getBXNRModuleData();
         } else if (stateType == StateType.INSTANCE.getWorkOrderType()) {
             setTitleBarLayout(R.drawable.icon_back_white_bar, "工单类型", null, "确定", true);
             moduleBean = DataStateQueryCenter.getGDLXModuleData();

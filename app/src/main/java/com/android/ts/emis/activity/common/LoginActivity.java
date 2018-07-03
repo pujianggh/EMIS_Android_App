@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,6 +43,11 @@ public class LoginActivity extends BaseActivity {
     private boolean isShow = false;
 
     @Override
+    public boolean isSupportSwipeBack() {
+        return false;
+    }
+
+    @Override
     protected void initView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
@@ -71,10 +77,11 @@ public class LoginActivity extends BaseActivity {
                     showToast("请输入密码");
                     return;
                 }
-                if ("emis".equals(edtAccount.getText().toString()) && "123".equals(edtPassword.getText().toString())) {
+                if (edtAccount.getText().toString().length() >= 4 && "111111".equals(edtPassword.getText().toString())) {
                     mUserPasswrd = SPUtil.INSTANCE.getAllModle(mAPPApplication, mUserPasswrd);
-                    mUserPasswrd.setUserName("emis");
-                    mUserPasswrd.setPassword("123");
+                    mUserPasswrd.setUserName(edtAccount.getText().toString());
+                    mUserPasswrd.setPassword(edtPassword.getText().toString());
+                    mUserPasswrd.setUserPhone("18000008808");
                     SPUtil.INSTANCE.putAllModle(mAPPApplication, mUserPasswrd);
                     startActivity(new Intent(this, MainActivity.class));
                     onBackPressed();
@@ -121,5 +128,13 @@ public class LoginActivity extends BaseActivity {
         public void afterTextChanged(Editable s) {
 
         }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            return false;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

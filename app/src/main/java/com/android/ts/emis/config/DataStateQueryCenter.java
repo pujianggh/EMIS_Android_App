@@ -43,6 +43,30 @@ public class DataStateQueryCenter {
     }
 
     /**
+     * 模拟保修内容数据
+     */
+    public static StateInfoBean getBXNRModuleData() {
+        StateInfoBean dataBean = new StateInfoBean();
+        List<StateInfoBean.Data> list = new ArrayList<>();
+
+        StateInfoBean.Data data = new StateInfoBean.Data();
+        data.setName("ATM机");
+        StateInfoBean.Data data1 = new StateInfoBean.Data();
+        data1.setName("POS机");
+        StateInfoBean.Data data2 = new StateInfoBean.Data();
+        data2.setName("扫描仪");
+        StateInfoBean.Data data3 = new StateInfoBean.Data();
+        data3.setName("自助取票机");
+
+        list.add(data);
+        list.add(data1);
+        list.add(data2);
+        list.add(data3);
+        dataBean.setData(list);
+        return dataBean;
+    }
+
+    /**
      * 模拟服务类型数据
      */
     public static StateInfoBean getFWLXModuleData() {
@@ -92,12 +116,17 @@ public class DataStateQueryCenter {
         List<StateInfoBean.Data> list = new ArrayList<>();
 
         StateInfoBean.Data data = new StateInfoBean.Data();
-        data.setName("自检");
+        data.setName("维修工单");
         StateInfoBean.Data data1 = new StateInfoBean.Data();
-        data1.setName("纠正性维护");
-
+        data1.setName("保洁工单");
+        StateInfoBean.Data data2 = new StateInfoBean.Data();
+        data2.setName("保安工单");
+        StateInfoBean.Data data3 = new StateInfoBean.Data();
+        data3.setName("投诉工单");
         list.add(data);
         list.add(data1);
+        list.add(data2);
+        list.add(data3);
         dataBean.setData(list);
         return dataBean;
     }

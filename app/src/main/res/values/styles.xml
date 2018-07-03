@@ -25,24 +25,28 @@
         <item name="colorAccent">@color/color_bottom_bg</item>
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowDisablePreview">true</item>
     </style>
 
     <!-- 适用于开启滑动返回功能的 Activity -->
-    <style name="AppTheme_WindowBackGround_Black" parent="AppTheme"></style>
+    <style name="AppTheme_WindowBackGround_Black" parent="AppTheme">
+        <!--colorPrimaryDark对应状态栏的颜色-->
+        <item name="colorPrimaryDark">@color/color_title_bg</item>
+        <!--colorPrimary对应ActionBar的颜色-->
+        <item name="colorPrimary">@color/color_title_bg</item>
+        <item name="android:windowBackground">@color/color_black_bg</item>
+    </style>
 
     <!-- 适用于开启滑动返回功能的 Activity -->
     <style name="AppTheme.Transparent">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowDisablePreview">true</item>
     </style>
 
     <!-- 适用于欢迎界面避免第一次进来白屏或黑屏 -->
     <style name="AppTheme.Transparent.Splash">
         <item name="android:windowDisablePreview">true</item>
-    </style>
-
-    <!--设置-启动界面全屏-->
-    <style name="AppTheme.Transparent.Splash.Fullscreen">
         <item name="android:windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
         <item name="android:windowFullscreen">true</item>
@@ -171,7 +175,7 @@
         <item name="android:gravity">center</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/textsize_normal</item>
-        <item name="android:background">@drawable/selector_button_orange</item>
+        <item name="android:background">@drawable/button_press_orange</item>
     </style>
 
     <!-- 通用Button橙色样式 -->
@@ -182,7 +186,7 @@
         <item name="android:gravity">center</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/textsize_normal</item>
-        <item name="android:background">@drawable/selector_button_orange</item>
+        <item name="android:background">@drawable/button_press_orange</item>
     </style>
 
     <!-- 通用Button黑色样式 -->

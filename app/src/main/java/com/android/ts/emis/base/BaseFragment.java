@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.android.ts.emis.app.APPApplication;
+import com.android.ts.emis.mode.UserPasswordBean;
 import com.android.ts.emis.utils.ToastUtil;
 import com.libcommon.action.base.CommonBaseFragment;
 
@@ -28,6 +29,7 @@ public abstract class BaseFragment extends CommonBaseFragment {
     protected View mContentView;
     protected BaseActivity mActivity;
     protected Unbinder unBinder;
+    protected UserPasswordBean mUserPasswrd = new UserPasswordBean();
 
     @Override
     public void onAttach(Context context) {

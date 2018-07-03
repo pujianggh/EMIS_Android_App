@@ -272,10 +272,10 @@ public class DataCenter {
         for (int i = 0; i < 20; i++) {
             data = new MessageInfoBean.Data();
             if (i < 3) {
-                data.setDate("今天");
+                data.setDate("2018-6-12");
                 data.setState("0");
             } else if (i < 10) {
-                data.setDate("昨天");
+                data.setDate("2018-5-3");
                 data.setState("1");
             } else {
                 data.setDate("2018-4-30");
@@ -438,6 +438,12 @@ public class DataCenter {
         bodyBean4.setImageURL("");
         bodyBean4.setWorkCode(30005);
 
+        WorkModuleBean.BodyBean bodyBean6 = new WorkModuleBean.BodyBean();
+        bodyBean6.setName("待评价工单");
+        bodyBean6.setCount(0);
+        bodyBean6.setImageURL("");
+        bodyBean6.setWorkCode(30006);
+
         WorkModuleBean.BodyBean bodyBean5 = new WorkModuleBean.BodyBean();
         bodyBean5.setName("工单查询");
         bodyBean5.setCount(2);
@@ -450,6 +456,7 @@ public class DataCenter {
         mDatas.add(bodyBean3);
         mDatas.add(bodyBean4);
         mDatas.add(bodyBean5);
+        mDatas.add(bodyBean6);
 
         workModuleBean.setBody(mDatas);
         return workModuleBean;

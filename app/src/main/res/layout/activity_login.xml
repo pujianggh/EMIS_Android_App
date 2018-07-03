@@ -85,7 +85,6 @@
             android:layout_marginLeft="@dimen/item_dp10"
             android:layout_marginRight="@dimen/item_dp10"
             android:layout_marginTop="@dimen/item_dp30"
-            android:enabled="false"
             android:text="登  录" />
     </LinearLayout>
 

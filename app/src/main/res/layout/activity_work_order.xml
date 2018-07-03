@@ -6,16 +6,27 @@
 
     <include layout="@layout/layout_title_bar" />
 
-    <ImageView
-        style="@style/MatchMatch.Horizontal"
-        android:layout_height="320dp"
-        android:background="@drawable/ic_workorder_bg" />
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rlv_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
+    <ScrollView
+        style="@style/MatchMatch"
+        android:clipChildren="false"
+        android:clipToPadding="false"
         android:overScrollMode="never"
-        android:scrollbars="none" />
+        android:scrollbars="none">
+
+        <LinearLayout style="@style/MatchMatch.Vertical">
+
+            <ImageView
+                style="@style/MatchMatch.Horizontal"
+                android:layout_height="320dp"
+                android:background="@drawable/ic_workorder_bg" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rlv_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:overScrollMode="never"
+                android:scrollbars="none" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

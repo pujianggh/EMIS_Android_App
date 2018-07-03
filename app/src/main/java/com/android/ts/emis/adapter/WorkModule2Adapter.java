@@ -87,6 +87,9 @@ public class WorkModule2Adapter extends RecyclerView.Adapter<WorkModule2Adapter.
                 case 30005:
                     holder.igvIcon.setImageResource(R.drawable.icon_home_work_dcdgd);
                     break;
+                case 30006:
+                    holder.igvIcon.setImageResource(R.drawable.icon_home_work_dspgd);
+                    break;
                 case 30008:
                     holder.igvIcon.setImageResource(R.drawable.icon_home_work_gdcx);
                     break;
@@ -135,6 +138,7 @@ public class WorkModule2Adapter extends RecyclerView.Adapter<WorkModule2Adapter.
                         case 30003://待派批工单
                         case 30004://待审批工单
                         case 30005://待存档工单
+                        case 30006://待评价工单
                             mContext.startActivity(new Intent(mContext, WorkOrderListActivity.class).putExtra(StrRes.INSTANCE.getType(), mode.getWorkCode()));
                             break;
                         case 30008://工单查询

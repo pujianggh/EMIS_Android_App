@@ -20,5 +20,6 @@ object StrRes {
     val code = base + "code"
     val action = base + "action"
     val id = base + "id"
+    val result = base + "result"
 
 }

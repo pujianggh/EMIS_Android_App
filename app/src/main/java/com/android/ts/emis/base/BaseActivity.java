@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import com.android.ts.emis.R;
 import com.android.ts.emis.app.APPApplication;
 import com.android.ts.emis.mode.UserPasswordBean;
+import com.android.ts.emis.utils.NavigationBarUtil;
 import com.android.ts.emis.utils.ToastUtil;
 import com.libcommon.action.base.CommonBaseSwipeBackActivity;
 
@@ -30,6 +31,14 @@ public abstract class BaseActivity extends CommonBaseSwipeBackActivity {
     protected BGATitleBar mTitleBar;
     private LinearLayout mTitleBarLayer;
     protected UserPasswordBean mUserPasswrd = new UserPasswordBean();
+
+    @Override
+    public boolean isSupportSwipeBack() {
+        if (NavigationBarUtil.checkDeviceHasNavigationBar(this)){
+            return false;
+        }
+        return true;
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

@@ -1,13 +1,16 @@
 package com.android.ts.emis.activity.common;
 
 import android.Manifest;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.android.kotlinapp.action.config.StrRes;
 import com.android.ts.emis.R;
 import com.android.ts.emis.base.BaseActivity;
 
@@ -61,8 +64,10 @@ public class QRCodeActivity extends BaseActivity implements ZXingView.Delegate {
 
     @Override
     public void onScanQRCodeSuccess(String result) {
-        showToast("扫描结果:" + result);
+        //showToast("扫描结果:" + result);
         vibrate();
+        setResult(RESULT_OK, new Intent().putExtra(StrRes.INSTANCE.getResult(), result));
+        onBackPressed();
         mZxvContent.startSpot();
     }
 
@@ -76,6 +81,7 @@ public class QRCodeActivity extends BaseActivity implements ZXingView.Delegate {
         switch (view.getId()) {
             case R.id.igv_back:
             case R.id.tv_title:
+                setResult(RESULT_OK, null);
                 onBackPressed();
                 break;
             case R.id.igv_icon:
@@ -112,5 +118,15 @@ public class QRCodeActivity extends BaseActivity implements ZXingView.Delegate {
     protected void onDestroy() {
         mZxvContent.onDestroy();
         super.onDestroy();
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            setResult(RESULT_OK, null);
+            onBackPressed();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

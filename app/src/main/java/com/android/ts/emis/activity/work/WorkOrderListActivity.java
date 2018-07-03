@@ -54,6 +54,9 @@ public class WorkOrderListActivity extends BaseActivity {
             case 30005://待存档工单
                 mTitle = "待存档工单";
                 break;
+            case 30006://待评价工单
+                mTitle = "待评价工单";
+                break;
         }
         setTitleBarLayout(R.drawable.icon_back_white_bar, mTitle, null, true);
 

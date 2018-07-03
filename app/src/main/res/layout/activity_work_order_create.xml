@@ -39,6 +39,12 @@
                         android:text="申请人" />
 
                     <TextView
+                        style="@style/Text_Common_Style"
+                        android:layout_marginLeft="@dimen/item_dp55"
+                        android:text="*"
+                        android:textColor="@color/red_text" />
+
+                    <TextView
                         android:id="@+id/tv_createrName"
                         style="@style/Text_Common_Style"
                         android:layout_alignParentRight="true"
@@ -58,6 +64,12 @@
                         android:layout_marginLeft="@dimen/item_dp10"
                         android:text="联系电话" />
 
+                    <TextView
+                        style="@style/Text_Common_Style"
+                        android:layout_marginLeft="@dimen/item_dp70"
+                        android:text="*"
+                        android:textColor="@color/red_text" />
+
                     <EditText
                         android:id="@+id/edt_phoneNumber"
                         style="@style/Edit_MatchWrap_Style"
@@ -69,7 +81,7 @@
                         android:background="@android:color/transparent"
                         android:gravity="right|center_vertical"
                         android:inputType="phone"
-                        android:maxLength="11"
+                        android:maxLength="15"
                         android:textCursorDrawable="@drawable/cursor_color_red" />
                 </RelativeLayout>
 
@@ -114,6 +126,12 @@
                         android:text="位置" />
 
                     <TextView
+                        style="@style/Text_Common_Style"
+                        android:layout_marginLeft="@dimen/item_dp40"
+                        android:text="*"
+                        android:textColor="@color/red_text" />
+
+                    <TextView
                         android:id="@+id/tv_location"
                         style="@style/Text_Common_Style"
                         android:layout_alignParentRight="true"
@@ -142,6 +160,12 @@
                         android:text="工单类型" />
 
                     <TextView
+                        style="@style/Text_Common_Style"
+                        android:layout_marginLeft="@dimen/item_dp70"
+                        android:text="*"
+                        android:textColor="@color/red_text" />
+
+                    <TextView
                         android:id="@+id/tv_workOrderType"
                         style="@style/Text_Common_Style"
                         android:layout_alignParentRight="true"
@@ -168,6 +192,12 @@
                         style="@style/Text_Common_Style"
                         android:layout_marginLeft="@dimen/item_dp10"
                         android:text="服务类型" />
+
+                    <TextView
+                        style="@style/Text_Common_Style"
+                        android:layout_marginLeft="@dimen/item_dp70"
+                        android:text="*"
+                        android:textColor="@color/red_text" />
 
                     <TextView
                         android:id="@+id/tv_serverType"
@@ -211,6 +241,48 @@
                         android:layout_centerVertical="true"
                         android:layout_marginRight="@dimen/item_dp10"
                         android:background="@drawable/icon_indicator2" />
+                </RelativeLayout>
+
+                <View style="@style/View_Line_Common_Style" />
+
+                <RelativeLayout
+                    android:id="@+id/rly_yuyueTime"
+                    style="@style/LinearLayout_Child_Style"
+                    android:layout_height="@dimen/item_dp45">
+
+                    <TextView
+                        style="@style/Text_Common_Style"
+                        android:layout_marginLeft="@dimen/item_dp10"
+                        android:text="预约时间" />
+
+                    <TextView
+                        android:id="@+id/tv_yuyueTime"
+                        style="@style/Text_Common_Style"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/item_dp25"
+                        android:text="13:00-15:00" />
+
+                    <ImageView
+                        android:layout_width="@dimen/item_dp20"
+                        android:layout_height="@dimen/item_dp20"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/item_dp10"
+                        android:background="@drawable/icon_indicator2"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <View style="@style/View_Line_Common_Style" />
+
+                <RelativeLayout
+                    android:id="@+id/rly_addDevice"
+                    style="@style/LinearLayout_Child_Style"
+                    android:layout_height="@dimen/item_dp45">
+
+                    <TextView
+                        style="@style/Text_Common_Style"
+                        android:layout_marginLeft="@dimen/item_dp10"
+                        android:text="添加设备" />
                 </RelativeLayout>
 
                 <View
@@ -335,12 +407,12 @@
         android:id="@+id/igv_addDevice"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:visibility="gone"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="@dimen/item_dp65"
         android:layout_marginRight="@dimen/item_dp10"
-        android:src="@drawable/selector_workorder_create_add" />
+        android:src="@drawable/selector_workorder_create_add"
+        android:visibility="gone" />
 
     <LinearLayout
         android:id="@+id/lly_bottom"
